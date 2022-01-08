@@ -1,6 +1,8 @@
 @use './_fonts'
 @use './_typography'
+@import './navigation.style'
 @import './about.style'
+@import './button.style'
 
 
 // Global 
@@ -66,72 +68,7 @@ form
         font-size: 14px
         line-height: 22px
         color: #ff3f3f
-    
-.p__submit 
-    overflow: hidden
-    font-size: 14px
-    line-height: 24px
-    border-radius: 50px
-    color: #fff
-    background: #000
-    padding: 9px 32px
-    border: 1px solid #000
-    font-weight: 700
-    &::before
-        content: ''
-        background: #fff
-        width: 120%
-        height: 0
-        padding-bottom: 120%
-        top: -110%
-        left: -10%
-        border-radius: 50%
-        transform: translate3d(0,68%,0) scale3d(0,0,0)
-        poosition: absolute
-    &::after
-        content: ''
-        background: #fff
-        transform: translate3d(0,-100%,0)
-        transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1)
-        position: absolute
-        top: 0
-        left: 0
-        width: 100%
-        height: 100%
-    span
-        display: block
-        position: relative
-        mix-blend-mode: difference
-        z-index: 10
 
-    &:hover 
-        span
-            animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s
-
-        ::before
-            transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-            transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1)
-
-
-        ::after
-            transform: translate3d(0, 0, 0)
-            transition-duration: 0.05s
-            transition-delay: 0.4s
-            transition-timing-function: linear
-
-@keyframes MoveScaleUpInitial
-  to
-    transform: translate3d(0, -105%, 0) scale3d(1, 2, 1)
-    opacity: 0
-
-@keyframes MoveScaleUpEnd
-  from
-    transform: translate3d(0, 100%, 0) scale3d(1, 2, 1)
-    opacity: 0
-
-  to
-    transform: translate3d(0, 0, 0)
-    opacity: 1
 // ===========================
 // Reusable classes
 // ===========================
@@ -175,26 +112,6 @@ form
     margin-right: auto 
     margin-left: auto 
 
-
-header // Main Navigation Bar
-    padding-top: 25px
-    .p_navigation_bar 
-        .p_container 
-            display: flex 
-            justify-content: space-between 
-            align-items: center
-            .p_brand 
-                font-weight: bold
-                font-size: 20px
-                line-height: 25px
-            .p_navigation_menu 
-                li 
-                    margin-right: 35px 
-                    &:last-of-type
-                        margin-right: 0
-                    a 
-                        font-size: 16px
-                        line-height: 20px
 
 
 .p_page_header // Page Header
@@ -312,10 +229,6 @@ header // Main Navigation Bar
                     font-size: 16px
                     line-height: 24px
                     color: #000C19
-
-.p_about_body 
-    padding-top: 130px
-    padding-bottom: 130px
 
 footer 
     padding-top: 75px
