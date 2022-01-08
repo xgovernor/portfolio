@@ -5,6 +5,7 @@ import SingleCover from "../../components/article/SingleCover";
 import SingleContent from "../../components/article/SingleContent";
 import SingleUpdateStatus from "../../components/article/SingleUpdateStatus";
 import NavigationalArticles from "../../components/NavigationArticles";
+import { motion } from "framer-motion";
 
 
 export default function ArticlesSingle() {
@@ -22,13 +23,19 @@ export default function ArticlesSingle() {
     
     return (
         <>
-            <Layout>
-                <SingleHeader data={singleArticleHeader} />
-                <SingleCover data={singleArticleCover} />
-                <SingleContent />
-                <SingleUpdateStatus />
-                <NavigationalArticles />
-            </Layout>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }} 
+            >
+                <Layout>
+                    <SingleHeader data={singleArticleHeader} />
+                    <SingleCover data={singleArticleCover} />
+                    <SingleContent />
+                    <SingleUpdateStatus />
+                    <NavigationalArticles />
+                </Layout>
+            </motion.div>
         </>
     )
 }

@@ -1,7 +1,12 @@
-import '../styles/index.sass'
+import { AnimatePresence } from 'framer-motion';
+import '../styles/index.sass';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <AnimatePresence exitBeforeEnter>
+      <Component {...pageProps} />
+    </AnimatePresence>
+  );
 }
 
-export default MyApp
+export default MyApp;
