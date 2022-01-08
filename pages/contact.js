@@ -68,7 +68,7 @@ export default function Contact() {
                                     </li>
                                 </ul>
 
-                                <p className="mt_20">So in case you wonder anything, reach out to Henrik, it'll be fun!✌️</p>
+                                <p className="mt_20">So in case you wonder anything, reach out to Henrik, it&apos;ll be fun!✌️</p>
                             </div>
                         </div>
 
