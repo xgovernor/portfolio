@@ -1,23 +1,22 @@
 // Core Components
 // Custom Components
 import Layout from "../components/Layout";
+import PageHeader from "../components/PageHeader";
 import PageBanner from "../components/PageBanner";
 
 
-export default function Index() {
-    const pageData = {
-        title: 'Abu Taher Muhammad',
-        class: 'p_page_home'
-    }
+export default function Work() {
     const dataImg = {
-        url: "/images/index.jpg",
+        url: "/images/work.jpg",
         alt: 'About banner Image',
         width: 1444,
         height: 579
     }
+
     return (
         <>
-            <Layout data={pageData}>
+            <Layout>
+                <PageHeader data={{heading: 'WORKS', subheading: "Muhammad crafts accessible web experiences where creativity meets technology."}} />
                 <PageBanner dataImg={dataImg} />
             </Layout>
         </>
