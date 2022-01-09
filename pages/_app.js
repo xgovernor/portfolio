@@ -1,10 +1,15 @@
 import { AnimatePresence } from 'framer-motion';
+import { SmoothScrollProvider } from '../hooks/useScroll'
 import '../styles/index.sass';
 
 function MyApp({ Component, pageProps }) {
   return (
     <AnimatePresence exitBeforeEnter>
-      <Component {...pageProps} />
+    	<SmoothScrollProvider options={{ smooth: true, lerp: 0.1 }}>
+    		<div data-scroll-container >
+      			<Component {...pageProps} />
+      		</div>
+      	</SmoothScrollProvider>
     </AnimatePresence>
   );
 }
