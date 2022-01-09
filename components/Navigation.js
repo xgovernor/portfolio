@@ -7,8 +7,8 @@ import Container from './Container'
 export default function Navigation() {
     return (
         <>
-            <header  data-scroll-section>
-                <nav className="p_navigation_bar" data-scroll>
+            <header>
+                <nav className="p_navigation_bar">
                     <Container>
                         <Link href={`/`}>
                             <a className="p_brand">

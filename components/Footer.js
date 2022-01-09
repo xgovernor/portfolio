@@ -8,7 +8,7 @@ import Container from "./Container";
 export default function Footer() {
     return (
         <>
-            <footer  data-scroll-section>
+            <footer>
                 <Container dataClass="p_content">
                     <div className="p__left">
                         <div className="p_img_wrapper">

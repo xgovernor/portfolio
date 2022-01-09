@@ -4,7 +4,7 @@ import Container from "./Container";
 export default function BlogGrid() {
     return (
         <>
-            <section className="p_blog_grid" data-scroll-section>
+            <section className="p_blog_grid">
                 <Container dataClass="p_content">
                     <BlgoGridCard />
                     <BlgoGridCard />

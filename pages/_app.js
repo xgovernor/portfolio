@@ -5,11 +5,11 @@ import '../styles/index.sass';
 function MyApp({ Component, pageProps }) {
   return (
     <AnimatePresence exitBeforeEnter>
-    	<SmoothScrollProvider options={{ smooth: true, lerp: 0.1 }}>
-    		<div data-scroll-container >
+    	{/* <SmoothScrollProvider options={{ smooth: true, lerp: 0.1 }}> */}
+    		{/* <div data-scroll-container > */}
       			<Component {...pageProps} />
-      		</div>
-      	</SmoothScrollProvider>
+      		{/*</div> */}
+      	{/* </SmoothScrollProvider> */}
     </AnimatePresence>
   );
 }
