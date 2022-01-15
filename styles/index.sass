@@ -3,6 +3,8 @@
 @import './navigation.style'
 @import './about.style'
 @import './button.style'
+@import './table.style'
+@import './commingsoon.style'
 // @import './scroll.style'
 
 
@@ -20,8 +22,8 @@ body
     font-weight: normal
     font-size: 16px
     line-height: 20px
-    color: #000C19
-    background: #fff
+    color: #4D4D4D
+    background: #FFFFFF
 
 h1, h2, h3, h4, h5, h6
     font-style: normal 
@@ -46,11 +48,11 @@ form
         color: #000C19
         border-top: none 
         border-right: none
-        border-bottom: 1px solid rgba(0, 12, 25, 0.3)
+        border-bottom: 1px solid hsla(0, 0%, 0%, 0.12)
         border-left: none
         outline: none
-        &:active, &:focus, &:valid
-            border-bottom: 1px solid #000C19
+        &:active, &:focus
+            border-bottom: 1px solid #000000
         &.__err
             border-bottom: 1px solid #ff3f3f
     textarea 
@@ -107,35 +109,82 @@ form
         z-index: 9999
         mix-blend-mode: difference
 
-
 .p_container  // Container
-    width: 1088px 
     margin-right: auto 
     margin-left: auto 
+    
+@media screen and (min-width: 1366px)   // Desktop Device and so on
+    .p_container
+        width: 1088px
+@media screen and (min-width: 1024px) and (max-width: 1365px)   // Retinal Device
+    .p_container
+        width: 904px
+@media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
+    .p_container
+        width: 696px
+@media screen and (min-width: 425px) and (max-width: 767px)     // Mobile
+    .p_container
+        width: 696px
 
 
-
-.p_page_header // Page Header
-    padding-top: 150px 
-    padding-bottom: 130px
+// Page Header
+.p_page_header 
     .p_content 
-        width: 972px
         .p_heading
-            width: 972px
-            margin-left: 0
-            margin-right: auto
-            margin-bottom: 10px
-            font-size: 14px
-            line-height: 24px
-            color: rgba(0, 12, 26, 0.7)
+            width: 100%
+            color: #4D4D4D
             font-family: "Neue Haas Grotesk Display Pro"
-        .p_subheading 
-            width: 972px
             margin-left: 0
             margin-right: auto
-            font-size: 48px
-            line-height: 50px
-            color: #000C19
+        .p_subheading 
+            width: 100%
+            color: #000000
+            margin-left: 0
+            margin-right: auto
+@media screen and (min-width: 1920px)  // Big Screen
+@media screen and (min-width: 1366px) and (max-width: 1919px)   // Desktop Device
+    .p_page_header 
+        padding-top: 105px 
+        padding-bottom: 130px
+        .p_content 
+            width: 972px
+            .p_heading
+                margin-bottom: 10px
+                font-size: 14px
+                line-height: 24px
+            .p_subheading 
+                font-size: 48px
+                line-height: 50px
+@media screen and (min-width: 1024px) and (max-width: 1365px)   // Retinal Device
+    .p_page_header 
+        padding-top: 75px 
+        padding-bottom: 80px
+        .p_content 
+            width: 724px
+            .p_heading
+                width: 724px
+                margin-bottom: 10px
+                font-size: 14px
+                line-height: 24px
+            .p_subheading 
+                width: 724px
+                font-size: 38px
+                line-height: 40px
+@media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
+    .p_page_header 
+        padding-top: 45px 
+        padding-bottom: 70px
+        .p_content 
+            width: 585px
+            .p_heading
+                margin-bottom: 6px
+                font-size: 12px
+                line-height: 18px
+            .p_subheading 
+                font-size: 28px
+                line-height: 30px
+@media screen and (min-width: 425px) and (max-width: 767px)     // Mobile
+
 
 .p_page_banner  // Page Banner
     width: 100%

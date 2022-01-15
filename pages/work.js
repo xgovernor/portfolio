@@ -3,6 +3,7 @@
 import Layout from "../components/Layout";
 import PageHeader from "../components/PageHeader";
 import PageBanner from "../components/PageBanner";
+import CommingSoon from "../components/CommingSoon";
 
 
 export default function Work() {
@@ -18,6 +19,8 @@ export default function Work() {
             <Layout>
                 <PageHeader data={{heading: 'WORKS', subheading: "Muhammad crafts accessible web experiences where creativity meets technology."}} />
                 <PageBanner dataImg={dataImg} />
+
+                <CommingSoon />
             </Layout>
         </>
     )
