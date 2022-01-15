@@ -21,7 +21,7 @@ export default function Blog() {
             exit={{ opacity: 0 }} 
         >
             <Layout>
-                <PageHeader data={{heading: 'KNOWLEDGE BOOK', subheading: "Occasional thoughts and insights from Muhammad's everyday life."}} />
+                <PageHeader data={{heading: 'Knowledge Book', subheading: "Occasional thoughts and insights from Muhammad's everyday life."}} />
                 <PageBanner dataImg={dataImg} />
                 <BlogGrid />
             </Layout>

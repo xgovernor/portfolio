@@ -1,9 +1,10 @@
 @use './_fonts'
 @use './_typography'
+@import './table.style'
+@import './button.style'
 @import './navigation.style'
 @import './about.style'
-@import './button.style'
-@import './table.style'
+@import './blog.style'
 @import './commingsoon.style'
 // @import './scroll.style'
 
@@ -60,7 +61,7 @@ form
         padding: 10px
         font-size: 16px
         line-height: 24px
-        border: 1px solid rgba(0, 12, 25, 0.3)
+        border: 1px solid hsla(0, 0%, 0%, 0.12)
         outline: none
         &:active, &:focus
             border: 1px solid #000C19
@@ -112,7 +113,6 @@ form
 .p_container  // Container
     margin-right: auto 
     margin-left: auto 
-    
 @media screen and (min-width: 1366px)   // Desktop Device and so on
     .p_container
         width: 1088px
@@ -141,8 +141,7 @@ form
             color: #000000
             margin-left: 0
             margin-right: auto
-@media screen and (min-width: 1920px)  // Big Screen
-@media screen and (min-width: 1366px) and (max-width: 1919px)   // Desktop Device
+@media screen and (min-width: 1366px)  // Desktop Device and so on
     .p_page_header 
         padding-top: 105px 
         padding-bottom: 130px
@@ -192,44 +191,6 @@ form
     overflow: hidden
     .p_img_wrapper 
         height: 547.72px
-
-
-.p_blog_grid_card  // Blog Grid card
-    height: 100%
-    padding: 45px
-    border: 1px solid rgba(0, 12, 25, 0.3)
-    .p__meta 
-        margin-bottom: 10px
-        font-size: 12px
-        line-height: 14px
-        color: rgba(0, 12, 25, 0.7)
-    .p__title 
-        margin-bottom: 20px
-        font-size: 28px
-        line-height: 34px
-        color: #000C19
-    .p__excerpt 
-        color: rgba(68, 68, 68, 0.8)
-        margin-bottom: 35px
-        font-size: 14px
-        line-height: 18px
-    .p__readmore 
-        font-size: 14px
-        line-height: 14px
-        text-decoration: underline
-        color: #000C19
-
-.p_blog_grid 
-    padding-top: 130px
-    padding-bottom: 130px
-    .p_content 
-        display: flex 
-        justify-content: space-between 
-        align-items: center 
-        flex-wrap: wrap
-        .p_blog_grid_card
-            width: 526px
-            margin-bottom: 35px
 
 .p_contact_form 
     padding-top: 130px
