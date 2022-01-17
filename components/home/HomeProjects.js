@@ -24,7 +24,7 @@ const HomeProjects = () => {
                                 <p className='p_body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
                                 <Link href={`/`}>
-                                    <a className='p_link'>Full Case Study</a>
+                                    <a className='p_link'>Comming soon</a>
                                 </Link>
                             </div>
                             <div className="p_card_right">
@@ -43,12 +43,12 @@ const HomeProjects = () => {
                                 <p className='p_body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
                                 <Link href={`/`}>
-                                    <a className='p_link'>Full Case Study</a>
+                                    <a className='p_link'>Comming soon</a>
                                 </Link>
                             </div>
                             <div className="p_card_right">
                                 <div className='p_image'>
-                                    <Image src={`/images/p1.jpg`} alt='The Gisthive' width={562} height={323} />
+                                    <Image src={`/images/p2.jpg`} alt='The Gisthive' width={562} height={323} />
                                 </div>
                             </div>
                         </Container>
@@ -69,7 +69,7 @@ const HomeProjects = () => {
                             </div>
                             <div className="p_card_right">
                                 <div className='p_image'>
-                                    <Image src={`/images/p1.jpg`} alt='The Gisthive' width={562} height={323} />
+                                    <Image src={`/images/p3.jpg`} alt='The Gisthive' width={562} height={323} />
                                 </div>
                             </div>
                         </Container>

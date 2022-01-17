@@ -1,6 +1,7 @@
 // Core Components
 // Custom Components
 import HomeAbout from "../components/home/HomeAbout";
+import HomeArticles from "../components/home/HomeArticles";
 import HomeHero from "../components/home/HomeHero";
 import HomeProjects from "../components/home/HomeProjects";
 import Layout from "../components/Layout";
@@ -24,6 +25,7 @@ export default function Index() {
                 <HomeHero />
                 <HomeAbout />
                 <HomeProjects />
+                <HomeArticles />
             </Layout>
         </>
     )
