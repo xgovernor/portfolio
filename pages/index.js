@@ -1,5 +1,8 @@
 // Core Components
 // Custom Components
+import HomeAbout from "../components/home/HomeAbout";
+import HomeHero from "../components/home/HomeHero";
+import HomeProjects from "../components/home/HomeProjects";
 import Layout from "../components/Layout";
 import PageBanner from "../components/PageBanner";
 
@@ -18,7 +21,9 @@ export default function Index() {
     return (
         <>
             <Layout data={pageData}>
-                <PageBanner dataImg={dataImg} />
+                <HomeHero />
+                <HomeAbout />
+                <HomeProjects />
             </Layout>
         </>
     )
