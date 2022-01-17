@@ -1,19 +1,36 @@
 // Hero Section
 .p_home_hero 
-    padding: 165px 0 170px
     .p_container 
         .p_title_hero
-            font-size: 92px
-            line-height: 116px 
             text-align: center
             color: #000000
+@media screen and (min-width: 1366px)    // Desktop Device
+    .p_home_hero 
+        padding: 165px 0 170px
+        .p_container 
+            .p_title_hero
+                font-size: 92px
+                line-height: 116px 
+@media screen and (min-width: 1024px) and (max-width: 1365px)   // Retinal Device
+    .p_home_hero 
+        padding: 105px 0 130px
+        .p_container 
+            .p_title_hero
+                font-size: 72px
+                line-height: 90px 
+@media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
+    .p_home_hero 
+        padding: 75px 0 100px
+        .p_container 
+            .p_title_hero
+                font-size: 62px
+                line-height: 110% 
+@media screen and (min-width: 425px) and (max-width: 767px)     // Mobile
+
 // About Section
 .p_home_about
-    padding: 0px 0 130px
     .p_container
-        width: 1088px
         .p_about_image
-            margin-bottom: 60px
             transition: transform 0.25s ease-in-out
             will-change: transform 
             &:hover
@@ -23,26 +40,63 @@
             justify-content: space-between 
             align-items: flex-start
             .p_home__left 
-                width: 300px
                 .p_subheading
-                    margin-bottom: 10px
                     font-style: normal
                     font-weight: bold
-                    font-size: 12px
-                    line-height: 14px
                     color: #4E545B
                 .p_heading_2
-                    color: #000000
             .p_home__right
-                width: 562px 
                 .p_body 
-                    margin-bottom: 25px
                     color: rgba(0, 0, 0, 0.8)
                 .p_link
                     color: #000000
                     font-weight: 500
-                    font-size: 14px
-                    line-height: 16px
+@media screen and (min-width: 1366px)   // Desktop Device
+    .p_home_about
+        padding: 0px 0 130px
+        .p_container
+            width: 1088px
+            .p_about_image
+                margin-bottom: 60px
+                &:hover
+            .p_about_description
+                .p_home__left 
+                    width: 300px
+                    .p_subheading
+                        font-size: 12px
+                        line-height: 14px
+                    .p_heading_2
+                .p_home__right
+                    width: 562px 
+                    .p_body 
+                        margin-bottom: 25px
+                    .p_link
+                        font-size: 14px
+                        line-height: 16px
+@media screen and (min-width: 1024px) and (max-width: 1365px)   // Retinal Device
+    .p_home_about
+        padding: 0px 0 80px
+        .p_container
+            // width: 1088px
+            .p_about_image
+                margin-bottom: 40px
+                &:hover
+            .p_about_description
+                .p_home__left 
+                    width: 323px
+                    .p_subheading
+                        font-size: 12px
+                        line-height: 14px
+                    .p_heading_2
+                .p_home__right
+                    width: 555px 
+                    .p_body 
+                        margin-bottom: 25px
+                    .p_link
+                        font-size: 14px
+                        line-height: 16px
+@media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
+@media screen and (min-width: 425px) and (max-width: 767px)     // Mobile
 
 // Featured Project Section 
 .p_home_projects 
@@ -95,7 +149,10 @@
                 margin-bottom: 25px
             .p_link
                 color: #000000
-                
+@media screen and (min-width: 1366px)   // Desktop Device
+@media screen and (min-width: 1024px) and (max-width: 1365px)   // Retinal Device
+@media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
+@media screen and (min-width: 425px) and (max-width: 767px)     // Mobile
 
 .p_home_blog 
     padding: 130px 0 105px
@@ -117,3 +174,7 @@
         .p_container 
             display: flex 
             justify-content: space-between
+@media screen and (min-width: 1366px)   // Desktop Device
+@media screen and (min-width: 1024px) and (max-width: 1365px)   // Retinal Device
+@media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
+@media screen and (min-width: 425px) and (max-width: 767px)     // Mobile
