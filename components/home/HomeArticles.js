@@ -1,6 +1,7 @@
-import React from 'react'
-import BlgoGridCard from '../BlogGridCard'
-import Container from '../Container'
+import React from 'react';
+import BlgoGridCard from '../BlogGridCard';
+import Container from '../Container';
+
 
 const HomeArticles = () => {
     return (

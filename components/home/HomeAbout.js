@@ -14,7 +14,7 @@ const HomeAbout = () => {
                     
                     <div className='p_about_description'>
                         <div className='p_home__left'>
-                            <h4 className="p_subheading">About me</h4>
+                            <h4 className="p_subheading">ABOUT ME</h4>
                             <h1 className='p_heading_2'>Section 1.10.32 of &quot;de Finibus Bonorum et Malorum&quot;, written by Cicero in 45 BC</h1>
                         </div>
 
