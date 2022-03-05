@@ -9,8 +9,6 @@ import Navigation from '../Navigation/Navigation';
 export default function Layout({data, children}) {
     return (
         <>
-            <Meta />
-
             {/* Main Navigation */}
             <Navigation />
 
