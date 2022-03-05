@@ -1,13 +1,13 @@
 // Core Components
 import Link from 'next/link'
 // Custom Components
-import Layout from "../components/Layout";
 import PageHeader from "../components/PageHeader";
 import PageBanner from "../components/PageBanner";
 import Container from '../components/Container';
 import ContactForm from './ContactForm';
 import { motion } from "framer-motion";
 import { SmoothScrollProvider } from '../hooks/useScroll'
+import Layout from '../views/shared/Layout/Layout';
 
 
 export default function Contact() {

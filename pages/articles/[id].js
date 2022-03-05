@@ -1,11 +1,11 @@
 // Custom Components
-import Layout from "../../components/Layout";
 import SingleHeader from "../../components/article/SingleHeader";
 import SingleCover from "../../components/article/SingleCover";
 import SingleContent from "../../components/article/SingleContent";
 import SingleUpdateStatus from "../../components/article/SingleUpdateStatus";
 import NavigationalArticles from "../../components/NavigationArticles";
 import { motion } from "framer-motion";
+import Layout from "../../views/shared/Layout/Layout";
 
 
 export default function ArticlesSingle() {

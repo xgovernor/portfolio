@@ -1,9 +1,9 @@
 // Core Components
 // Custom Components
-import Layout from "../components/Layout";
 import PageHeader from "../components/PageHeader";
 import PageBanner from "../components/PageBanner";
 import CommingSoon from "../components/CommingSoon";
+import Layout from "../views/shared/Layout/Layout";
 
 
 export default function Work() {

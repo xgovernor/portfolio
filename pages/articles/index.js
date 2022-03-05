@@ -2,8 +2,8 @@
 import BlogGrid from "../../components/BlogGrid"
 import PageBanner from "../../components/PageBanner"
 import PageHeader from "../../components/PageHeader"
-import Layout from "../../components/Layout"
 import { motion } from 'framer-motion'
+import Layout from "../../views/shared/Layout/Layout"
 
 
 export default function Blog() {

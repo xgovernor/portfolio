@@ -4,8 +4,8 @@ import HomeAbout from "../components/home/HomeAbout";
 import HomeArticles from "../components/home/HomeArticles";
 import HomeHero from "../components/home/HomeHero";
 import HomeProjects from "../components/home/HomeProjects";
-import Layout from "../components/Layout";
 import PageBanner from "../components/PageBanner";
+import Layout from "../views/shared/Layout/Layout";
 
 
 export default function Index() {
