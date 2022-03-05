@@ -1,16 +1,15 @@
 // Core Components
-import Head from 'next/head';
+
 // Custom Component
 import Footer from '../Footer/Footer';
+import Meta from '../Meta/Meta';
 import Navigation from '../Navigation/Navigation';
 
 
 export default function Layout({data, children}) {
     return (
         <>
-            <Head>
-                <title>{data?.title}</title>
-            </Head>
+            <Meta />
 
             {/* Main Navigation */}
             <Navigation />

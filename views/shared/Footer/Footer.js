@@ -54,6 +54,7 @@ const Footer = () => {
                 }
                 <FooterCopyright text="© 2021 - 2022. All right reserved by author." />
             </footer>
+            
         </>
     )
 }
