@@ -1,11 +1,12 @@
-// Core Components
 import Image from "next/image";
-import Link from 'next/link'
+import { footerRoutes } from "../../../routes/footer.routes";
 import Container from "../../../components/Container";
-// Custom Components
+import FooterCopyright from "./FooterCopyright/FooterCopyright";
+import FooterCTA from "./FooterCTA/FooterCTA";
+import FooterMenu from "./FooterMenu/FooterMenu";
 
 
-export default function Footer() {
+const Footer = () => {
     return (
         <>
             <footer>
@@ -15,45 +16,43 @@ export default function Footer() {
                             <Image src={`/images/branding/logo.svg`} width={34.59} height={35} layout="responsive" alt="Logo" />
                         </div>
                         
-                        <h4 className="p_slug">LET’S MAKE <br/>SOMETHING GREAT</h4>
+                        {
+                        /**
+                         * Footer CTA Component
+                         * 
+                         * This component take text lines as argument.
+                         * Argument is a JavaScript array. Every line 
+                         * of text is an element of this array.
+                         */
+                        }   
+                        <FooterCTA text={["LET’S MAKE","SOMETHING GREAT"]} />
+
                     </div>
+
                     <div className="p__right">
                         <ul className="p_menu p__im">
-                            <li>
-                                <Link href={`/about`}>
-                                    <a>
-                                        ABOUT
-                                    </a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={`/work`}>
-                                    <a>
-                                        WORKS
-                                    </a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={`/blog`}>
-                                    <a>
-                                        BLOG
-                                    </a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={`/contact`}>
-                                    <a>
-                                        CONTACT
-                                    </a>
-                                </Link>
-                            </li>
+
+                            {
+                            /**
+                             * Footer Menu Component
+                             * 
+                             * This is the mene location in the footer section.
+                             */
+                            }   
+                            <FooterMenu links={footerRoutes} />
                         </ul>
                     </div>
                 </Container>
 
-                <Container dataClass="p_copyright">
-                    <p>© 2021 - All right reserved by author.</p>
-                </Container>
+                {
+                /**
+                 * Copyright singleArticleHeader
+                 * 
+                 * This the last component of a page.
+                 * Here written about the copyright.
+                 */
+                }
+                <FooterCopyright text="© 2021 - 2022. All right reserved by author." />
             </footer>
         </>
     )
