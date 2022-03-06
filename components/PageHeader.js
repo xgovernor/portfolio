@@ -1,4 +1,5 @@
-import Container from "./Container";
+import Container from "../views/shared/Container/Container";
+
 
 export default function PageHeader({data}) {
     return (

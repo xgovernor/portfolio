@@ -1,7 +1,7 @@
 // Custom Components
 import ContactForm from "../../pages/ContactForm";
-import Container from "../Container";
 import { motion } from "framer-motion";
+import Container from "../../views/shared/Container/Container";
 
 
 export default function SingleHeader({ data }) {

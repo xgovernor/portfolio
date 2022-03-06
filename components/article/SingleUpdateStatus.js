@@ -5,8 +5,7 @@ export default function SingleUpdateStatus() {
                 <div className="p_container_single">
                     <p>LAST UPDATE: MARCH 21, 2021</p>
                 </div>
-                
             </div>
         </>
-    )
+    );
 }

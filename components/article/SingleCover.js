@@ -1,7 +1,7 @@
 // Core Components
 import Image from "next/image";
 // Custom Components
-import Container from "../Container";
+import Container from "../../views/shared/Container/Container";
 
 
 export default function SingleCover({ data }) {

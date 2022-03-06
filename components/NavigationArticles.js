@@ -1,5 +1,5 @@
 // Custom Components
-import Container from "./Container";
+import Container from "../views/shared/Container/Container";
 import BlgoGridCard from "./BlogGridCard";
 
 

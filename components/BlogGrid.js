@@ -1,5 +1,5 @@
+import Container from "../views/shared/Container/Container";
 import BlgoGridCard from "./BlogGridCard";
-import Container from "./Container";
 
 export default function BlogGrid() {
     return (
