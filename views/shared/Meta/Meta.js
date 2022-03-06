@@ -4,7 +4,8 @@ const Meta = ({title}) => {
     return (
         <>
             {/* General Tags */}
-            <meta name="title" content="Font-end Web Developer" />
+            <meta name="title" content="Abu Taher Muhammad || Front-end Web Developer" />
+            <meta name="author" content="Abu Taher Muhammad" />
             <meta name="description" content="Abu Taher Muhammad is a MERN stack web developer from Bangladesh. He is also experienced with WordPress, Data scraping with python. In his spare time," />
             <meta name="keywords" content="Font-end, web developer, top web developer, Abu Taher Muhammad, MERN stack developer, upwork" />
             <meta name="robots" content="index, follow" />

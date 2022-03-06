@@ -5,12 +5,10 @@ const FooterCTA = ({text}) => {
 
                 {text.map((line, index) => (
 
-                    <>
-                        <span key={index}>
-                            {(index !== 0) && (<br/>)}
-                            <span>{line}</span>
-                        </span>
-                    </>
+                    <span key={index}>
+                        {(index !== 0) && (<br/>)}
+                        <span>{line}</span>
+                    </span>
                     
                 ))}
             </h4>

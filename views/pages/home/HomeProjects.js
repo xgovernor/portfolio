@@ -1,7 +1,6 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import Container from '../Container'
+import Image from 'next/image';
+import Link from 'next/link';
+import Container from '../../shared/Container/Container';
 
 const HomeProjects = () => {
     return (
@@ -10,7 +9,7 @@ const HomeProjects = () => {
                 <div className='p_projects_header'>
                     <Container>
                         <h4 className="p_subtitle_1">FEATURED PROJECTS</h4>
-                        <h2 className="p_heading">Projects in which Henrik has been involved in recent years.</h2>
+                        <h2 className="p_heading">Projects in which Muhammad has been involved in recent years.</h2>
                     </Container>
                 </div>
 
@@ -53,8 +52,6 @@ const HomeProjects = () => {
                             </div>
                         </Container>
                     </div>
-
-
                     
                     <div className='p_projects_card'>
                         <Container>
@@ -77,7 +74,7 @@ const HomeProjects = () => {
                 </div>
             </section>
         </>
-    )
+    );
 }
 
-export default HomeProjects
+export default HomeProjects;

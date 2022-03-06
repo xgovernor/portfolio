@@ -1,11 +1,11 @@
 // Core Components
 // Custom Components
-import HomeAbout from "../components/home/HomeAbout";
-import HomeArticles from "../components/home/HomeArticles";
-import HomeHero from "../components/home/HomeHero";
-import HomeProjects from "../components/home/HomeProjects";
 import PageBanner from "../components/PageBanner";
 import Layout from "../views/shared/Layout/Layout";
+import HomeHero from '../views/pages/home/HomeHero';
+import HomeAbout from "../views/pages/home/HomeAbout";
+import HomeProjects from "../views/pages/home/HomeProjects";
+import HomeArticles from '../views/pages/home/HomeArticles';
 
 
 export default function Index() {
@@ -19,10 +19,17 @@ export default function Index() {
         width: 1444,
         height: 579
     }
+    const data = {
+        hero: {
+            title: ["Designer, developer", "and freethinker."],
+            cvUrl: "https://drive.google.com/file/d/1osz9wNueb0Ac9gGXk1QQgRwlu5UnKN6B/view?usp=sharing"
+        },
+    }
+
     return (
         <>
             <Layout data={pageData}>
-                <HomeHero />
+                <HomeHero title={data.hero.title} cvURL={data.hero.cvUrl} />
                 <HomeAbout />
                 <HomeProjects />
                 <HomeArticles />

@@ -1,4 +1,5 @@
-import Container from '../../../../components/Container'
+import Container from "../../Container/Container";;
+
 
 const FooterCopyright = ({text}) => {
     return (

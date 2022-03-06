@@ -1,8 +1,8 @@
 // Core Components
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import Container from "../../../components/Container";
 import { navigationRoutes } from '../../../routes/navigation.routes';
+import Container from '../Container/Container';
 import NavigationBrand from './NavigationBrand/NavigationBrand';
 import NavigationMenu from './NavigationMenu/NavigationMenu';
 // Custom Components

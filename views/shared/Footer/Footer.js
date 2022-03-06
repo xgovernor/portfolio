@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { footerRoutes } from "../../../routes/footer.routes";
-import Container from "../../../components/Container";
+import Container from "../Container/Container";
 import FooterCopyright from "./FooterCopyright/FooterCopyright";
 import FooterCTA from "./FooterCTA/FooterCTA";
 import FooterMenu from "./FooterMenu/FooterMenu";
@@ -56,7 +56,7 @@ const Footer = () => {
             </footer>
             
         </>
-    )
+    );
 }
 
 export default Footer;

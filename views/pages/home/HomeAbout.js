@@ -1,13 +1,14 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import Container from '../Container'
+import Image from 'next/image';
+import Link from 'next/link';
+import Container from '../../shared/Container/Container';
 
-const HomeAbout = () => {
+const HomeAbout = ({}) => {
     return (
         <>
             <section className='p_home_about'>
                 <Container>
+
+                    {/* Image */}
                     <div className='p_about_image'>
                         <Image className='p_image' src={`/images/home-about.jpg`} alt='about' width={1088} height={437} />
                     </div>
@@ -15,15 +16,15 @@ const HomeAbout = () => {
                     <div className='p_about_description'>
                         <div className='p_home__left'>
                             <h4 className="p_subheading">ABOUT ME</h4>
-                            <h1 className='p_heading_2'>Section 1.10.32 of &quot;de Finibus Bonorum et Malorum&quot;, written by Cicero in 45 BC</h1>
+                            <h1 className='p_heading'>Believe in <br/>being different</h1>
                         </div>
 
                         <div className='p_home__right'>
                             <div className='p_content'>
-                                <p className='p_body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <Link href={`/`}>
+                                <p className='p_body'>Anyone who knows me knows that I&apos;m a tech nerd who loves the internet. Or rather the possibilities that open up to us today. I used to play with WordPress. nowadays,  I primarily focused on MERN stack development. Isn&apos;t it fascinating to play with our favorite things? Oh! another thing, I love sharing, Sometimes, I arrange concise workshops/boot camps to share my knowledge with others.</p>
+                                <Link href={`/about`}>
                                     <a className="p_link">
-                                        MORE ABOUT ME
+                                        KNOW MORE
                                     </a>
                                 </Link>
                             </div>
@@ -33,7 +34,7 @@ const HomeAbout = () => {
                 </Container>
             </section>
         </>
-    )
+    );
 }
 
-export default HomeAbout
+export default HomeAbout;
