@@ -51,6 +51,34 @@ const Meta = ({title}) => {
                     "telephone": "+880 1627085640"
                 }) }}
             ></script>
+
+            <script
+                type='application/ld+json'
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "http://schema.org",
+                    "@type": "WebPage",
+                    "name": "Abu Taher Muhammad",
+                    "description": "Abu Taher Muhammad is a MERN stack web developer from Bangladesh. He is also experienced with WordPress, Data scraping with python. In his spare time, he likes to study robotics, read books, etc.",
+                    "publisher": {
+                        "@type": "ProfilePage",
+                        "name": "Patrick's Website"
+                }}) }}
+            ></script>
+
+            <script
+                type='application/ld+json'
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org/",
+                    "@type": "WebSite",
+                    "name": "Abu Taher Muhammad",
+                    "url": "https://at-mah.vercel.app",
+                    "potentialAction": {
+                      "@type": "SearchAction",
+                      "target": "https://google.com/search?q=Abu Taher Muhammad{search_term_string}",
+                      "query-input": "required name=search_term_string"
+                    }
+                  }) }}
+            ></script>
         </>
     );
 }
