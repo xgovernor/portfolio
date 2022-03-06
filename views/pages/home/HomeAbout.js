@@ -21,7 +21,8 @@ const HomeAbout = ({}) => {
 
                         <div className='p_home__right'>
                             <div className='p_content'>
-                                <p className='p_body'>Anyone who knows me knows that I&apos;m a tech nerd who loves the internet. Or rather the possibilities that open up to us today. I used to play with WordPress. nowadays,  I primarily focused on MERN stack development. Isn&apos;t it fascinating to play with our favorite things? Oh! another thing, I love sharing, Sometimes, I arrange concise workshops/boot camps to share my knowledge with others.</p>
+                                <p className='p_body'>Anyone who knows me knows that I'm a tech nerd who loves the internet. Or rather the possibilities that open up to us today.  How I used to play with WordPress has become muscle memory today. This is one among many. These days, I primarily focus on MERN stack development. Isn't it fascinating to play with our favorite things? Oh! I forgot,  I love to share my enthusiasm with others. , Sometimes, I arrange concise workshops/boot camps to help them see how uniquely different ways you could see a problem and find paths to solve it.</p>
+                                
                                 <Link href={`/about`}>
                                     <a className="p_link">
                                         KNOW MORE
