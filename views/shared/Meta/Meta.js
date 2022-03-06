@@ -73,9 +73,9 @@ const Meta = ({title}) => {
                     "name": "Abu Taher Muhammad",
                     "url": "https://at-mah.vercel.app",
                     "potentialAction": {
-                      "@type": "SearchAction",
-                      "target": "https://google.com/search?q=Abu Taher Muhammad{search_term_string}",
-                      "query-input": "required name=search_term_string"
+                        "@type": "SearchAction",
+                        "target": "{search_term_string}",
+                        "query-input": "required name=search_term_string"
                     }
                   }) }}
             ></script>
