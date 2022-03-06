@@ -19,7 +19,7 @@ export default function Work() {
                 <PageHeader data={{heading: 'WORKS', subheading: "Muhammad crafts accessible web experiences where creativity meets technology."}} />
                 <PageBanner dataImg={dataImg} />
 
-                <h1>Comming  Soon</h1>
+                <h1>Coming  Soon</h1>
             </Layout>
         </>
     )

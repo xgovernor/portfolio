@@ -2,8 +2,9 @@
 // Custom Components
 import PageHeader from "../components/PageHeader";
 import PageBanner from "../components/PageBanner";
-import AboutBody from "../components/about/AboutBody";
 import Layout from "../views/shared/Layout/Layout";
+import AboutBody from "../views/pages/about/AboutBody";
+import AboutQuote from "../views/pages/about/AboutQuote";
 
 
 export default function About() {
@@ -19,6 +20,7 @@ export default function About() {
             <Layout data={{class: "p_page_about"}}>
                 <PageHeader data={{heading: 'Family & friends, work, sports. In that order.', subheading: "Muhammad crafts accessible web experiences where creativity meets technology."}} />
                 <PageBanner dataImg={dataImg} />
+                {/* <AboutQuote /> */}
                 <AboutBody />
 
             </Layout>
