@@ -3,11 +3,11 @@ import Link from 'next/link'
 // Custom Components
 import PageHeader from "../components/PageHeader";
 import PageBanner from "../components/PageBanner";
-import Container from '../components/Container';
 import ContactForm from './ContactForm';
 import { motion } from "framer-motion";
 import { SmoothScrollProvider } from '../hooks/useScroll'
 import Layout from '../views/shared/Layout/Layout';
+import Container from '../views/shared/Container/Container';
 
 
 export default function Contact() {

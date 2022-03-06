@@ -2,7 +2,6 @@
 // Custom Components
 import PageHeader from "../components/PageHeader";
 import PageBanner from "../components/PageBanner";
-import CommingSoon from "../components/CommingSoon";
 import Layout from "../views/shared/Layout/Layout";
 
 
@@ -20,7 +19,7 @@ export default function Work() {
                 <PageHeader data={{heading: 'WORKS', subheading: "Muhammad crafts accessible web experiences where creativity meets technology."}} />
                 <PageBanner dataImg={dataImg} />
 
-                <CommingSoon />
+                <h1>Comming  Soon</h1>
             </Layout>
         </>
     )
