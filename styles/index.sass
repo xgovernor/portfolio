@@ -6,7 +6,6 @@
 @import './home.style'
 @import './about.style'
 @import './blog.style'
-@import './commingsoon.style'
 @import './single.style'
 
 // Global 
@@ -85,31 +84,6 @@ form
 // ===========================
 // Components 
 // ===========================
-.p__cursor
-    width: 10px
-    height: 10px
-    border: 2px solid rgba(0, 12, 25, 0.2)
-    background: #ffffff
-    border-radius: 100%
-    position: fixed
-    transition: all ease-in-out
-    transform: translate(-50%, -50%)
-    pointer-events: none
-    z-index: 999
-    mix-blend-mode: difference
-    display: block
-    .p__inner
-        width: 20px
-        height: 20px
-        border: 2px solid #000C19
-        background: #e20000
-        border-radius: 100%
-        position: fixed
-        transition: .5s ease-in-out
-        transform: translate(-50%, -50%)
-        pointer-events: none
-        z-index: 9999
-        mix-blend-mode: difference
 
 // Component: Container
 .p_container  // Container
@@ -145,19 +119,20 @@ form
             color: #000000
             margin-left: 0
             margin-right: auto
-@media screen and (min-width: 1366px)  // Desktop Device and so on
+@media screen and (min-width: 425px) and (max-width: 767px)     // Mobile
+@media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
     .p_page_header
-        padding-top: 105px
-        padding-bottom: 130px
+        padding-top: 45px
+        padding-bottom: 70px
         .p_content
-            width: 972px
+            width: 585px
             .p_heading
-                margin-bottom: 10px
-                font-size: 14px
-                line-height: 24px
+                margin-bottom: 6px
+                font-size: 12px
+                line-height: 18px
             .p_subheading
-                font-size: 48px
-                line-height: 50px
+                font-size: 28px
+                line-height: 30px
 @media screen and (min-width: 1024px) and (max-width: 1365px)   // Retinal Device
     .p_page_header
         padding-top: 75px
@@ -173,20 +148,19 @@ form
                 width: 724px
                 font-size: 38px
                 line-height: 40px
-@media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
+@media screen and (min-width: 1366px)  // Desktop Device and so on
     .p_page_header
-        padding-top: 45px
-        padding-bottom: 70px
+        padding-top: 105px
+        padding-bottom: 130px
         .p_content
-            width: 585px
+            width: 972px
             .p_heading
-                margin-bottom: 6px
-                font-size: 12px
-                line-height: 18px
+                margin-bottom: 10px
+                font-size: 14px
+                line-height: 24px
             .p_subheading
-                font-size: 28px
-                line-height: 30px
-@media screen and (min-width: 425px) and (max-width: 767px)     // Mobile
+                font-size: 48px
+                line-height: 50px
 
 .p_page_banner  // Page Banner
     width: 100%

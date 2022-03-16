@@ -375,18 +375,31 @@
         .p_container
             display: flex
             justify-content: space-between
-@media screen and (min-width: 1366px)   // Desktop Device
+@media screen and (min-width: 375px) and (max-width: 767px)     // Mobile
     .p_home_blog
-        padding: 130px 0 105px
+        padding: 80px 0 80px
         .p_blog_header
             .p_container
-                width: 823px
-                margin-bottom: 80px
+                // width: 513px
+                margin-bottom: 30px
                 .p_subtitle_1
                 .p_heading
-                    margin-top: 10px
-                    font-size: 48px
-                    line-height: 58px
+                    font-size: 22px
+                    line-height: 26px
+        .p_blog_body
+            .p_container
+                flex-wrap: wrap
+@media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
+    .p_home_blog
+        padding: 80px 0 80px
+        .p_blog_header
+            .p_container
+                width: 513px
+                margin-bottom: 50px
+                .p_subtitle_1
+                .p_heading
+                    font-size: 28px
+                    line-height: 34px
         .p_blog_body
             .p_container
 @media screen and (min-width: 1024px) and (max-width: 1365px)   // Retinal Device
@@ -402,30 +415,17 @@
                     line-height: 50px
         .p_blog_body
             .p_container
-@media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
+@media screen and (min-width: 1366px)   // Desktop Device
     .p_home_blog
-        padding: 80px 0 80px
+        padding: 130px 0 105px
         .p_blog_header
             .p_container
-                width: 513px
-                margin-bottom: 50px
+                width: 823px
+                margin-bottom: 80px
                 .p_subtitle_1
                 .p_heading
-                    font-size: 28px
-                    line-height: 34px
+                    margin-top: 10px
+                    font-size: 48px
+                    line-height: 58px
         .p_blog_body
             .p_container
-@media screen and (min-width: 375px) and (max-width: 767px)     // Mobile
-    .p_home_blog
-        padding: 80px 0 80px
-        .p_blog_header
-            .p_container
-                // width: 513px
-                margin-bottom: 30px
-                .p_subtitle_1
-                .p_heading
-                    font-size: 22px
-                    line-height: 26px
-        .p_blog_body
-            .p_container
-                flex-wrap: wrap
