@@ -7,19 +7,17 @@
 @import './about.style'
 @import './blog.style'
 @import './commingsoon.style'
-// @import './scroll.style'
-
 
 // Global 
-* 
+*
     margin: 0
     padding: 0
-*, *:before, *:after 
+*, *:before, *:after
     box-sizing: border-box
 
-body 
+body
     // cursor: none
-    font-family: 'Neue Haas Grotesk Display Pro'
+    font-family: "Neue Haas Grotesk Display Pro"
     font-style: normal
     font-weight: normal
     font-size: 16px
@@ -28,28 +26,28 @@ body
     background: #FFFFFF
 
 h1, h2, h3, h4, h5, h6
-    font-style: normal 
+    font-style: normal
     font-weight: bold
 
-form 
-    .p__row 
+form
+    .p__row
         width: 100%
         margin-bottom: 20px
-        display: flex 
+        display: flex
         flex-direction: column
-    label 
+    label
         margin-bottom: 8px
         font-weight: bold
         font-size: 14px
         line-height: 22px
         color: #000C19
-    input 
+    input
         margin-bottom: 6px
         padding-bottom: 6px
         font-size: 16px
         line-height: 24px
         color: #000C19
-        border-top: none 
+        border-top: none
         border-right: none
         border-bottom: 1px solid hsla(0, 0%, 0%, 0.12)
         border-left: none
@@ -58,7 +56,7 @@ form
             border-bottom: 1px solid #000000
         &.__err
             border-bottom: 1px solid #ff3f3f
-    textarea 
+    textarea
         height: 100px
         padding: 10px
         font-size: 16px
@@ -69,7 +67,7 @@ form
             border: 1px solid #000C19
         &.__err
             border: 1px solid #ff3f3f
-    .p__error 
+    .p__error
         font-weight: 400
         font-size: 14px
         line-height: 22px
@@ -78,15 +76,15 @@ form
 // ===========================
 // Reusable classes
 // ===========================
-.p__im 
+.p__im
     list-style: none
-    li 
+    li
         display: inline-block
 
 // ===========================
 // Components 
 // ===========================
-.p__cursor 
+.p__cursor
     width: 10px
     height: 10px
     border: 2px solid rgba(0, 12, 25, 0.2)
@@ -98,7 +96,7 @@ form
     pointer-events: none
     z-index: 999
     mix-blend-mode: difference
-    display: block 
+    display: block
     .p__inner
         width: 20px
         height: 20px
@@ -113,8 +111,8 @@ form
         mix-blend-mode: difference
 
 .p_container  // Container
-    margin-right: auto 
-    margin-left: auto 
+    margin-right: auto
+    margin-left: auto
 @media screen and (min-width: 1366px)   // Desktop Device and so on
     .p_container
         width: 1088px
@@ -133,74 +131,73 @@ form
         width: 335px
 
 // Page Header
-.p_page_header 
-    .p_content 
+.p_page_header
+    .p_content
         .p_heading
             width: 100%
             color: #4D4D4D
             font-family: "Neue Haas Grotesk Display Pro"
             margin-left: 0
             margin-right: auto
-        .p_subheading 
+        .p_subheading
             width: 100%
             color: #000000
             margin-left: 0
             margin-right: auto
 @media screen and (min-width: 1366px)  // Desktop Device and so on
-    .p_page_header 
-        padding-top: 105px 
+    .p_page_header
+        padding-top: 105px
         padding-bottom: 130px
-        .p_content 
+        .p_content
             width: 972px
             .p_heading
                 margin-bottom: 10px
                 font-size: 14px
                 line-height: 24px
-            .p_subheading 
+            .p_subheading
                 font-size: 48px
                 line-height: 50px
 @media screen and (min-width: 1024px) and (max-width: 1365px)   // Retinal Device
-    .p_page_header 
-        padding-top: 75px 
+    .p_page_header
+        padding-top: 75px
         padding-bottom: 80px
-        .p_content 
+        .p_content
             width: 724px
             .p_heading
                 width: 724px
                 margin-bottom: 10px
                 font-size: 14px
                 line-height: 24px
-            .p_subheading 
+            .p_subheading
                 width: 724px
                 font-size: 38px
                 line-height: 40px
 @media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
-    .p_page_header 
-        padding-top: 45px 
+    .p_page_header
+        padding-top: 45px
         padding-bottom: 70px
-        .p_content 
+        .p_content
             width: 585px
             .p_heading
                 margin-bottom: 6px
                 font-size: 12px
                 line-height: 18px
-            .p_subheading 
+            .p_subheading
                 font-size: 28px
                 line-height: 30px
 @media screen and (min-width: 425px) and (max-width: 767px)     // Mobile
-
 
 .p_page_banner  // Page Banner
     width: 100%
     position: relative
     overflow: hidden
-    .p_img_wrapper 
+    .p_img_wrapper
         height: 547.72px
 
-.p_contact_form 
+.p_contact_form
     padding-top: 130px
     padding-bottom: 130px
-    .p_header 
+    .p_header
         margin-bottom: 35px
         .p__title
             margin-bottom: 10px
@@ -212,15 +209,15 @@ form
             line-height: 34px
             color: #000C19
 
-    .p_content 
-        display: flex 
-        justify-content: space-between 
+    .p_content
+        display: flex
+        justify-content: space-between
         align-items: flex-start
-        .p__left 
+        .p__left
             width: 526px
-        .p__right 
+        .p__right
             width: 449px
-            .p_right_content 
+            .p_right_content
                 .p__title
                     margin-top: 30px
                     margin-bottom: 10px
@@ -228,64 +225,64 @@ form
                     font-size: 14px
                     line-height: 22px
                     color: #000C19
-                    border-bottom: 1px solid hsla(0, 0%, 0%, 0.12) 
+                    border-bottom: 1px solid hsla(0, 0%, 0%, 0.12)
                     &:first-of-type
                         margin-top: 0
-                .p__list 
+                .p__list
                     list-style: none
-                    li 
+                    li
                         margin-bottom: 10px
                         font-weight: normal
                         font-size: 16px
                         line-height: 24px
                         color: #999999
-                        a 
+                        a
                             font-weight: normal
                             font-size: 16px
                             line-height: 24px
                             color: #000000
                             text-decoration: underline
-                            &:hover 
+                            &:hover
                                 color: #999999
-                p 
+                p
                     margin-top: 20px
                     font-weight: normal
                     font-size: 16px
                     line-height: 24px
                     color: #000C19
 
-footer 
+footer
     padding-top: 75px
     padding-bottom: 35px
     background: #000C19
     .p_content
         margin-bottom: 95px
         display: flex
-        justify-content: space-between 
-        .p__left 
+        justify-content: space-between
+        .p__left
             width: 50%
-            .p_img_wrapper 
+            .p_img_wrapper
                 width: 35px
                 height: auto
                 margin-bottom: 20px
-            .p_slug 
+            .p_slug
                 font-size: 38px
                 line-height: 48px
                 letter-spacing: -0.01em
                 color: #FFFFFF
         .p__right
-            .p_menu 
-                li 
-                    margin-right: 35px 
+            .p_menu
+                li
+                    margin-right: 35px
                     &:last-of-type
                         margin-right: 0
-                    a 
+                    a
                         font-size: 14px
                         line-height: 17px
                         color: #FFFFFF
-    .p_copyright 
+    .p_copyright
         border-top: 1px solid rgba(255, 255, 255, 0.1)
-        p 
+        p
             margin-top: 10px
             font-weight: normal
             font-size: 14px
@@ -295,16 +292,15 @@ footer
 // Pages 
 // ===========================
 
-
 // ===========================
 // Single Article
 // ===========================
-.p_single_header 
+.p_single_header
     padding-top: 130px
     padding-bottom: 100px
     .p_container
         width: 862px
-        .p_meta_cat 
+        .p_meta_cat
             margin-bottom: 10px
             font-weight: bold
             font-size: 14px
@@ -321,28 +317,28 @@ footer
             font-size: 14px
             line-height: 14px
             color: rgba(0, 12, 26, 0.7)
-.p_single_content 
-    .p_container_single 
+.p_single_content
+    .p_container_single
         width: 862px
         margin: 0 auto
         padding-top: 70px
         padding-bottom: 30px
-        border-bottom: 1px solid hsla(0, 0%, 0%, 0.12) 
+        border-bottom: 1px solid hsla(0, 0%, 0%, 0.12)
 
         p, h2, blockquote
             width: 710px
             margin-right: auto
-            margin-left: auto 
-        p  
+            margin-left: auto
+        p
             margin-bottom: 15px
             color: #717171
-        h2 
+        h2
             margin-top: 10px
             margin-bottom: 10px
             font-size: 24px
             line-height: 30px
             color: #000C19
-        blockquote 
+        blockquote
             margin-top: 20px
             margin-bottom: 35px
             padding: 35px
@@ -351,8 +347,8 @@ footer
             line-height: 24px
             color: #000000
             background: #F4F6F6
-            border: 1px solid hsla(0, 0%, 0%, 0.12) 
-        pre  
+            border: 1px solid hsla(0, 0%, 0%, 0.12)
+        pre
             width: 710px
             margin: 25px auto 35px auto
             padding: 35px
@@ -364,9 +360,9 @@ footer
             width: 862px
             margin: 20px auto 35px auto
             display: flex
-            justify-content: space-between 
-            align-items: center 
-            .p_2c_left 
+            justify-content: space-between
+            align-items: center
+            .p_2c_left
                 width: 413px
                 height: auto
                 margin-right: 36px
@@ -377,21 +373,21 @@ footer
             width: 862px
             margin: 35px auto
 
-.p_single_update 
+.p_single_update
     .p_container_single
         width: 862px
         margin: 20px auto 130px auto
-        p 
+        p
             font-weight: normal
             font-size: 12px
             line-height: 14px
             color: #4D4D4D
 
-.p_navaigation_articles 
+.p_navaigation_articles
     padding: 130px 0
     background: #F0F7FF
-    .p_header 
-        h2 
+    .p_header
+        h2
             margin-bottom: 35px
             font-size: 38px
             line-height: 48px
@@ -399,8 +395,8 @@ footer
             color: #000C1A
 
     .p_content
-        display: flex 
+        display: flex
         justify-content: space-between
         align-items: center
-        .p_blog_grid_card 
+        .p_blog_grid_card
             width: 526px
