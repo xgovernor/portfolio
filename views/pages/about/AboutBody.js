@@ -117,9 +117,9 @@ const AboutBody = () => {
 								<tbody>
 									<tr>
 										<td className='__left'>
-											<p className='p_body'>
+											<h4 className='p_body'>
 												Junior Web Developer
-											</p>
+											</h4>
 										</td>
 										<td className='__center'>
 											<p className='p_body'>
@@ -134,9 +134,9 @@ const AboutBody = () => {
 									</tr>
 									<tr>
 										<td className='__left'>
-											<p className='p_body'>
+											<h4 className='p_body'>
 												Front-end Designer & Developer
-											</p>
+											</h4>
 										</td>
 										<td className='__center'>
 											<p className='p_body'>DigiYotta</p>
@@ -149,9 +149,9 @@ const AboutBody = () => {
 									</tr>
 									<tr>
 										<td className='__left'>
-											<p className='p_body'>
+											<h4 className='p_body'>
 												Freelance Developer
-											</p>
+											</h4>
 										</td>
 										<td className='__center'>
 											<p className='p_body'>...</p>
@@ -181,9 +181,9 @@ const AboutBody = () => {
 								<tbody>
 									<tr>
 										<td className='__left'>
-											<p className='p_body'>
+											<h4 className='p_body'>
 												Complete Web Development
-											</p>
+											</h4>
 										</td>
 										<td className='__center'>
 											<p className='p_body'>
@@ -197,9 +197,9 @@ const AboutBody = () => {
 
 									<tr>
 										<td className='__left'>
-											<p className='p_body'>
+											<h4 className='p_body'>
 												Computer Science & Engineering
-											</p>
+											</h4>
 										</td>
 										<td className='__center'>
 											<p className='p_body'>
@@ -214,7 +214,7 @@ const AboutBody = () => {
 									</tr>
 									<tr>
 										<td className='__left'>
-											<p className='p_body'>IELTS</p>
+											<h4 className='p_body'>IELTS</h4>
 										</td>
 										<td className='__center'>
 											<p className='p_body'>
