@@ -7,7 +7,7 @@ const Meta = ({title}) => {
             <meta name="title" content="Abu Taher Muhammad || Front-end Web Developer" />
             <meta name="author" content="Abu Taher Muhammad" />
             <meta name="description" content="Abu Taher Muhammad is a MERN stack web developer from Bangladesh. He is also experienced with WordPress, Data scraping with python. In his spare time," />
-            <meta name="keywords" content="Font-end, web developer, top web developer, Abu Taher Muhammad, MERN stack developer, upwork" />
+            <meta name="keywords" content="Font-end, web developer, top web developer, Abu Taher Muhammad, MERN stack developer, upwork, ferne health" />
             <meta name="robots" content="index, follow" />
             <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
             <meta name="language" content="English" />
@@ -15,10 +15,10 @@ const Meta = ({title}) => {
             {/* Open Graph Data */}
             <meta property="og:title" content="Portfolio" />
             <meta property="og:site_name" content="Abu Taher Muhammad" />
-            <meta property="og:url" content="https://at-mah.vercel.app" />
+            <meta property="og:url" content="https://abutahermuhammad.com/" />
             <meta property="og:description" content="Abu Taher Muhammad is a MERN stack web developer from Bangladesh. He is also experienced with WordPress, Data scraping with python. In his spare time, he likes to study robotics, read books, etc." />
             <meta property="og:type" content="profile" />
-            <meta property="og:image" content="https://at-mah.vercel.app/images/branding/logo.svg" />
+            <meta property="og:image" content="https://abutahermuhammad.com//images/branding/logo.svg" />
 
             {/* JSON-LD */}
             <script
@@ -30,10 +30,10 @@ const Meta = ({title}) => {
                     "jobTitle": "Web Developer",
                     "height": "68.4",
                     "gender": "male",
-                    "url": "https://at-mah.vercel.app",
+                    "url": "https://abutahermuhammad.com/",
                     "sameAs": [
-                        "https://www.linkedin.com/in/rootover3/",
-                        "https://github.com/rootOver3"
+                        "https://www.linkedin.com/in/abutahermuhammad/",
+                        "https://github.com/abutahermuhammad"
                     ],
                     "image": "https://drive.google.com/file/d/13TQA24DvJCnwUWSfCaSIQv4Nd6n_D1Hs/view?usp=sharing",
                     "address": {
@@ -72,7 +72,7 @@ const Meta = ({title}) => {
                     "@context": "https://schema.org/",
                     "@type": "WebSite",
                     "name": "Abu Taher Muhammad",
-                    "url": "https://at-mah.vercel.app",
+                    "url": "https://abutahermuhammad.com/",
                     "potentialAction": {
                         "@type": "SearchAction",
                         "target": "{search_term_string}",
