@@ -3,12 +3,14 @@
 import { AnimatePresence } from "framer-motion";
 import Script from "next/script";
 import "../styles/index.sass";
+import Head from 'next/head';
 
 const GOOGLE_GTAG_MEASUREMENT_ID = 'GTM-N3QF76C';
 
 function MyApp({ Component, pageProps }) {
 	return (
 		<>
+		<Head>
 		{/* Google Tag Manager */}
 			<Script
 				id="GTag"
@@ -22,7 +24,7 @@ function MyApp({ Component, pageProps }) {
 				}}
 			/>
 			{/* End Google Tag Manager */}
-
+</Head>
 			{/* Google Tag Manager (noscript) */}
 			<noscript>
 				<iframe
