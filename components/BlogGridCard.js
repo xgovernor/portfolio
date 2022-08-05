@@ -1,21 +1,40 @@
 import Link from "next/link";
+import PropTypes from "prop-types";
 
-export default function BlgoGridCard() {
-    return (
-        <>
-            <div className="p_blog_grid_card">
-                <h4 className="p__meta">PUBLISHED MARCH 21, 2021</h4>
-                <Link href={`/articles/jh`}>
-                    <a className="p__title_link">
-                        <h3 className="p__title">From Engineer to Tech Lead - Doubts and Challenges </h3>
-                    </a>
-                </Link>
-                
-                <p className="p__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <Link href={`/articles/jh`}>
-                    <a className="p__readmore">Read in details</a>
-                </Link>
-            </div>
-        </>
-    ) 
+export default function BlgoGridCard({
+	className,
+	meta,
+	slug,
+	title,
+	excerpt,
+	...rest
+}) {
+	return (
+		<>
+			<div
+				className={`p_blog_grid_card ${className ? className : ""}`}
+				{...rest}>
+				<h4 className="p__meta">{meta}</h4>
+				<Link href={`/articles/${slug}`}>
+					<a className="p__title_link">
+						<h3 className="p__title">{title}</h3>
+					</a>
+				</Link>
+
+				<p className="p__excerpt">{excerpt}</p>
+				<Link href={`/articles/jh`}>
+					<a className="p__readmore">Read in details</a>
+				</Link>
+			</div>
+		</>
+	);
 }
+
+BlgoGridCard.propTypes = {
+	className: PropTypes.string,
+	meta: PropTypes.string,
+	title: PropTypes.string,
+	excerpt: PropTypes.string,
+	slug: PropTypes.string,
+	rest: PropTypes.object,
+};

@@ -1,4 +1,5 @@
-import Container from "../views/shared/Container/Container";
+import PropTypes from "prop-types";
+import Container from "../../views/shared/Container/Container";
 
 export default function PageHeader({ data }) {
 	return (
@@ -13,11 +14,9 @@ export default function PageHeader({ data }) {
 						<h1 className="p_subheading">
 							{data.subheading &&
 								data.subheading?.map((line, i) => (
-									<>
-										<span className="heading__line" key={i}>
-											{line}
-										</span>
-									</>
+									<span className="heading__line" key={i}>
+										{line}
+									</span>
 								))}
 						</h1>
 					</div>
@@ -26,3 +25,7 @@ export default function PageHeader({ data }) {
 		</>
 	);
 }
+
+PageHeader.propTypes = {
+	data: PropTypes.object.isRequired,
+};
