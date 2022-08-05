@@ -15,6 +15,10 @@
 *, *:before, *:after
     box-sizing: border-box
 
+::selection
+    color: #FFFFFF
+    background: #000000
+
 body
     // cursor: none
     // font-family: "Neue Haas Grotesk Display Pro"
@@ -108,19 +112,26 @@ form
 
 // Page Header
 .p_page_header
+    min-height: calc( 100vh - 75px )
     .p_content
-        .p_heading
+        .p_header__title__area
             width: 100%
-            color: #4D4D4D
-            font-family: "Neue Haas Grotesk Display Pro"
             margin-left: 0
             margin-right: auto
-        .p_subheading
-            width: 100%
-            font-family: "Neue Haas Grotesk Display Pro"
-            color: #000000
-            margin-left: 0
-            margin-right: auto
+            .p_heading
+                color: #4D4D4D
+                font-family: "Neue Haas Grotesk Display Pro"
+
+        .p_header__subheading__area
+            .p_subheading
+                width: 100%
+                font-family: "Neue Haas Grotesk Display Pro"
+                color: #000000
+                margin-left: 0
+                margin-right: auto
+                display: flex
+                flex-direction: column
+                align-items: flex-start
 @media screen and (min-width: 425px) and (max-width: 767px)     // Mobile
 @media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
     .p_page_header
@@ -128,48 +139,58 @@ form
         padding-bottom: 70px
         .p_content
             width: 585px
-            .p_heading
-                margin-bottom: 6px
-                font-size: 12px
-                line-height: 18px
-            .p_subheading
-                font-size: 28px
-                line-height: 30px
+            .p_header__title__area
+                .p_heading
+                    margin-bottom: 6px
+                    font-size: 12px
+                    line-height: 18px
+            .p_header__subheading__area
+                .p_subheading
+                    font-size: 28px
+                    line-height: 30px
 @media screen and (min-width: 1024px) and (max-width: 1365px)   // Retinal Device
     .p_page_header
         padding-top: 75px
         padding-bottom: 80px
         .p_content
             width: 724px
-            .p_heading
-                width: 724px
-                margin-bottom: 10px
-                font-size: 14px
-                line-height: 24px
-            .p_subheading
-                width: 724px
-                font-size: 38px
-                line-height: 40px
+            .p_header__title__area
+                .p_heading
+                    width: 724px
+                    margin-bottom: 10px
+                    font-size: 14px
+                    line-height: 24px
+            .p_header__subheading__area
+                .p_subheading
+                    width: 724px
+                    font-size: 38px
+                    line-height: 40px
 @media screen and (min-width: 1366px)  // Desktop Device and so on
     .p_page_header
         padding-top: 105px
         padding-bottom: 130px
         .p_content
             width: 972px
-            .p_heading
-                margin-bottom: 10px
-                font-size: 14px
-                line-height: 24px
-            .p_subheading
-                font-size: 48px
-                line-height: 50px
+
+            .p_header__title__area
+                .p_heading
+                    margin-bottom: 10px
+                    font-size: 14px
+                    line-height: 24px
+            .p_header__subheading__area
+                .p_subheading
+                    font-size: 92px
+                    line-height: 102px
 
 .p_page_banner  // Page Banner
     width: 100%
+    min-height: 100vh
     position: relative
     overflow: hidden
     .p_img_wrapper
-        height: 547.72px
+        // height: 547.72px
+        height: 100%
+        min-height: 100vh
 
 .p_contact_form
     padding-top: 130px
