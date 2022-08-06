@@ -4,7 +4,7 @@ import BlgoGridCard from "./BlogGridCard";
 const DATA_BLOG = [
 	{
 		slug: "jh",
-		title: "From Engineer to Tech Lead - Doubts and Challenges",
+		title: "You need to learn Kubernetes RIGHT NOW!! 🚀",
 		excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -17,7 +17,7 @@ const DATA_BLOG = [
 	},
 	{
 		slug: "jh",
-		title: "From Engineer to Tech Lead",
+		title: "20 Awesome Website You Didn't Know About",
 		excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -30,7 +30,7 @@ const DATA_BLOG = [
 	},
 	{
 		slug: "jh",
-		title: "From Engineer to Tech Lead - Doubts and Challenges",
+		title: "Optimize Dockerfile images for NextJS",
 		excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -43,7 +43,7 @@ const DATA_BLOG = [
 	},
 	{
 		slug: "jh",
-		title: "From Engineer to Tech Lead - Doubts and Challenges",
+		title: "Creating an infinite scroll with React JS! ♾️",
 		excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -56,7 +56,7 @@ const DATA_BLOG = [
 	},
 	{
 		slug: "jh",
-		title: "From Engineer to Tech Lead - Doubts and Challenges",
+		title: "Simple Node JS Resize Image Before Upload using Sharp Multer",
 		excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         minim veniam, quis nostrud exercitation ullamco laboris nisi ut

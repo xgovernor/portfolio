@@ -10,8 +10,8 @@ export default function PageBanner({ dataImg }) {
 				<Parallax speed={-20}>
 					<Image
 						src={dataImg.url}
-						width={dataImg.width}
-						height={dataImg.height}
+						width={1366}
+						height={768}
 						alt={dataImg.alt}
 						priority={true}
 						layout="responsive"

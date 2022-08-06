@@ -3,6 +3,7 @@
 import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
 import Script from "next/script";
+import NextNProgress from "nextjs-progressbar";
 import { ParallaxProvider } from "react-scroll-parallax";
 import "../styles/index.sass";
 
@@ -35,7 +36,11 @@ function MyApp({ Component, pageProps }) {
 					style={{ display: "none", visibility: "hidden" }}></iframe>
 			</noscript>
 			{/* End Google Tag Manager (noscript) */}
-
+			<NextNProgress
+				color=" radial-gradient(400.96% 3527.54% at 0% 100%, #576C6F 0%, #000000 10.24%, #FE0000 18.58%, #B06D61 25.6%, #000000 37.11%, #8FE3F2 67.87%, #FD0000 69.79%, #190B00 93.75%, #FF6A00 100%, #FE0000 100%)"
+				height={3}
+				options={{ easing: "ease", speed: 500 }}
+			/>
 			<AnimatePresence exitBeforeEnter>
 				<ParallaxProvider>
 					<Component {...pageProps} />

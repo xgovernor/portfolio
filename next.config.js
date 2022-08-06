@@ -1,4 +1,7 @@
 module.exports = {
-  reactStrictMode: true,
-  swcMinify: true
-}
+	images: {
+		domains: ["images.pexels.com"],
+	},
+	reactStrictMode: true,
+	swcMinify: true,
+};

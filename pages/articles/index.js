@@ -8,6 +8,7 @@ import Layout from "../../views/shared/Layout/Layout";
 export default function Blog() {
 	const dataImg = {
 		url: "/images/blog_banner.jpg",
+		// url: "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 		alt: "About banner Image",
 		width: 1444,
 		height: 579,

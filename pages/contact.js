@@ -16,6 +16,12 @@ export default function Contact() {
 		height: 579,
 	};
 
+	const formSubmitHandler = (e) => {
+		e.preventDefault();
+
+		console.log(e);
+	};
+
 	return (
 		<>
 			<motion.div
@@ -49,8 +55,9 @@ export default function Contact() {
 
 						<Container dataClass="p_content">
 							<div className="p__left">
-								<ContactForm />
+								<ContactForm onSubmit={formSubmitHandler} />
 							</div>
+
 							<div className="p__right">
 								<div className="p_right_content">
 									<h4 data-scroll className="p__title">
@@ -68,14 +75,14 @@ export default function Contact() {
 									<h4 className="p__title">Social</h4>
 									<ul className="p__list">
 										<li data-scroll>
-											<Link href="mailto:abut1081@gmail.com">
-												<a>Linkedin</a>
+											<Link href="https://www.linkedin.com/in/abutahermuhammad/">
+												<a target="_blank">Linkedin</a>
 											</Link>
 											- Where Muhammad strives to look professional 😎.
 										</li>
 										<li data-scroll>
-											<Link href="mailto:abut1081@gmail.com">
-												<a>Dribbble</a>
+											<Link href="https://github.com/abutahermuhammad">
+												<a target="_blank">GitHub</a>
 											</Link>
 											- Where Muhammad hopefully will post design related stuff
 											occasionally 🎨.
@@ -83,7 +90,7 @@ export default function Contact() {
 									</ul>
 
 									<p data-scroll className="mt_20">
-										So in case you wonder anything, reach out to Henrik,
+										So in case you wonder anything, reach out to Muhammad,
 										it&apos;ll be fun!✌️
 									</p>
 								</div>

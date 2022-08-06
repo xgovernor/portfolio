@@ -1,7 +1,6 @@
-// Core Components
-// Custom Components
 import PageBanner from "../components/PageBanner";
 import PageHeader from "../components/PageHeader";
+import WorkProjects from "../views/pages/home/WorkProjects";
 import Layout from "../views/shared/Layout/Layout";
 
 export default function Work() {
@@ -27,7 +26,7 @@ export default function Work() {
 				/>
 				<PageBanner dataImg={dataImg} />
 
-				<h1>Coming Soon</h1>
+				<WorkProjects />
 			</Layout>
 		</>
 	);
