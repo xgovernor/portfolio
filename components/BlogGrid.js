@@ -1,5 +1,5 @@
 import Container from "../views/shared/Container/Container";
-import BlgoGridCard from "./BlogGridCard";
+import { default as BlogGridCard } from "./BlogGridCard";
 
 const DATA_BLOG = [
 	{
@@ -133,12 +133,31 @@ const DATA_BLOG = [
 		meta: "PUBLISHED MARCH 21, 2021",
 	},
 ];
-export default function BlogGrid() {
+export default function BlogGrid({ className, articles, ...rest }) {
+	console.log(articles);
 	return (
 		<>
 			<section className="p_blog_grid">
-				<Container dataClass="p_content">
-					{DATA_BLOG.map((data, i) => (
+				<Container className="p_content">
+					{articles?.map((article, i) => {
+						const meta = article.date._updatedAt
+							? `UPDATED ${article.date._updatedAt}`
+							: `PUBLISHED ${article.date.publishedAt}`;
+
+						return (
+							<BlogGridCard
+								key={i}
+								category={article?.category?.title}
+								meta={meta}
+								slug={article?.slug}
+								title={article?.title}
+								excerpt={article?.excerpt}
+								url={`/article/${article.slug}`}
+							/>
+						);
+					})}
+
+					{/* {DATA_BLOG.map((data, i) => (
 						<BlgoGridCard
 							key={i}
 							meta={data.meta}
@@ -147,7 +166,7 @@ export default function BlogGrid() {
 							excerpt={data.excerpt}
 							url={data.url}
 						/>
-					))}
+					))} */}
 				</Container>
 			</section>
 		</>

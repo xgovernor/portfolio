@@ -16,13 +16,13 @@ const ProjectCard = ({
 }) => {
 	console.log("URL", thumbnail);
 	return (
-		<div className="p_projects_card" {...rest}>
-			<Container>
-				<div className="p_card_left">
+		<div className="p_projectCard" {...rest}>
+			<Container className="p_projectCard__container">
+				<div className="p_projectCard__content">
 					<h4 className="p_subtitle_1">{category}</h4>
-					<h2 className="p_heading">{title}</h2>
+					<h2 className="p_projectCard__title">{title}</h2>
 					<p className="p_body">
-						T{excerpt}
+						{excerpt}
 						<br />
 						<br />
 						<strong>Technologies: </strong>
@@ -43,9 +43,14 @@ const ProjectCard = ({
 						<p className="p_link">Coming soon</p>
 					)}
 				</div>
-				<div className="p_card_right">
-					<div className="p_image">
-						<Image src={thumbnail} alt={title} width={562} height={323} />
+				<div className="p_projectCard__thumbnail">
+					<div className="p_projectCard__image">
+						<Image
+							src={`/images/p1.jpg`}
+							alt={title}
+							width={562}
+							height={323}
+						/>
 					</div>
 				</div>
 			</Container>

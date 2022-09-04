@@ -7,6 +7,7 @@
 @import './about.style'
 @import './blog.style'
 @import './single.style'
+@import './_component.sass'
 
 // Global 
 *
@@ -18,7 +19,6 @@
 ::selection
     color: #FFFFFF
     background: #000000
-    background: radial-gradient(136.21% 515.62% at 36.95% 26.72%, #576C6F 0%, #000000 10.24%, #FE0000 18.58%, #B06D61 25.6%, #000000 59.21%, #8FE3F2 72.19%, #FD0000 82.81%, #190B00 93.75%, #FF6A00 100%, #FE0000 100%)
 
 body
     // cursor: none
@@ -92,23 +92,23 @@ form
 // ===========================
 
 // Component: Container
-.p_container  // Container
+.p_c__container  // Container
     margin-right: auto
     margin-left: auto
 @media screen and (min-width: 375px) and (max-width: 425px)     // Mobile
-    .p_container
+    .p_c__container
         width: 335px
 @media screen and (min-width: 425px) and (max-width: 767px)     // Mobile
-    .p_container
+    .p_c__container
         width: 370px
 @media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
-    .p_container
+    .p_c__container
         width: 696px
 @media screen and (min-width: 1024px) and (max-width: 1365px)   // Retinal Device
-    .p_container
+    .p_c__container
         width: 904px
 @media screen and (min-width: 1366px)   // Desktop Device and so on
-    .p_container
+    .p_c__container
         width: 1088px
 
 // Page Header

@@ -6,11 +6,11 @@ export default function NavigationalArticles({ articles }) {
 	return (
 		<>
 			<section className="p_navaigation_articles">
-				<Container dataClass="p_header">
+				<Container className="p_header">
 					<h2>Navigational Articles</h2>
 				</Container>
 
-				<Container dataClass="p_content">
+				<Container className="p_content">
 					{articles.map((data, i) => (
 						<BlgoGridCard
 							key={i}

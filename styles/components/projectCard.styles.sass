@@ -1,0 +1,127 @@
+.p_projectCard
+    &:first-of-type
+        margin-top: 0
+    .p_c__container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &:nth-child(odd)
+            .p_c__container
+                .p_projectCard__content
+                .p_projectCard__thumbnail
+        &:nth-child(even)
+            .p_c__container
+                .p_projectCard__content
+                .p_projectCard__thumbnail
+        .p_projectCard__image
+        .p_subtitle_1
+        .p_projectCard__title
+            margin-top: 10px
+            color: #000000
+        .p_body
+            margin-top: 15px
+            margin-bottom: 25px
+        .p_link
+            color: #000000
+            font-weight: 500
+            font-size: 14px
+            font-family: "Neue Haas Grotesk Display Pro"
+            &:hover
+                color: #717171
+@media screen and (min-width: 375px) and (max-width: 767px)     // Mobile
+    .p_projectCard
+        margin-top: 35px
+        .p_c__container
+            flex-direction: column-reverse
+            .p_projectCard__content
+                // width: 378px
+                display: flex
+                flex-direction: row-reverse
+                justify-content: space-between
+                flex-wrap: wrap
+            .p_projectCard__thumbnail
+                // width: 439px
+                margin-bottom: 20px
+        .p_projectCard__image
+        .p_subtitle_1
+            // width: 50%
+        .p_projectCard__title
+            // width: 50%
+            margin-top: 0
+            font-size: 18px
+            line-height: 24px
+        .p_body
+            width: 100%
+        .p_link
+            width: 100%
+
+@media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
+    .p_projectCard
+        margin-top: 60px
+        .p_c__container
+            width: 585px
+            flex-direction: column-reverse
+            .p_projectCard__content
+                width: 378px
+            .p_projectCard__thumbnail
+                width: 439px
+                margin-bottom: 35px
+        .p_projectCard__image
+        .p_subtitle_1
+        .p_projectCard__title
+            font-size: 18px
+            line-height: 24px
+        .p_body
+        .p_link
+
+@media screen and (min-width: 1024px) and (max-width: 1365px)   // Retinal Device
+    .p_projectCard
+        margin-top: 80px
+        .p_c__container
+            width: 904px
+        &:nth-child(odd)
+            .p_c__container
+                .p_projectCard__content
+                    width: 439px
+                .p_projectCard__thumbnail
+                    width: 378px
+        &:nth-child(even)
+            .p_c__container
+                flex-direction: row-reverse
+                .p_projectCard__content
+                    width: 378px
+                .p_projectCard__thumbnail
+                    width: 439px
+        .p_projectCard__image
+        .p_subtitle_1
+        .p_projectCard__title
+            font-size: 18px
+            line-height: 24px
+        .p_body
+        .p_link
+
+@media screen and (min-width: 1366px)   // Desktop Device
+    .p_projectCard
+        margin-top: 130px
+        .p_c__container
+            width: 1088px
+        &:nth-child(odd)
+            .p_c__container
+                .p_projectCard__content
+                    width: 413px
+                .p_projectCard__thumbnail
+                    width: 562px
+        &:nth-child(even)
+            .p_c__container
+                flex-direction: row-reverse
+                .p_projectCard__content
+                    width: 413px
+                .p_projectCard__thumbnail
+                    width: 562px
+        .p_projectCard__image
+        .p_subtitle_1
+        .p_projectCard__title
+            font-size: 38px
+            line-height: 42px
+        .p_body
+        .p_link

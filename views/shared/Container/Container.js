@@ -1,9 +1,19 @@
-export default function Container({ children, dataClass }) {
-    return (
-        <>
-            <div className={dataClass? `p_container ${dataClass}`:`p_container`}>
-                {children}
-            </div>
-        </>
-    )
+import PropTypes from "prop-types";
+
+export default function Container({ className, children, ...rest }) {
+	return (
+		<>
+			<div
+				className={className ? `p_c__container ${className}` : `p_c__container`}
+				{...rest}>
+				{children}
+			</div>
+		</>
+	);
 }
+
+Container.propTypes = {
+	className: PropTypes.string,
+	children: PropTypes.node,
+	rest: PropTypes.object,
+};

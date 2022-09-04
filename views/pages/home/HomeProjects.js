@@ -5,7 +5,7 @@ import Container from "../../shared/Container/Container";
 
 const HomeProjects = ({ className, projects, ...rest }) => {
 	return (
-		<section className="p_home_projects">
+		<section className="p_s__projects">
 			<div className="p_projects_header">
 				<Container>
 					<h4 className="p_subtitle_1">FEATURED PROJECTS</h4>
@@ -15,7 +15,7 @@ const HomeProjects = ({ className, projects, ...rest }) => {
 				</Container>
 			</div>
 
-			<div className="p_projects_body">
+			<div className="p_projects__body">
 				{projects.map((project, i) => (
 					<ProjectCard
 						key={i}

@@ -5,7 +5,7 @@ export default function PageHeader({ data }) {
 	return (
 		<>
 			<section className="p_page_header">
-				<Container dataClass="p_content">
+				<Container className="p_content">
 					<div className="p_header__title__area">
 						<h4 className="p_heading">{data.heading}</h4>
 					</div>
