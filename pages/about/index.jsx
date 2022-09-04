@@ -1,9 +1,9 @@
 // Core Components
 // Custom Components
-import PageBanner from "../components/PageBanner";
-import PageHeader from "../components/PageHeader";
-import AboutBody from "../views/pages/about/AboutBody";
-import Layout from "../views/shared/Layout/Layout";
+import PageBanner from "../../components/PageBanner";
+import PageHeader from "../../components/PageHeader";
+import AboutBody from "../../views/pages/about/AboutBody";
+import Layout from "../../views/shared/Layout/Layout";
 
 export default function About() {
 	const dataImg = {
