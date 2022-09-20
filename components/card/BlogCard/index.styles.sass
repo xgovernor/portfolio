@@ -1,0 +1,136 @@
+
+.p_c__blogCard  // Blog Grid card
+    border: 1px solid hsla(0, 0%, 0%, 0.12)
+    &:hover
+        border: 1px solid #000000
+    .p__meta
+        font-family: "NHaasGroteskDSPro"
+        font-weight: bold
+        color: rgba(0, 12, 25, 0.7)
+    .p__title__link
+        text-decoration: none
+        .p__title
+            color: #000C19
+            font-family: "NHaasGroteskDSPro"
+            font-weight: black
+        &:hover
+            // text-decoration: underline
+            .p__title
+                color: #717171
+    .p__excerpt
+        color: rgba(77, 77, 77, 0.8)
+        font-family: "NHaasGroteskTXPro"
+        font-weight: normal
+    .p__readmore
+        font-family: "NHaasGroteskDSPro"
+        text-decoration: underline
+        color: #000C19
+        font-weight: bold
+        &:hover
+            color: #717171
+
+@media (max-width: 767px)
+    .p_c__blogCard
+        margin-bottom: 25px
+        padding: 25px
+        &:hover
+        .p__meta
+            margin-bottom: 6px
+            font-size: 10px
+            line-height: 12px
+
+        .p__title__link
+            &:hover
+                .p__title
+            .p__title
+                margin-bottom: 15px
+                font-size: 16px
+                line-height: 18px
+        .p__excerpt
+            margin-bottom: 25px
+            font-size: 10px
+            line-height: 17px
+        .p__readmore
+            font-size: 12px
+            line-height: 14px
+            &:hover
+
+@media screen and (min-width: 768px) and (max-width: 1023px)
+    .p_c__blogCard  // Blog Grid card
+        // width: 335px
+        width: calc( (100% - 56px) / 2 )
+        margin-bottom: 25px
+        padding: 25px
+        &:hover
+        .p__meta
+            margin-bottom: 6px
+            font-size: 12px
+            line-height: 14px
+        .p__title__link
+            &:hover
+                .p__title
+            .p__title
+                margin-bottom: 15px
+                font-size: 18px
+                line-height: 24px
+        .p__excerpt
+            margin-bottom: 25px
+            font-size: 14px
+            line-height: 18px
+        .p__readmore
+            font-size: 14px
+            line-height: 14px
+            &:hover
+
+@media screen and (min-width: 1024px) and (max-width: 1365px)
+    .p_c__blogCard  // Blog Grid card
+        width: 439px
+        margin-bottom: 35px
+        padding: 35px
+        &:hover
+        .p__meta
+            margin-bottom: 10px
+            font-size: 12px
+            line-height: 14px
+        .p__title__link
+            &:hover
+                .p__title
+            .p__title
+                margin-bottom: 20px
+                font-size: 24px
+                line-height: 30px
+        .p__excerpt
+            margin-bottom: 35px
+            font-size: 14px
+            line-height: 18px
+        .p__readmore
+            font-size: 14px
+            line-height: 14px
+            &:hover
+
+@media screen and (min-width: 1366px)
+    .p_c__blogCard  // Blog Grid card
+        width: 526px
+        min-height: 385px
+        margin-bottom: 35px
+        padding: 45px
+        &:hover
+        .p__meta
+            margin-bottom: 10px
+            font-size: 12px
+            line-height: 14px
+        .p__title__link
+            &:hover
+                .p__title
+            .p__title
+                margin-bottom: 20px
+                font-size: 28px
+                line-height: 34px
+        .p__excerpt
+            margin-bottom: 35px
+            font-size: 14px
+            line-height: 23px
+        .p__readmore
+            font-size: 14px
+            line-height: 14px
+            &:hover

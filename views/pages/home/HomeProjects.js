@@ -1,7 +1,7 @@
 import { memo } from "react";
 import ProjectCard from "../../../components/card/ProjectCard";
+import Container from "../../../components/components/Container";
 import { imageBuilder } from "../../../lib/sanity";
-import Container from "../../shared/Container/Container";
 
 const HomeProjects = ({ className, projects, ...rest }) => {
 	return (

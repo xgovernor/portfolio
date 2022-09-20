@@ -1,10 +1,10 @@
 // Core Components
 import Link from "next/link";
+import Container from "../components/components/Container";
 // Custom Components
 import PageBanner from "../components/PageBanner";
 import PageHeader from "../components/PageHeader";
-import Container from "../views/shared/Container/Container";
-import Layout from "../views/shared/Layout/Layout";
+import Layout from "../components/scene/Layout";
 import ContactForm from "./ContactForm";
 
 export default function Contact() {

@@ -4224,6 +4224,11 @@ next-sanity@^0.8.4:
     "@sanity/groq-store" "^0.4.1"
     groq "^2.29.3"
 
+next-themes@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.2.1.tgz#0c9f128e847979daf6c67f70b38e6b6567856e45"
+  integrity sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==
+
 next@^12.2.5:
   version "12.2.5"
   resolved "https://registry.yarnpkg.com/next/-/next-12.2.5.tgz#14fb5975e8841fad09553b8ef41fe1393602b717"
@@ -5003,6 +5008,11 @@ react-fast-compare@^2.0.1:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
+
+react-icons@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.4.0.tgz#a13a8a20c254854e1ec9aecef28a95cdf24ef703"
+  integrity sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"

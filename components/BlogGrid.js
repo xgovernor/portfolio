@@ -1,5 +1,5 @@
-import Container from "../views/shared/Container/Container";
-import { default as BlogGridCard } from "./BlogGridCard";
+import BlogCard from "./card/BlogCard";
+import Container from "./components/Container";
 
 const DATA_BLOG = [
 	{
@@ -145,7 +145,7 @@ export default function BlogGrid({ className, articles, ...rest }) {
 							: `PUBLISHED ${article.date.publishedAt}`;
 
 						return (
-							<BlogGridCard
+							<BlogCard
 								key={i}
 								category={article?.category?.title}
 								meta={meta}

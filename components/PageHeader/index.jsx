@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import Container from "../../views/shared/Container/Container";
+import Container from "../components/Container";
 
 export default function PageHeader({ data }) {
 	return (

@@ -1,6 +1,6 @@
 import Image from "next/image";
+import Container from "../../../components/components/Container";
 import { footerRoutes } from "../../../routes/footer.routes";
-import Container from "../Container/Container";
 import FooterCopyright from "./FooterCopyright/FooterCopyright";
 import FooterCTA from "./FooterCTA/FooterCTA";
 import FooterMenu from "./FooterMenu/FooterMenu";

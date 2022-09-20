@@ -1,11 +1,11 @@
-/** @format */
-
 import { AnimatePresence } from "framer-motion";
+import { ThemeProvider } from "next-themes";
 import Head from "next/head";
 import Script from "next/script";
 import NextNProgress from "nextjs-progressbar";
 import { ParallaxProvider } from "react-scroll-parallax";
 import "../styles/index.sass";
+import "../styles/theme.css";
 
 const GOOGLE_GTAG_MEASUREMENT_ID = "GTM-N3QF76C";
 
@@ -42,9 +42,11 @@ function MyApp({ Component, pageProps }) {
 				options={{ easing: "ease", speed: 500 }}
 			/>
 			<AnimatePresence exitBeforeEnter>
-				<ParallaxProvider>
-					<Component {...pageProps} />
-				</ParallaxProvider>
+				<ThemeProvider>
+					<ParallaxProvider>
+						<Component {...pageProps} />
+					</ParallaxProvider>
+				</ThemeProvider>
 			</AnimatePresence>
 		</>
 	);

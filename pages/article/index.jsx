@@ -3,8 +3,8 @@ import { groq } from "next-sanity";
 import BlogGrid from "../../components/BlogGrid";
 import PageBanner from "../../components/PageBanner";
 import PageHeader from "../../components/PageHeader";
+import Layout from "../../components/scene/Layout";
 import { getClient } from "../../lib/sanity.server";
-import Layout from "../../views/shared/Layout/Layout";
 
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[_type == "article"] {

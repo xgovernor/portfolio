@@ -1,13 +1,11 @@
-/** @format */
-
-import Container from "../../shared/Container/Container";
+import Container from "../../../components/components/Container";
 
 const AboutBody = () => {
 	return (
 		<>
 			<section className="p_about_body_info">
 				<Container>
-					<div className="p_about_info_card">
+					<div className="p_about_info_card border--b--motion">
 						{/* Left Side */}
 						<div className="p_card__left">
 							<h4 className="p_heading_2">Who am I ?</h4>
@@ -36,7 +34,7 @@ const AboutBody = () => {
 						</div>
 					</div>
 
-					<div className="p_about_info_card">
+					<div className="p_about_info_card border--b--motion">
 						{/* Left Side */}
 						<div className="p_card__left">
 							<h4 className="p_heading_2">What I have learned</h4>
@@ -61,7 +59,7 @@ const AboutBody = () => {
 						</div>
 					</div>
 
-					<div className="p_about_info_card">
+					<div className="p_about_info_card border--b--motion">
 						{/* Left Side */}
 						<div className="p_card__left">
 							<h4 className="p_heading_2">Experiences</h4>
@@ -79,7 +77,7 @@ const AboutBody = () => {
 						</div>
 					</div>
 
-					<div className="p_about_info_card">
+					<div className="p_about_info_card border--b--motion">
 						{/* Left Side */}
 						<div className="p_card__left">
 							<h4 className="p_heading_2">What else do I do?</h4>
@@ -105,7 +103,7 @@ const AboutBody = () => {
 						<div className="p_card_right">
 							<table className="p_table">
 								<tbody>
-									<tr>
+									<tr className="border--b--motion">
 										<td className="__left">
 											<h4 className="p_body">Front-end Engineer</h4>
 										</td>
@@ -116,7 +114,8 @@ const AboutBody = () => {
 											<p className="p_body">2022 - Current</p>
 										</td>
 									</tr>
-									<tr>
+
+									<tr className="border--b--motion">
 										<td className="__left">
 											<h4 className="p_body">Junior Web Developer</h4>
 										</td>
@@ -127,7 +126,8 @@ const AboutBody = () => {
 											<p className="p_body">2020 - 2021</p>
 										</td>
 									</tr>
-									<tr>
+
+									<tr className="border--b--motion">
 										<td className="__left">
 											<h4 className="p_body">Web Developer</h4>
 										</td>
@@ -138,7 +138,8 @@ const AboutBody = () => {
 											<p className="p_body">2019 - 2020</p>
 										</td>
 									</tr>
-									<tr>
+
+									<tr className="border--b--motion">
 										<td className="__left">
 											<h4 className="p_body">Freelance Developer</h4>
 										</td>
@@ -164,7 +165,7 @@ const AboutBody = () => {
 						<div className="p_card_right">
 							<table className="p_table">
 								<tbody>
-									<tr>
+									<tr className="border--b--motion">
 										<td className="__left">
 											<h4 className="p_body">Complete Web Development</h4>
 										</td>
@@ -176,7 +177,7 @@ const AboutBody = () => {
 										</td>
 									</tr>
 
-									<tr>
+									<tr className="border--b--motion">
 										<td className="__left">
 											<h4 className="p_body">Computer Science & Engineering</h4>
 										</td>
@@ -187,7 +188,8 @@ const AboutBody = () => {
 											<p className="p_body">2021 - Current</p>
 										</td>
 									</tr>
-									<tr>
+
+									<tr className="border--b--motion">
 										<td className="__left">
 											<h4 className="p_body">IELTS</h4>
 										</td>

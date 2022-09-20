@@ -1,7 +1,7 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-export default function BlogGridCard({
+export default function BlogCard({
 	className,
 	meta,
 	url,
@@ -11,12 +11,10 @@ export default function BlogGridCard({
 }) {
 	return (
 		<>
-			<div
-				className={`p_blog_grid_card ${className ? className : ""}`}
-				{...rest}>
+			<div className={`p_c__blogCard ${className ? className : ""}`} {...rest}>
 				<h4 className="p__meta">{meta}</h4>
 				<Link href={url}>
-					<a className="p__title_link">
+					<a className="p__title__link">
 						<h3 className="p__title">{title}</h3>
 					</a>
 				</Link>
@@ -30,7 +28,7 @@ export default function BlogGridCard({
 	);
 }
 
-BlogGridCard.propTypes = {
+BlogCard.propTypes = {
 	className: PropTypes.string,
 	meta: PropTypes.string,
 	title: PropTypes.string,

@@ -40,6 +40,7 @@ export default function ContactForm({ onSubmit }) {
 		name: "",
 		email: "",
 		phone: "",
+		subject: "",
 		message: "",
 	};
 
@@ -67,7 +68,9 @@ export default function ContactForm({ onSubmit }) {
 						<div className="p__row">
 							<label htmlFor="name">Full name</label>
 							<Field
-								className={touched.name && errors.name ? "__err" : null}
+								className={`border--b--motion ${
+									touched.name && errors.name ? "__err" : null
+								}`}
 								id="name"
 								name="name"
 								type="text"
@@ -83,7 +86,9 @@ export default function ContactForm({ onSubmit }) {
 						<div className="p__row">
 							<label htmlFor="email">Email address</label>
 							<Field
-								className={touched.email && errors.email ? "__err" : null}
+								className={`border--b--motion ${
+									touched.email && errors.email ? "__err" : null
+								}`}
 								id="email"
 								name="email"
 								type="text"

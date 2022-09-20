@@ -1,6 +1,6 @@
 import React from "react";
-import BlogGridCard from "../../../components/BlogGridCard";
-import Container from "../../shared/Container/Container";
+import BlogCard from "../../../components/card/BlogCard";
+import Container from "../../../components/components/Container";
 
 const HomeArticles = ({ className, articles, ...rest }) => {
 	return (
@@ -24,7 +24,7 @@ const HomeArticles = ({ className, articles, ...rest }) => {
 								: `PUBLISHED ${article.date.publishedAt}`;
 
 							return (
-								<BlogGridCard
+								<BlogCard
 									key={i}
 									category={article?.category?.title}
 									meta={meta}

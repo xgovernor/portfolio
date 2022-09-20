@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Parallax } from "react-scroll-parallax";
-import Container from "../../shared/Container/Container";
+import Container from "../../../components/components/Container";
 
 const HomeAbout = ({}) => {
 	return (

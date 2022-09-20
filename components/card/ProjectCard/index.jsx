@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import React from "react";
-import Container from "../../../views/shared/Container/Container";
+import Container from "../../components/Container";
 
 const ProjectCard = ({
 	className,

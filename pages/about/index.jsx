@@ -2,8 +2,8 @@
 // Custom Components
 import PageBanner from "../../components/PageBanner";
 import PageHeader from "../../components/PageHeader";
+import Layout from "../../components/scene/Layout";
 import AboutBody from "../../views/pages/about/AboutBody";
-import Layout from "../../views/shared/Layout/Layout";
 
 export default function About() {
 	const dataImg = {

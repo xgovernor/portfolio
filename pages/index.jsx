@@ -1,11 +1,11 @@
 import { groq } from "next-sanity";
 import { useRouter } from "next/router";
+import Layout from "../components/scene/Layout";
 import { getClient } from "../lib/sanity.server";
 import HomeAbout from "../views/pages/home/HomeAbout";
 import HomeArticles from "../views/pages/home/HomeArticles";
 import HomeHero from "../views/pages/home/HomeHero";
 import HomeProjects from "../views/pages/home/HomeProjects";
-import Layout from "../views/shared/Layout/Layout";
 
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[(_type == "project" || _type == "article") && featured == true] {

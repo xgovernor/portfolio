@@ -1,9 +1,9 @@
 import { groq } from "next-sanity";
 import PageBanner from "../components/PageBanner";
 import PageHeader from "../components/PageHeader";
+import Layout from "../components/scene/Layout";
 import { getClient } from "../lib/sanity.server";
 import WorkProjects from "../views/pages/home/WorkProjects";
-import Layout from "../views/shared/Layout/Layout";
 
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[_type == "project"] {

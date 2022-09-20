@@ -1,6 +1,5 @@
-// Custom Components
-import Container from "../views/shared/Container/Container";
-import BlgoGridCard from "./BlogGridCard";
+import BlogCard from "./card/BlogCard";
+import Container from "./components/Container";
 
 export default function NavigationalArticles({ articles }) {
 	return (
@@ -12,7 +11,7 @@ export default function NavigationalArticles({ articles }) {
 
 				<Container className="p_content">
 					{articles.map((data, i) => (
-						<BlgoGridCard
+						<BlogCard
 							key={i}
 							meta={data.meta}
 							slug={data.slug}
