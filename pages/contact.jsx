@@ -30,8 +30,7 @@ export default function Contact() {
 		// 	"phone": "01627085640",
 		// 	"message": "Nice to meet you Mr. Muhammad. I need some help with a project of mine."
 		// }
-
-		console.log(values);
+		// console.log(values);
 	};
 
 	return (

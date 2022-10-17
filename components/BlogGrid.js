@@ -134,7 +134,7 @@ const DATA_BLOG = [
 	},
 ];
 export default function BlogGrid({ className, articles, ...rest }) {
-	console.log(articles);
+	// console.log(articles);
 	return (
 		<>
 			<section className="p_blog_grid">

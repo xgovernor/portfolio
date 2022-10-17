@@ -34,7 +34,12 @@ const NavMenu = () => {
 				a {
 					text-decoration: none;
 					color: #000000;
-					font-family: "Neue Haas Grotesk Display Pro";
+				}
+
+				@media screen and (max-width: 767px) {
+					ul {
+						display: none;
+					}
 				}
 
 				@media screen and (min-width: 768px) and (max-width: 1023px) {

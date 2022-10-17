@@ -14,7 +14,7 @@ const ProjectCard = ({
 	url,
 	...rest
 }) => {
-	console.log("URL", thumbnail);
+	// console.log("URL", thumbnail);
 	return (
 		<div className="p_projectCard" {...rest}>
 			<Container className="p_projectCard__container">

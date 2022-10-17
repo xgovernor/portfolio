@@ -30,11 +30,9 @@ const ThemeChanger = () => {
 				.tt__button {
 					width: 36px;
 					height: 36px;
-					color: #000c19;
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					background: rgb(234, 234, 234);
 					border-radius: 8px;
 				}
 				.tt__icon {
@@ -46,13 +44,16 @@ const ThemeChanger = () => {
 				svg {
 				}
 
-				[data-theme="light"] .p_themeToggler {
+				[data-theme="light"] .p_themeToggler,
+				[data-theme="light"] .tt__button {
 					color: rgb(234, 234, 234);
 					background: #000c19;
 				}
-				[data-theme="dark"] .p_themeToggler {
-					color: #000c19;
-					background: rgb(234, 234, 234);
+
+				[data-theme="dark"] .p_themeToggler,
+				[data-theme="dark"] .tt__button {
+					color: rgb(234, 234, 234);
+					background: #000c19;
 				}
 			`}</style>
 		</>
