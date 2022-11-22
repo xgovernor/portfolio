@@ -1,5 +1,8 @@
 
 .p_c__blogCard  // Blog Grid card
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     border: 1px solid hsla(0, 0%, 0%, 0.12)
     &:hover
         border: 1px solid #000000
@@ -19,7 +22,7 @@
                 color: #717171
     .p__excerpt
         color: rgba(77, 77, 77, 0.8)
-        font-family: "NHaasGroteskTXPro"
+        font-family: "Inter"
         font-weight: normal
     .p__readmore
         font-family: "NHaasGroteskDSPro"
@@ -40,25 +43,23 @@
             line-height: 12px
 
         .p__title__link
-            &:hover
-                .p__title
             .p__title
                 margin-bottom: 15px
-                font-size: 16px
-                line-height: 18px
+                font-size: 22px
+                line-height: 26px
         .p__excerpt
             margin-bottom: 25px
-            font-size: 10px
-            line-height: 17px
+            font-size: 14px
+            line-height: 20px
         .p__readmore
-            font-size: 12px
-            line-height: 14px
+            font-size: 16px
+            line-height: 18px
             &:hover
 
 @media screen and (min-width: 768px) and (max-width: 1023px)
     .p_c__blogCard  // Blog Grid card
         // width: 335px
-        width: calc( (100% - 56px) / 2 )
+        width: calc( (100% - 40px) / 2 )
         margin-bottom: 25px
         padding: 25px
         &:hover
@@ -71,20 +72,21 @@
                 .p__title
             .p__title
                 margin-bottom: 15px
-                font-size: 18px
-                line-height: 24px
+                font-size: 22px
+                line-height: 28px
         .p__excerpt
             margin-bottom: 25px
             font-size: 14px
             line-height: 18px
         .p__readmore
-            font-size: 14px
-            line-height: 14px
+            font-size: 16px
+            line-height: 18px
             &:hover
 
 @media screen and (min-width: 1024px) and (max-width: 1365px)
     .p_c__blogCard  // Blog Grid card
-        width: 439px
+        width: 100%
+        max-width: calc(( 100% - 60px ) /2)
         margin-bottom: 35px
         padding: 35px
         &:hover
@@ -102,16 +104,16 @@
         .p__excerpt
             margin-bottom: 35px
             font-size: 14px
-            line-height: 18px
+            line-height: 22px
         .p__readmore
-            font-size: 14px
-            line-height: 14px
+            font-size: 16px
+            line-height: 18px
             &:hover
 
 @media screen and (min-width: 1366px)
     .p_c__blogCard  // Blog Grid card
         width: 526px
-        min-height: 385px
+        min-height: 400px
         margin-bottom: 35px
         padding: 45px
         &:hover
@@ -123,14 +125,14 @@
             &:hover
                 .p__title
             .p__title
-                margin-bottom: 20px
-                font-size: 28px
-                line-height: 34px
+                margin-bottom: 22px
+                font-size: 30px
+                line-height: 38px
         .p__excerpt
             margin-bottom: 35px
-            font-size: 14px
-            line-height: 23px
+            font-size: 15px
+            line-height: 24px
         .p__readmore
-            font-size: 14px
-            line-height: 14px
+            font-size: 16px
+            line-height: 18px
             &:hover
