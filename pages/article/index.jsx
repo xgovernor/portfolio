@@ -5,6 +5,7 @@ import PageBanner from "../../components/PageBanner";
 import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/scene/Layout";
 import { getClient } from "../../lib/sanity.server";
+import IMG from "../../assets/images/blog_banner.jpg";
 
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[_type == "article"] {
@@ -30,8 +31,6 @@ export default function Blog({ data }) {
     url: "/images/blog_banner.jpg",
     // url: "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     alt: "About banner Image",
-    width: 1444,
-    height: 579,
   };
 
   return (
@@ -47,7 +46,7 @@ export default function Blog({ data }) {
           ],
         }}
       />
-      <PageBanner dataImg={dataImg} />
+      <PageBanner img={IMG} />
       {/* <BlogGrid articles={data?.articles} /> */}
     </Layout>
   );
