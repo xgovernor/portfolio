@@ -47,8 +47,8 @@ export default function Blog({ data }) {
           ],
         }}
       />
-      {/* <PageBanner dataImg={dataImg} />
-			<BlogGrid articles={data?.articles} /> */}
+      <PageBanner dataImg={dataImg} />
+      {/* <BlogGrid articles={data?.articles} /> */}
     </Layout>
   );
 }
