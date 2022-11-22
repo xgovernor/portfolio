@@ -26,40 +26,40 @@ const QUERY = groq`*[_type == "article"] {
   }`;
 
 export default function Blog({ data }) {
-	const dataImg = {
-		url: "/images/blog_banner.jpg",
-		// url: "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-		alt: "About banner Image",
-		width: 1444,
-		height: 579,
-	};
+  const dataImg = {
+    url: "/images/blog_banner.jpg",
+    // url: "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "About banner Image",
+    width: 1444,
+    height: 579,
+  };
 
-	return (
-		<Layout>
-			<PageHeader
-				data={{
-					heading: "KNOWLEDGE BOOK",
-					subheading: [
-						// "Occasional thoughts and insights from Muhammad's everyday life.",
-						"Occasional",
-						"thoughts & insights.",
-						"from Muhammad's life.",
-					],
-				}}
-			/>
-			<PageBanner dataImg={dataImg} />
-			<BlogGrid articles={data?.articles} />
-		</Layout>
-	);
+  return (
+    <Layout>
+      <PageHeader
+        data={{
+          heading: "KNOWLEDGE BOOK",
+          subheading: [
+            // "Occasional thoughts and insights from Muhammad's everyday life.",
+            "Occasional",
+            "thoughts & insights.",
+            "from Muhammad's life.",
+          ],
+        }}
+      />
+      {/* <PageBanner dataImg={dataImg} />
+			<BlogGrid articles={data?.articles} /> */}
+    </Layout>
+  );
 }
 
 export async function getStaticProps({ params, preview = false }) {
-	const articles = await getClient(preview).fetch(QUERY);
+  const articles = await getClient(preview).fetch(QUERY);
 
-	return {
-		props: {
-			data: { articles },
-		},
-		revalidate: 86400,
-	};
+  return {
+    props: {
+      data: { articles },
+    },
+    revalidate: 86400,
+  };
 }

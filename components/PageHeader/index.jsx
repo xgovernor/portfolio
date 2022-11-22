@@ -1,31 +1,32 @@
 import PropTypes from "prop-types";
 import Container from "../components/Container";
+import S from "./PageHeader.module.sass";
 
 export default function PageHeader({ data }) {
-	return (
-		<>
-			<section className="p_c__pageHeader">
-				<Container className="p_pageHeader__content">
-					<div className="p_pageHeader__heading">
-						<h4 className="p_pageHeader__title">{data.heading}</h4>
-					</div>
+  return (
+    <>
+      <section className={S.__pageHeader}>
+        <Container className={S.__content}>
+          <div className={S.__heading}>
+            <h4 className={S.__title}>{data.heading}</h4>
+          </div>
 
-					<div className="p_pageHeader__subHeading">
-						<h1 className="p_pageHeader__subTitle">
-							{data.subheading &&
-								data.subheading?.map((line, i) => (
-									<span className="p_pageHeader__subTitle__line" key={i}>
-										{line}
-									</span>
-								))}
-						</h1>
-					</div>
-				</Container>
-			</section>
-		</>
-	);
+          <div className={S.__subHeading}>
+            <h1 className={S.__subTitle}>
+              {data.subheading &&
+                data.subheading?.map((line, i) => (
+                  <span className={S.__line} key={i}>
+                    {line}
+                  </span>
+                ))}
+            </h1>
+          </div>
+        </Container>
+      </section>
+    </>
+  );
 }
 
 PageHeader.propTypes = {
-	data: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
 };
