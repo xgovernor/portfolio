@@ -5,7 +5,7 @@ import Container from "../../components/components/Container";
 import PageBanner from "../../components/PageBanner";
 import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/scene/Layout";
-import ContactForm from "../ContactForm";
+import ContactForm from "./ContactForm";
 import IMG from "../../assets/images/contact.jpg";
 
 export default function Contact() {

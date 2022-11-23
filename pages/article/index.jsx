@@ -5,7 +5,7 @@ import PageBanner from "../../components/PageBanner";
 import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/scene/Layout";
 import { getClient } from "../../lib/sanity.server";
-import IMG from "../../assets/images/blog_banner.jpg";
+import IMG from "../../assets/images/blog.png";
 
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[_type == "article"] {

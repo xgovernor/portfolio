@@ -4,7 +4,8 @@ import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/scene/Layout";
 import { getClient } from "../../lib/sanity.server";
 import WorkProjects from "../../views/pages/home/WorkProjects";
-import IMG from "../../assets/images/work.jpg";
+// import IMG from "../../assets/images/work.jpg";
+import IMG from "../../assets/images/work.webp";
 
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[_type == "project"] {
