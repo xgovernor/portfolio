@@ -1,12 +1,12 @@
 // Core Components
 import Link from "next/link";
-import Container from "../components/components/Container";
+import Container from "../../components/components/Container";
 // Custom Components
-import PageBanner from "../components/PageBanner";
-import PageHeader from "../components/PageHeader";
-import Layout from "../components/scene/Layout";
-import ContactForm from "./ContactForm";
-import IMG from "../assets/images/contact.jpg";
+import PageBanner from "../../components/PageBanner";
+import PageHeader from "../../components/PageHeader";
+import Layout from "../../components/scene/Layout";
+import ContactForm from "../ContactForm";
+import IMG from "../../assets/images/contact.jpg";
 
 export default function Contact() {
   /**
@@ -41,9 +41,6 @@ export default function Contact() {
 
         <section className="p_contact_form" data-scroll-section>
           <Container className="p_header">
-            <h2 data-scroll className="p__title">
-              CONTACT OPTIONS
-            </h2>
             <h1 data-scroll className="p__subtitle">
               Contact me
             </h1>
