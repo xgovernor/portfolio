@@ -7,3 +7,9 @@ export const truncate = (string, len = 205) => {
 
   return string;
 };
+
+export const arrayToString = (list, connector = ", ") => {
+  if (!list || !Array.isArray(list)) return;
+
+  return list.join(connector);
+};
