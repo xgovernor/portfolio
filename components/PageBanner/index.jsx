@@ -24,6 +24,10 @@ export default function PageBanner({ dataImg, img }) {
           background-attachment: fixed;
           background-position: center;
           background-size: cover;
+          z-index: -1;
+          transform: translate3d(0, 0, 1000px) {
+            /* transform: perspective(1000); */
+          }
         }
       `}</style>
     </>
