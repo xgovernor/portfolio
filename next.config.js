@@ -3,12 +3,19 @@ module.exports = {
     domains: ["cdn.sanity.io", "images.pexels.com"],
   },
   reactStrictMode: false,
-  headers: [
-    {
-      key: "Strict-Transport-Security",
-      value: "max-age=63072000; includeSubDomains; preload"
-    }
-  ]
+  async headers() {
+    return [
+      {
+        source: '*',
+        headers: [
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload', // Matched parameters can be used in the value
+          },
+        ],
+      },
+    ]
+  },
 };
 
 const STUDIO_REWRITE = {
