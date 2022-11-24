@@ -6,30 +6,31 @@ module.exports = {
   async headers() {
     return [
       {
-        source: '*',
+        source: "/*",
         headers: [
           {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=63072000; includeSubDomains; preload', // Matched parameters can be used in the value
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload", // Matched parameters can be used in the value
           },
           {
-  key: 'X-DNS-Prefetch-Control',
-  value: 'on'
-},
+            key: "X-DNS-Prefetch-Control",
+            value: "on",
+          },
           {
-  key: 'X-XSS-Protection',
-  value: '1; mode=block'
-},
+            key: "X-XSS-Protection",
+            value: "1; mode=block",
+          },
           {
-  key: 'X-Frame-Options',
-  value: 'SAMEORIGIN'
-},{
-  key: 'X-Content-Type-Options',
-  value: 'nosniff'
-},
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
+          },
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
         ],
       },
-    ]
+    ];
   },
 };
 
