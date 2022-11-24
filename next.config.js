@@ -3,6 +3,12 @@ module.exports = {
     domains: ["cdn.sanity.io", "images.pexels.com"],
   },
   reactStrictMode: false,
+  headers: [
+    {
+      key: "Strict-Transport-Security",
+      value: "max-age=63072000; includeSubDomains; preload"
+    }
+  ]
 };
 
 const STUDIO_REWRITE = {
