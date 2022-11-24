@@ -1,7 +1,8 @@
 // Core Components
 import Image from "next/image";
+import { memo } from "react";
 
-export default function SingleContent() {
+function SingleContent() {
   return (
     <>
       <section className="p_single_content">
@@ -156,3 +157,5 @@ export default function SingleContent() {
     </>
   );
 }
+
+export default memo(SingleContent);

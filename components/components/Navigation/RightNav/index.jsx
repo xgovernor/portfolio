@@ -1,11 +1,8 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState, memo } from "react";
 import MobileMenu from "./MobileMenu";
 import NavMenu from "./NavMenu";
-import ThemeChanger from "./ThemeChanger";
 
-const RightNav = () => {
+function RightNav() {
   const [isVisible, setIsVisible] = useState(false);
   const handleMenu = () => setIsVisible(!isVisible);
 
@@ -81,6 +78,6 @@ const RightNav = () => {
       `}</style>
     </>
   );
-};
+}
 
-export default RightNav;
+export default memo(RightNav);

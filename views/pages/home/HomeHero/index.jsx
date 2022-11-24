@@ -17,10 +17,8 @@ const HomeHero = ({ title, cvURL }) => {
           </h1>
 
           <p className={S.__downloadButton}>
-            <Link href={cvURL}>
-              <a className="p__btn" target="_blank">
-                DOWNLOAD CV
-              </a>
+            <Link href={cvURL} className="p__btn" target="_blank">
+              DOWNLOAD CV
             </Link>
           </p>
         </Container>

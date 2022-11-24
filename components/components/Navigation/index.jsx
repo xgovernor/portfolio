@@ -1,12 +1,10 @@
-// Core Components
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo, useCallback } from "react";
 import { navigationRoutes } from "../../../routes/navigation.routes";
 import Container from "../Container";
 import LeftNav from "./LeftNav";
 import RightNav from "./RightNav";
 
-const Navigation = () => {
+function Navigation() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -15,11 +13,11 @@ const Navigation = () => {
     });
   }, []);
 
-  const scroll = () => {
+  const scroll = useCallback(() => {
     let scrollTop = window.scrollY;
 
     scrollTop > 75 ? setScrolled(true) : setScrolled(false);
-  };
+  }, []);
 
   return (
     <>
@@ -50,12 +48,9 @@ const Navigation = () => {
           padding-bottom: 25px;
           height: 75px;
         }
-        .p_c__container {
-          background: red;
-        }
       `}</style>
     </>
   );
-};
+}
 
-export default Navigation;
+export default memo(Navigation);

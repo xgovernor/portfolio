@@ -1,15 +1,14 @@
-// Core Components
 import Link from "next/link";
 import Container from "../../components/components/Container";
-// Custom Components
 import PageBanner from "../../components/PageBanner";
 import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/scene/Layout";
 import ContactForm from "./ContactForm";
 // import IMG from "../../assets/images/contact.jpg";
 import IMG from "../../assets/images/contact3.webp";
+import { memo, useContext } from "react";
 
-export default function Contact() {
+function Contact() {
   /**
    * ToDo
    * On Every Submit:
@@ -17,7 +16,7 @@ export default function Contact() {
    * 	2) A copy will be sent to my email.
    * 	3) A copy of response will store on the sanity.
    */
-  const formSubmitHandler = (values) => {
+  const formSubmitHandler = useContext((values) => {
     // Response Object
     // {
     // 	"name": "Abu Taher Muhammad",
@@ -26,7 +25,7 @@ export default function Contact() {
     // 	"message": "Nice to meet you Mr. Muhammad. I need some help with a project of mine."
     // }
     // console.log(values);
-  };
+  }, []);
 
   return (
     <>
@@ -60,7 +59,7 @@ export default function Contact() {
                 <ul className="p__list mb_20">
                   <li data-scroll>
                     <Link href="mailto:abut1081@gmail.com">
-                      <a>abut1081@gmail.com</a>
+                      abut1081@gmail.com
                     </Link>
                     - Probably the easiest way to reach out to Muhammad..
                   </li>
@@ -69,14 +68,20 @@ export default function Contact() {
                 <h4 className="p__title">Social</h4>
                 <ul className="p__list">
                   <li data-scroll>
-                    <Link href="https://www.linkedin.com/in/abutahermuhammad/">
-                      <a target="_blank">Linkedin</a>
+                    <Link
+                      href="https://www.linkedin.com/in/abutahermuhammad/"
+                      target="_blank"
+                    >
+                      Linkedin
                     </Link>
                     - Where Muhammad strives to look professional 😎.
                   </li>
                   <li data-scroll>
-                    <Link href="https://github.com/abutahermuhammad">
-                      <a target="_blank">GitHub</a>
+                    <Link
+                      href="https://github.com/abutahermuhammad"
+                      target="_blank"
+                    >
+                      GitHub
                     </Link>
                     - Where Muhammad hopefully will post design related stuff
                     occasionally 🎨.
@@ -95,3 +100,5 @@ export default function Contact() {
     </>
   );
 }
+
+export default memo(Contact);

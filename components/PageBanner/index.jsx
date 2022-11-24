@@ -1,10 +1,8 @@
-// Core Components
-import Image from "next/image";
-import { Parallax } from "react-scroll-parallax";
+import { memo } from "react";
+// import { Parallax } from "react-scroll-parallax";
 import S from "./PageBanner.module.sass";
 
-export default function PageBanner({ dataImg, img }) {
-  // console.log(dataImg)
+function PageBanner({ dataImg, img }) {
   return (
     <>
       <section className={S.__banner}>
@@ -25,11 +23,10 @@ export default function PageBanner({ dataImg, img }) {
           background-position: center;
           background-size: cover;
           z-index: -1;
-          transform: translate3d(0, 0, 1000px) {
-            /* transform: perspective(1000); */
-          }
         }
       `}</style>
     </>
   );
 }
+
+export default memo(PageBanner);

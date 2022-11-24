@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Container from "../components/Container";
 
-export default function SingleCover({ data }) {
+function SingleCover({ data }) {
   return (
     <>
       <section className="p_single_cover">
@@ -18,3 +18,5 @@ export default function SingleCover({ data }) {
     </>
   );
 }
+
+export default SingleCover;

@@ -1,7 +1,4 @@
-/** @format */
-
-// Custom Components
-import { motion } from "framer-motion";
+import { memo } from "react";
 import SingleContent from "../../components/article/SingleContent";
 import SingleCover from "../../components/article/SingleCover";
 import SingleHeader from "../../components/article/SingleHeader";
@@ -37,7 +34,8 @@ const DATA_BLOG = [
     meta: "PUBLISHED MARCH 21, 2021",
   },
 ];
-export default function ArticlesSingle() {
+
+function ArticlesSingle() {
   const singleArticleHeader = {
     title: "How Gorgias uses Vouchers to lessen webinar fatigue",
     date: "Published March 21, 2021",
@@ -51,20 +49,14 @@ export default function ArticlesSingle() {
   };
 
   return (
-    <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-      >
-        <Layout style={{ background: "#f6f6f6" }}>
-          <SingleHeader data={singleArticleHeader} />
-          <SingleCover data={singleArticleCover} />
-          <SingleContent />
-          <SingleUpdateStatus />
-          <NavigationalArticles articles={DATA_BLOG} />
-        </Layout>
-      </motion.div>
-    </>
+    <Layout style={{ background: "#f6f6f6" }}>
+      <SingleHeader data={singleArticleHeader} />
+      <SingleCover data={singleArticleCover} />
+      <SingleContent />
+      <SingleUpdateStatus />
+      <NavigationalArticles articles={DATA_BLOG} />
+    </Layout>
   );
 }
+
+export default memo(ArticlesSingle);

@@ -49,8 +49,8 @@ const HomeAbout = ({}) => {
                   ways you could see a problem and find paths to solve it.
                 </p>
 
-                <Link href={`/about`}>
-                  <a className={S.__link}>KNOW MORE</a>
+                <Link href={`/about`} className={S.__link}>
+                  KNOW MORE
                 </Link>
               </div>
             </div>

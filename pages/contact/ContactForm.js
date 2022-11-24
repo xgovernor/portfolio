@@ -1,8 +1,7 @@
-// Core Components
 import { Field, Form, Formik } from "formik";
-import React from "react";
+import React, { memo } from "react";
 
-export default function ContactForm({ onSubmit }) {
+function ContactForm({ onSubmit }) {
   // Form Validation
   // A custom validation function. This must return an object
   // which keys are symmetrical to our values/initialValues
@@ -144,3 +143,5 @@ export default function ContactForm({ onSubmit }) {
     </>
   );
 }
+
+export default memo(ContactForm);

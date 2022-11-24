@@ -1,12 +1,12 @@
+import { memo } from "react";
 import BlogCard from "../card/BlogCard";
 import Container from "../components/Container";
 import S from "./BlogGrid.module.sass";
 
-export default function BlogGrid({ className, articles, ...rest }) {
-  // console.log(articles);
+function BlogGrid({ className, articles, ...rest }) {
   return (
     <>
-      <section className={S.__grid}>
+      <section className={S.__grid} {...rest}>
         <Container className={S.__content}>
           {articles?.map((article, i) => {
             const meta = article.date._updatedAt
@@ -25,19 +25,10 @@ export default function BlogGrid({ className, articles, ...rest }) {
               />
             );
           })}
-
-          {/* {DATA_BLOG.map((data, i) => (
-						<BlgoGridCard
-							key={i}
-							meta={data.meta}
-							slug={data.slug}
-							title={data.title}
-							excerpt={data.excerpt}
-							url={data.url}
-						/>
-					))} */}
         </Container>
       </section>
     </>
   );
 }
+
+export default memo(BlogGrid);

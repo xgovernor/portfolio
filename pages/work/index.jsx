@@ -6,6 +6,7 @@ import { getClient } from "../../lib/sanity.server";
 import WorkProjects from "../../views/pages/home/WorkProjects";
 // import IMG from "../../assets/images/work.jpg";
 import IMG from "../../assets/images/work.webp";
+import { memo } from "react";
 
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[_type == "project"] {
@@ -30,7 +31,7 @@ const QUERY = groq`*[_type == "project"] {
 	technology,
   }`;
 
-export default function Work({ data }) {
+function Work({ data }) {
   return (
     <>
       <Layout className="page__work">
@@ -62,3 +63,5 @@ export async function getStaticProps({ params, preview = false }) {
     revalidate: 86400,
   };
 }
+
+export default memo(Work);

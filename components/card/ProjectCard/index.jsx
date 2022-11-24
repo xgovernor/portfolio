@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import PropTypes from "prop-types";
-import React from "react";
+import { memo } from "react";
 import { arrayToString } from "../../../utils/string.utils";
 import Container from "../../components/Container";
 
-const ProjectCard = ({
+function ProjectCard({
   className,
   category,
   thumbnail,
@@ -14,7 +14,7 @@ const ProjectCard = ({
   technologies,
   url,
   ...rest
-}) => {
+}) {
   console.log("URL", thumbnail);
   return (
     <div className="p_projectCard" {...rest}>
@@ -28,18 +28,11 @@ const ProjectCard = ({
             <br />
             <strong>Technologies: </strong>
             {arrayToString(technologies)}.
-            {/* {technologies.map((technology, i) => (
-              <span key={i} className={`technology--${technology}`}>
-                {technology}
-              </span>
-            ))} */}
           </p>
 
           {url ? (
-            <Link href={url}>
-              <a className="p_link" target="_blank">
-                Visit Website
-              </a>
+            <Link href={url} className="p_link" target="_blank">
+              Visit Website
             </Link>
           ) : (
             <p className="p_link">Coming soon</p>
@@ -59,7 +52,7 @@ const ProjectCard = ({
       </Container>
     </div>
   );
-};
+}
 
 ProjectCard.propTypes = {
   className: PropTypes.string,
@@ -72,4 +65,4 @@ ProjectCard.propTypes = {
   rest: PropTypes.object,
 };
 
-export default ProjectCard;
+export default memo(ProjectCard);

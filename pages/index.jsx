@@ -1,5 +1,6 @@
 import { groq } from "next-sanity";
 import { useRouter } from "next/router";
+import { memo } from "react";
 import Layout from "../components/scene/Layout";
 import { getClient } from "../lib/sanity.server";
 import HomeAbout from "../views/pages/home/HomeAbout";
@@ -30,7 +31,7 @@ const QUERY = groq`*[(_type == "project" || _type == "article") && featured == t
 	technology,
   }`;
 
-export default function HomePage({ data, preview }) {
+function HomePage({ data, preview }) {
   const router = useRouter();
 
   // if (!router.isFallback && !data.post?.slug) {
@@ -81,3 +82,5 @@ export async function getStaticProps({ params, preview = false }) {
     revalidate: 86400,
   };
 }
+
+export default memo(HomePage);
