@@ -3,6 +3,11 @@ module.exports = {
     domains: ["cdn.sanity.io", "images.pexels.com"],
   },
   reactStrictMode: false,
+  poweredByHeader: false,
+  experimental: {
+    optimizeCss: true,
+    scrollRestoration: true,
+  },
   async headers() {
     return [
       {
