@@ -28,6 +28,10 @@ module.exports = {
             key: "X-Content-Type-Options",
             value: "nosniff",
           },
+          {
+            key: "cache-control",
+            value: "public, max-age=63072000, must-revalidate",
+          },
         ],
       },
     ];
