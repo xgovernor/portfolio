@@ -45,14 +45,15 @@ function Blog({ data }) {
   );
 }
 
-export async function getStaticProps({ params, preview = false }) {
+// export async function getStaticProps({ params, preview = false }) {
+export async function getServerSideProps({ params, preview = false }) {
   const articles = await getClient(preview).fetch(QUERY);
 
   return {
     props: {
       data: { articles },
     },
-    revalidate: 86400,
+//     revalidate: 86400,
   };
 }
 
