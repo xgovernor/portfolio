@@ -1,11 +1,12 @@
 import { groq } from "next-sanity";
-import BlogGrid from "../../components/BlogGrid";
-import PageBanner from "../../components/PageBanner";
 import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/scene/Layout";
 import { getClient } from "../../lib/sanity.server";
 import IMG from "../../assets/images/blog.png";
 import { memo } from "react";
+import dynamic from "next/dynamic";
+const PageBanner = dynamic(() => import("../../components/PageBanner"));
+const BlogGrid = dynamic(() => import("../../components/BlogGrid"));
 
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[_type == "article"] {
@@ -46,14 +47,14 @@ function Blog({ data }) {
 }
 
 // export async function getStaticProps({ params, preview = false }) {
-export async function getServerSideProps({ params, preview = false }) {
+export async function getStaticProps({ preview = false }) {
   const articles = await getClient(preview).fetch(QUERY);
 
   return {
     props: {
       data: { articles },
     },
-//     revalidate: 86400,
+    revalidate: 60*60*24,
   };
 }
 
