@@ -1,7 +1,33 @@
 import { Field, Form, Formik } from "formik";
 import React, { memo } from "react";
+import * as Yup from "yup";
 
 function ContactForm({ onSubmit }) {
+   // Set initial values
+   const initialValues = {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+   };
+  
+  // Define form validation schema
+  const validationSchema = Yup.object().shape({
+    name: Yup.string().required("Please enter your full name"),
+    email: Yup.string().email("Invalid email address").required("Please enter your email address"),
+    phone: Yup.string().required("Please enter your phone number"),
+    message: Yup.string().required("Please enter your message"),
+  });
+
+  
+  // Handle form submission
+  const handleSubmit = (values, { setSubmitting }) => {
+    setTimeout(() => {
+      onSubmit(values);
+      setSubmitting(false);
+    }, 400);
+  };
+
   // Form Validation
   // A custom validation function. This must return an object
   // which keys are symmetrical to our values/initialValues
@@ -35,26 +61,10 @@ function ContactForm({ onSubmit }) {
     return errors;
   };
 
-  const initialValues = {
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  };
 
   return (
     <>
-      <Formik
-        initialValues={initialValues}
-        validate={validate}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            onSubmit(values);
-            setSubmitting(false);
-          }, 400);
-        }}
-      >
+      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
         {({
           values,
           errors,
@@ -64,7 +74,7 @@ function ContactForm({ onSubmit }) {
           handleSubmit,
           isSubmitting,
         }) => (
-          <Form onSubmit={handleSubmit}>
+          <Form>
             <div className="p__row">
               <label htmlFor="name">Full name</label>
               <Field

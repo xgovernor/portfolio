@@ -1,10 +1,11 @@
+import clsx from "clsx";
 import PropTypes from "prop-types";
 import { memo } from "react";
 
 function Container({ className, children, ...rest }) {
   return (
     <div
-      className={className ? `p_c__container ${className}` : `p_c__container`}
+      className={clsx('p_c__container', className)}
       {...rest}
     >
       {children}

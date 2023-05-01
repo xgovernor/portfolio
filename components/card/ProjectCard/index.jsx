@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { memo } from "react";
 import { arrayToString } from "../../../utils/string.utils";
 import Container from "../../components/Container";
+import clsx from "clsx";
 
 function ProjectCard({
   className,
@@ -15,9 +16,10 @@ function ProjectCard({
   url,
   ...rest
 }) {
-  console.log("URL", thumbnail);
+  const img = thumbnail ? thumbnail : "/images/placeholder.png";
+  
   return (
-    <div className="p_projectCard" {...rest}>
+    <div className={clsx("p_projectCard", className)} {...rest}>
       <Container className="p_projectCard__container">
         <div className="p_projectCard__content">
           <h4 className="p_subtitle_1">{category}</h4>
@@ -41,8 +43,7 @@ function ProjectCard({
         <div className="p_projectCard__thumbnail">
           <div className="p_projectCard__image">
             <Image
-              src={`/images/p1.jpg`}
-              //   src={thumbnail}
+              src={img}
               alt={title}
               width={562}
               height={323}

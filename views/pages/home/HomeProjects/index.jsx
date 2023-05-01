@@ -3,16 +3,15 @@ import ProjectCard from "../../../../components/card/ProjectCard";
 import Container from "../../../../components/components/Container";
 import { imageBuilder } from "../../../../lib/sanity";
 import S from "./HomeProjects.module.sass";
+import clsx from "clsx";
 
-const HomeProjects = ({ className, projects, ...rest }) => {
+const HomeProjects = ({ className, title, description, projects, ...rest }) => {
   return (
-    <section className={S.__section}>
+    <section className={clsx(S.__section, className)} {...rest}>
       <div className={S.__header}>
         <Container className={S.__container}>
-          <h4 className={S.__subHeading}>FEATURED PROJECTS</h4>
-          <h2 className={S.__heading}>
-            Projects in which Muhammad has been involved in recent years.
-          </h2>
+          <h4 className={S.__subHeading}>{ title }</h4>
+          <h2 className={S.__heading}>{ description }</h2>
         </Container>
       </div>
 

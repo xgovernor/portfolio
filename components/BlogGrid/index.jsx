@@ -1,33 +1,34 @@
-import { memo } from "react";
+import { Suspense, memo } from "react";
 import BlogCard from "../card/BlogCard";
 import Container from "../components/Container";
 import S from "./BlogGrid.module.sass";
+import clsx from "clsx";
 
 function BlogGrid({ className, articles, ...rest }) {
   return (
-    <>
-      <section className={S.__grid} {...rest}>
-        <Container className={S.__content}>
-          {articles?.map((article, i) => {
-            const meta = article.date._updatedAt
-              ? `UPDATED ${article.date._updatedAt}`
-              : `PUBLISHED ${article.date.publishedAt}`;
+    <section className={clsx(S.__grid, className)} {...rest}>
+      <Container className={S.__content}>
+        <Suspense fallback={<div>Loading...</div>}>
+          {articles?.map(({ slug, title, category, excerpt, date }, i) => {
+            const meta = date._updatedAt
+              ? `UPDATED ${date._updatedAt}`
+              : `PUBLISHED ${date.publishedAt}`;
 
             return (
               <BlogCard
                 key={i}
-                category={article?.category?.title}
+                category={category?.title}
                 meta={meta}
-                slug={article?.slug}
-                title={article?.title}
-                excerpt={article?.excerpt}
-                url={`/article/${article.slug}`}
+                slug={slug}
+                title={title}
+                excerpt={excerpt}
+                url={`/article/${slug}`}
               />
             );
           })}
-        </Container>
-      </section>
-    </>
+        </Suspense>
+      </Container>
+    </section>
   );
 }
 

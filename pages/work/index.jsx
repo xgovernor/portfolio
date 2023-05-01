@@ -1,12 +1,12 @@
 import { groq } from "next-sanity";
-import PageBanner from "../../components/PageBanner";
 import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/scene/Layout";
 import { getClient } from "../../lib/sanity.server";
-import WorkProjects from "../../views/pages/home/WorkProjects";
-// import IMG from "../../assets/images/work.jpg";
 import IMG from "../../assets/images/work.webp";
 import { memo } from "react";
+import dynamic from "next/dynamic";
+const PageBanner = dynamic(() => import("../../components/PageBanner"));
+const WorkProjects = dynamic(() => import("../../views/pages/home/WorkProjects"));
 
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[_type == "project"] {
@@ -53,7 +53,7 @@ function Work({ data }) {
   );
 }
 
-export async function getStaticProps({ params, preview = false }) {
+export async function getStaticProps({ preview = false }) {
   const projects = await getClient(preview).fetch(QUERY);
 
   return {

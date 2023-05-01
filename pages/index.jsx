@@ -1,12 +1,12 @@
 import { groq } from "next-sanity";
-import { useRouter } from "next/router";
-import { memo } from "react";
+import { Suspense, memo } from "react";
 import Layout from "../components/scene/Layout";
 import { getClient } from "../lib/sanity.server";
-import HomeAbout from "../views/pages/home/HomeAbout";
-import HomeArticles from "../views/pages/home/HomeArticles";
 import HomeHero from "../views/pages/home/HomeHero";
-import HomeProjects from "../views/pages/home/HomeProjects";
+import dynamic from "next/dynamic";
+const HomeAbout = dynamic(() => import("../views/pages/home/HomeAbout"));
+const HomeProjects = dynamic(() => import("../views/pages/home/HomeProjects"));
+const HomeArticles = dynamic(() => import("../views/pages/home/HomeArticles"));
 
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[(_type == "project" || _type == "article") && featured == true] {
@@ -31,23 +31,13 @@ const QUERY = groq`*[(_type == "project" || _type == "article") && featured == t
 	technology,
   }`;
 
-function HomePage({ data, preview }) {
-  const router = useRouter();
-
-  // if (!router.isFallback && !data.post?.slug) {
-  // 	return <ErrorPage statusCode={200} />;
-  // }
-
   const pageData = {
     title: "Abu Taher Muhammad",
     class: "p_page_home",
   };
-  const dataImg = {
-    url: "/images/index.jpg",
-    alt: "About banner Image",
-    width: 1444,
-    height: 579,
-  };
+
+function HomePage({ data, preview }) {
+
 
   return (
     <>
@@ -58,15 +48,23 @@ function HomePage({ data, preview }) {
             "https://drive.google.com/file/d/1osz9wNueb0Ac9gGXk1QQgRwlu5UnKN6B/view?usp=sharing"
           }
         />
-        <HomeAbout />
-        <HomeProjects projects={data?.projects} />
-        <HomeArticles articles={data?.articles} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <HomeAbout />
+        </Suspense>
+
+        <Suspense fallback={<div>Loading...</div>}>
+          <HomeProjects title="FEATURED PROJECTS" description="Projects in which Muhammad has been involved in recent years." projects={data?.projects} />
+        </Suspense>
+
+        <Suspense fallback={<div>Loading...</div>}>
+          <HomeArticles articles={data?.articles} />
+        </Suspense>
       </Layout>
     </>
   );
 }
 
-export async function getStaticProps({ params, preview = false }) {
+export async function getStaticProps({ preview = false }) {
   /**
    * Getting 3 featured project & 2 featured articles.
    */

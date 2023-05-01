@@ -7,12 +7,9 @@ import IMG from "../../../../assets/images/about.webp";
 
 const HomeAbout = ({}) => {
   return (
-    <>
       <section className={S.__section}>
         <Container className={S.__headerContainer}>
-          {/* Image */}
           <div className={S.__imageWrapper}>
-            {/* <Parallax speed={-5}> */}
             <Image
               className={S.__image}
               // src={`/images/home-about.jpg`}
@@ -21,7 +18,6 @@ const HomeAbout = ({}) => {
               width={1088}
               height={556}
             />
-            {/* </Parallax> */}
           </div>
         </Container>
 
@@ -57,7 +53,6 @@ const HomeAbout = ({}) => {
           </div>
         </Container>
       </section>
-    </>
   );
 };
 

@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Container from "../../components/components/Container";
-import PageBanner from "../../components/PageBanner";
 import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/scene/Layout";
-import ContactForm from "./ContactForm";
-// import IMG from "../../assets/images/contact.jpg";
 import IMG from "../../assets/images/contact3.webp";
-import { memo, useContext } from "react";
+import { memo } from "react";
+import dynamic from "next/dynamic";
+const PageBanner = dynamic(() => import("../../components/PageBanner"));
+const ContactForm = dynamic(() => import("./ContactForm"));
 
 function Contact() {
   /**
@@ -16,7 +16,7 @@ function Contact() {
    * 	2) A copy will be sent to my email.
    * 	3) A copy of response will store on the sanity.
    */
-  const formSubmitHandler = useContext((values) => {
+  const formSubmitHandler = (values) => {
     // Response Object
     // {
     // 	"name": "Abu Taher Muhammad",
@@ -24,8 +24,8 @@ function Contact() {
     // 	"phone": "01627085640",
     // 	"message": "Nice to meet you Mr. Muhammad. I need some help with a project of mine."
     // }
-    // console.log(values);
-  }, []);
+    console.log(values);
+  };
 
   return (
     <>

@@ -1,10 +1,12 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { truncate } from "../../../utils/string.utils";
+import clsx from "clsx";
+import { memo } from "react";
 
 function BlogCard({ className, meta, url, title, excerpt, ...rest }) {
   return (
-    <div className={`p_c__blogCard ${className ? className : ""}`} {...rest}>
+    <div className={clsx('p_c__blogCard', className)} {...rest}>
       <div>
         <h4 className="p__meta">{meta}</h4>
         <Link href={url} className="p__title__link">
@@ -32,4 +34,4 @@ BlogCard.propTypes = {
   rest: PropTypes.object,
 };
 
-export default BlogCard;
+export default memo(BlogCard);
