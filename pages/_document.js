@@ -1,14 +1,12 @@
-/** @format */
-
 import { Head, Html, Main, NextScript } from "next/document";
-import Meta from "../views/shared/Meta/Meta";
+import Meta from "../components/Meta";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
         {/* Common Meta Data */}
-        <Meta />
+        {/* <Meta /> */}
         <meta name="theme-color" content="#000" />
 
         {/* Google Custom Font */}

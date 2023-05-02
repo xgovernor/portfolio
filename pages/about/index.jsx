@@ -5,20 +5,25 @@ import AboutBody from "../../views/pages/about/AboutBody";
 // import IMG from "../../assets/images/about.jpg";
 import IMG from "../../assets/images/about.webp";
 import { memo } from "react";
+import Meta from "../../components/Meta";
 
 function About() {
   return (
-    <Layout data={{ class: "p_page_about" }}>
-      <PageHeader
-        data={{
-          heading: "FAMILY & FRIENDS, ACHIEVEMENTS, ETC.",
-          subheading: ["Journey.", "Purification.", "Rewards reimagined."],
-        }}
-      />
-      <PageBanner img={IMG} />
-      {/* <AboutQuote /> */}
-      <AboutBody />
-    </Layout>
+    <>
+      <Meta title="About" />
+
+      <Layout data={{ class: "p_page_about" }}>
+        <PageHeader
+          data={{
+            heading: "FAMILY & FRIENDS, ACHIEVEMENTS, ETC.",
+            subheading: ["Journey.", "Purification.", "Rewards reimagined."],
+          }}
+        />
+        <PageBanner img={IMG} />
+        {/* <AboutQuote /> */}
+        <AboutBody />
+      </Layout>
+    </>
   );
 }
 

@@ -5,8 +5,11 @@ import { getClient } from "../../lib/sanity.server";
 import IMG from "../../assets/images/work.webp";
 import { memo } from "react";
 import dynamic from "next/dynamic";
+import Meta from "../../components/Meta";
 const PageBanner = dynamic(() => import("../../components/PageBanner"));
-const WorkProjects = dynamic(() => import("../../views/pages/home/WorkProjects"));
+const WorkProjects = dynamic(() =>
+  import("../../views/pages/home/WorkProjects")
+);
 
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[_type == "project"] {
@@ -34,6 +37,8 @@ const QUERY = groq`*[_type == "project"] {
 function Work({ data }) {
   return (
     <>
+      <Meta title="Work" />
+
       <Layout className="page__work">
         <PageHeader
           data={{

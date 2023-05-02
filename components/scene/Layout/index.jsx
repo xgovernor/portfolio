@@ -13,7 +13,7 @@ const Layout = ({ className, children, ...rest }) => (
       animate={{ opacity: 1, transition: "opacity 1s ease" }}
       exit={{ opacity: 0, transition: "opacity 1s ease" }}
     >
-      <main className={clsx('p_page', className)} {...rest}>
+      <main className={clsx("p_page", className)} {...rest}>
         {children}
       </main>
     </motion.div>

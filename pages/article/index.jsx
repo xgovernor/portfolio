@@ -5,6 +5,7 @@ import { getClient } from "../../lib/sanity.server";
 import IMG from "../../assets/images/blog.png";
 import { memo } from "react";
 import dynamic from "next/dynamic";
+import Meta from "../../components/Meta";
 const PageBanner = dynamic(() => import("../../components/PageBanner"));
 const BlogGrid = dynamic(() => import("../../components/BlogGrid"));
 
@@ -29,20 +30,24 @@ const QUERY = groq`*[_type == "article"] {
 
 function Blog({ data }) {
   return (
-    <Layout>
-      <PageHeader
-        data={{
-          heading: "KNOWLEDGE BOOK",
-          subheading: [
-            "Occasional",
-            "thoughts & insights.",
-            "from Muhammad's life.",
-          ],
-        }}
-      />
-      <PageBanner img={IMG} />
-      <BlogGrid articles={data?.articles} />
-    </Layout>
+    <>
+      <Meta title="Blog" />
+
+      <Layout>
+        <PageHeader
+          data={{
+            heading: "KNOWLEDGE BOOK",
+            subheading: [
+              "Occasional",
+              "thoughts & insights.",
+              "from Muhammad's life.",
+            ],
+          }}
+        />
+        <PageBanner img={IMG} />
+        <BlogGrid articles={data?.articles} />
+      </Layout>
+    </>
   );
 }
 
@@ -54,7 +59,7 @@ export async function getStaticProps({ preview = false }) {
     props: {
       data: { articles },
     },
-    revalidate: 60*60*24,
+    revalidate: 60 * 60 * 24,
   };
 }
 

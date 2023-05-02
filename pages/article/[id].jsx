@@ -5,6 +5,7 @@ import SingleHeader from "../../components/article/SingleHeader";
 import SingleUpdateStatus from "../../components/article/SingleUpdateStatus";
 import NavigationalArticles from "../../components/NavigationArticles";
 import Layout from "../../components/scene/Layout";
+import Meta from "../../components/Meta";
 
 const DATA_BLOG = [
   {
@@ -49,13 +50,16 @@ function ArticlesSingle() {
   };
 
   return (
-    <Layout style={{ background: "#f6f6f6" }}>
-      <SingleHeader data={singleArticleHeader} />
-      <SingleCover data={singleArticleCover} />
-      <SingleContent />
-      <SingleUpdateStatus />
-      <NavigationalArticles articles={DATA_BLOG} />
-    </Layout>
+    <>
+      <Meta />
+      <Layout style={{ background: "#f6f6f6" }}>
+        <SingleHeader data={singleArticleHeader} />
+        <SingleCover data={singleArticleCover} />
+        <SingleContent />
+        <SingleUpdateStatus />
+        <NavigationalArticles articles={DATA_BLOG} />
+      </Layout>
+    </>
   );
 }
 

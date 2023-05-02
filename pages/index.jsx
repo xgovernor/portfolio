@@ -4,6 +4,7 @@ import Layout from "../components/scene/Layout";
 import { getClient } from "../lib/sanity.server";
 import HomeHero from "../views/pages/home/HomeHero";
 import dynamic from "next/dynamic";
+import Meta from "../components/Meta";
 const HomeAbout = dynamic(() => import("../views/pages/home/HomeAbout"));
 const HomeProjects = dynamic(() => import("../views/pages/home/HomeProjects"));
 const HomeArticles = dynamic(() => import("../views/pages/home/HomeArticles"));
@@ -31,16 +32,16 @@ const QUERY = groq`*[(_type == "project" || _type == "article") && featured == t
 	technology,
   }`;
 
-  const pageData = {
-    title: "Abu Taher Muhammad",
-    class: "p_page_home",
-  };
+const pageData = {
+  title: "Abu Taher Muhammad",
+  class: "p_page_home",
+};
 
 function HomePage({ data, preview }) {
-
-
   return (
     <>
+      <Meta />
+
       <Layout data={pageData}>
         <HomeHero
           title={["Designer, developer", "and freethinker."]}
@@ -53,7 +54,11 @@ function HomePage({ data, preview }) {
         </Suspense>
 
         <Suspense fallback={<div>Loading...</div>}>
-          <HomeProjects title="FEATURED PROJECTS" description="Projects in which Muhammad has been involved in recent years." projects={data?.projects} />
+          <HomeProjects
+            title="FEATURED PROJECTS"
+            description="Projects in which Muhammad has been involved in recent years."
+            projects={data?.projects}
+          />
         </Suspense>
 
         <Suspense fallback={<div>Loading...</div>}>

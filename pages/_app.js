@@ -12,8 +12,6 @@ const GOOGLE_GTAG_MEASUREMENT_ID = "GTM-N3QF76C";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Head></Head>
-      {/* Moved from HEAD */}
       {/* Google Tag Manager */}
       <Script
         id="GTag"

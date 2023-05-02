@@ -5,6 +5,7 @@ import Layout from "../../components/scene/Layout";
 import IMG from "../../assets/images/contact3.webp";
 import { memo } from "react";
 import dynamic from "next/dynamic";
+import Meta from "../../components/Meta";
 const PageBanner = dynamic(() => import("../../components/PageBanner"));
 const ContactForm = dynamic(() => import("./ContactForm"));
 
@@ -29,6 +30,8 @@ function Contact() {
 
   return (
     <>
+      <Meta title="Contact" />
+
       <Layout>
         <PageHeader
           data={{
@@ -41,9 +44,9 @@ function Contact() {
 
         <section className="p_contact_form" data-scroll-section>
           <Container className="p_header">
-            <h1 data-scroll className="p__subtitle">
+            <h2 data-scroll className="p__subtitle">
               Contact me
-            </h1>
+            </h2>
           </Container>
 
           <Container className="p_content">
