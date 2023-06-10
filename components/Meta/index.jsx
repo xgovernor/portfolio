@@ -37,12 +37,12 @@ const Meta = ({ title, description, image, children }) => {
 				<meta property="og:url" content="https://abutahermuhammad.com/" />
 				<meta
 					property="og:deScription"
-					content="Abu Taher Muhammad is a MERN stack web developer from Bangladesh. He is also experienced with WordPress, Data scraping with python. In his spare time, he likes to study robotics, read books, etc."
+					content="Abu Taher Muhammad, a MERN stack web developer from Bangladesh, is well-versed in Laravel, WordPress, and Python data scraping. Fascinated by Cyber Security, AI, and Medical technology, he aspires to build future tech startups in these domains. In his spare time, Abu Taher enjoys studying robotics and reading books. With a strong technical background and a thirst for knowledge, he is poised to make a significant impact in web development."
 				/>
 				<meta property="og:type" content="profile" />
 				<meta
 					property="og:image"
-					content="https://abutahermuhammad.com/image/avater.png"
+					content="https://abutahermuhammad.com/images/avater.png"
 				/>
 
 				{/* Twitter Card */}
@@ -54,8 +54,8 @@ const Meta = ({ title, description, image, children }) => {
 				<meta name="twitter:creator" content="@abutahermuhammad" />
 
 				{/* Favicons */}
-				<link rel="icon" href="/favicon.ico" />
-				<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+				<link rel="icon" href="/images/favicon.svg" />
+				<link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
 				<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 				<link rel="manifest" href="/manifest.json" />
 				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
