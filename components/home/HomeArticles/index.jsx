@@ -1,7 +1,7 @@
 import React from "react";
-import BlogCard from "../../../../components/card/BlogCard";
-import Container from "../../../../components/components/Container";
 import S from "./HomeArticles.module.sass";
+import Container from "../../components/Container";
+import BlogCard from "../../card/BlogCard";
 
 const HomeArticles = ({ className, articles, ...rest }) => {
   return (

@@ -1,13 +1,13 @@
 import { groq } from "next-sanity";
 import { Suspense, memo } from "react";
 import Layout from "../components/scene/Layout";
-import { getClient } from "../lib/sanity.server";
-import HomeHero from "../views/pages/home/HomeHero";
+import HomeHero from "../components/home/HomeHero";
 import dynamic from "next/dynamic";
 import Meta from "../components/Meta";
-const HomeAbout = dynamic(() => import("../views/pages/home/HomeAbout"));
-const HomeProjects = dynamic(() => import("../views/pages/home/HomeProjects"));
-const HomeArticles = dynamic(() => import("../views/pages/home/HomeArticles"));
+import { getClient } from "../utils/sanity";
+const HomeAbout = dynamic(() => import("../components/home/HomeAbout"));
+const HomeProjects = dynamic(() => import("../components/home/HomeProjects"));
+const HomeArticles = dynamic(() => import("../components/home/HomeArticles"));
 
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[(_type == "project" || _type == "article") && featured == true] {

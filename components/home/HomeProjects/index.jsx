@@ -1,17 +1,17 @@
 import { memo } from "react";
-import ProjectCard from "../../../../components/card/ProjectCard";
-import Container from "../../../../components/components/Container";
-import { imageBuilder } from "../../../../lib/sanity";
 import S from "./HomeProjects.module.sass";
 import clsx from "clsx";
+import Container from "../../components/Container";
+import ProjectCard from "./../../card/ProjectCard";
+import { imageBuilder } from "../../../utils/sanity";
 
 const HomeProjects = ({ className, title, description, projects, ...rest }) => {
   return (
     <section className={clsx(S.__section, className)} {...rest}>
       <div className={S.__header}>
         <Container className={S.__container}>
-          <h4 className={S.__subHeading}>{ title }</h4>
-          <h2 className={S.__heading}>{ description }</h2>
+          <h4 className={S.__subHeading}>{title}</h4>
+          <h2 className={S.__heading}>{description}</h2>
         </Container>
       </div>
 

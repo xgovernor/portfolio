@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Parallax } from "react-scroll-parallax";
-import Container from "../../../../components/components/Container";
 import S from "./HomeAbout.module.sass";
-import IMG from "../../../../assets/images/about.webp";
+import IMG from "./../../../assets/images/about.webp";
+import Container from "../../components/Container";
 
 const HomeAbout = ({}) => {
   return (

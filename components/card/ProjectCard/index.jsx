@@ -3,10 +3,10 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 import { memo } from "react";
 import { arrayToString } from "../../../utils/string.utils";
-import Container from "../../components/Container";
 import clsx from "clsx";
+import Container from "../../components/Container";
 
-function ProjectCard({
+const ProjectCard = ({
   className,
   category,
   thumbnail,
@@ -15,9 +15,9 @@ function ProjectCard({
   technologies,
   url,
   ...rest
-}) {
+}) => {
   const img = thumbnail ? thumbnail : "/images/placeholder.png";
-  
+
   return (
     <div className={clsx("p_projectCard", className)} {...rest}>
       <Container className="p_projectCard__container">
@@ -42,18 +42,13 @@ function ProjectCard({
         </div>
         <div className="p_projectCard__thumbnail">
           <div className="p_projectCard__image">
-            <Image
-              src={img}
-              alt={title}
-              width={562}
-              height={323}
-            />
+            <Image src={img} alt={title} width={562} height={323} />
           </div>
         </div>
       </Container>
     </div>
   );
-}
+};
 
 ProjectCard.propTypes = {
   className: PropTypes.string,
