@@ -26,6 +26,20 @@ function Contact() {
     // 	"message": "Nice to meet you Mr. Muhammad. I need some help with a project of mine."
     // }
     console.log(values);
+    fetch("/api/mail", {
+      method: "POST",
+      body: JSON.stringify(values),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        console.log("Response received");
+        if (res.status === 200) {
+          console.log("Response succeeded!");
+        }
+      }
+    )
   };
 
   return (
@@ -36,7 +50,7 @@ function Contact() {
         <PageHeader
           data={{
             heading: "GET IN TOUCH",
-            subheading: ["Life.", "It could just the", "thing your brand need"],
+            subheading: ["ENGAGE.", "EXPLORE & DISCOVER.", "IGNITE POSSIBILITIES."],
           }}
         />
 
