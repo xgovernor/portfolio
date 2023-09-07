@@ -113,7 +113,7 @@ const AboutBody = () => {
                       <p className={S.__pBody}>Ferne Health</p>
                     </td>
                     <td className={S.__right}>
-                      <p className={S.__pBody}>2022 - Current</p>
+                      <p className={S.__pBody}>2022</p>
                     </td>
                   </tr>
 
@@ -187,7 +187,9 @@ const AboutBody = () => {
                       </h4>
                     </td>
                     <td className={S.__center}>
-                      <p className={S.__pBody}>Leadign University</p>
+                      <p className={S.__pBody}>
+                        Metropolitan University, Sylhet.
+                      </p>
                     </td>
                     <td className={S.__right}>
                       <p className={S.__pBody}>2021 - Current</p>
