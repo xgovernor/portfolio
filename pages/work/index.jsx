@@ -44,9 +44,9 @@ function Work({ data }) {
           data={{
             heading: "WORKS",
             subheading: [
-              "Craft. Experiences",
-              "where creativity",
-              "meets technology.",
+              "FORGING EXPERIENCES",
+              "WHERE CREATIVITY",
+              "EMBRACES TECHNOLOGY.",
             ],
           }}
         />
