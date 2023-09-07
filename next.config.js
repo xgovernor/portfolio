@@ -1,11 +1,3 @@
-const ContentSecurityPolicy = `
-  default-src 'self';
-  script-src 'self' 'random-nonce-value';
-  child-src at-mah.vercel.app;
-  style-src 'self' at-mah.vercel.app;
-  font-src 'self';
-`;
-
 module.exports = {
   images: {
     domains: ["cdn.sanity.io", "images.pexels.com"],
@@ -54,11 +46,7 @@ module.exports = {
         },
         {
           key: 'Permissions-Policy',
-          value: 'geolocation=(), browsing-topics=()',
-        },
-        {
-          key: 'Content-Security-Policy',
-          value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
+          value: 'geolocation=()',
         },
       ],
     },
