@@ -2,91 +2,400 @@
 // Single Article
 // ===========================
 .p_single_header
-    padding-top: 130px
-    padding-bottom: 100px
-    .p_container
-        width: 862px
+    .p_c__container
         .p_meta_cat
-            margin-bottom: 10px
-            font-weight: bold
-            font-size: 14px
-            line-height: 14px
-            color: rgba(0, 12, 25, 0.7)
+            font-family: 'NHaasGroteskDSPro'
+            font-weight: 700
+            color: #000
+            // color: rgba(0, 12, 25, 0.7)
+            text-transform: uppercase
         .p__title
-            margin-bottom: 20px
-            font-weight: bold
-            font-size: 58px
-            line-height: 62px
+            font-family: 'NHaasGroteskDSPro'
+            font-weight: 700
             color: #000C19
+            // inline-size: 100%
+            overflow-wrap: break-all
+            // word-break: break-all
+            hyphens: manual
         .p_meta_date
             font-weight: normal
-            font-size: 14px
-            line-height: 14px
-            color: rgba(0, 12, 26, 0.7)
+            color: rgba(0, 12, 25, 0.7)
 
 .p_single_content
     .p_container_single
-        width: 862px
         margin: 0 auto
-        padding-top: 70px
-        padding-bottom: 30px
         border-bottom: 1px solid hsla(0, 0%, 0%, 0.12)
 
         p, h2, blockquote
-            width: 710px
+            width: 100%
+            max-width: 710px
             margin-right: auto
             margin-left: auto
         p
-            margin-bottom: 25px
             // color: #717171
-            line-height: 150%
         h2
-            margin-top: 20px
-            margin-bottom: 10px
-            font-size: 24px
-            line-height: 30px
+            font-family: 'NHaasGroteskDSPro'
             color: #000C19
+
         blockquote
-            margin-top: 20px
-            margin-bottom: 35px
-            padding: 45px
+            font-family: 'NHaasGroteskDSPro'
             font-weight: 500
-            font-size: 15px
-            line-height: 24px
+            letter-spacing: 0.02em
             color: #000000
             background: #F4F6F6
-            // border: 1px solid hsla(0, 0%, 0%, 0.12)
+            border: 1px solid hsla(0, 0%, 0%, 0.12)
+
+        pre, code
+            font-family: "CCI"
         pre
-            width: 710px
-            margin: 25px auto 35px auto
-            padding: 35px
+            width: 100%
+            max-width: 710px
             color: #AEAEAE
-            font-size: 14px
-            line-height: 22px
             background: #0b0b0c
+            overflow-x: auto
+
         .p_2c_img
-            width: 862px
-            margin: 20px auto 35px auto
+            width: 100%
+            max-width: 862px
+            margin-right: auto
+            margin-left: auto
             display: flex
             justify-content: space-between
             align-items: center
             .p_2c_left
-                width: 413px
+                width: 100%
+                max-width: 413px
                 height: auto
-                margin-right: 36px
             .p_2c_right
-                width: 413px
+                width: 100%
+                max-width: 413px
                 height: auto
         .p_1c_img
-            width: 862px
-            margin: 35px auto
+            width: 100%
+            max-width: 862px
+            margin-left: auto
+            margin-right: auto
 
 .p_single_update
     .p_container_single
-        width: 862px
-        margin: 20px auto 130px auto
+        width: 100%
+        max-width: 862px
+        margin-left: auto
+        margin-right: auto
         p
             font-weight: normal
-            font-size: 12px
-            line-height: 14px
             color: #4D4D4D
+
+@media (max-width: 767px)
+    .p_single_header
+        padding-top: 40px
+        padding-bottom: 40px
+        .p_c__container
+            padding: 0 30px
+            .p_meta_cat
+                margin-bottom: 10px
+                font-size: 12px
+                line-height: 14px
+            .p__title
+                margin-bottom: 20px
+                font-size: 34px
+                line-height: 38px
+            .p_meta_date
+                font-size: 14px
+                line-height: 14px
+
+    .p_single_content
+        .p_container_single
+            // width: 862px
+            margin: 0 auto
+            padding: 40px 30px 0px 30px
+            border-bottom: 1px solid hsla(0, 0%, 0%, 0.12)
+
+            p, h2, blockquote
+            p
+                margin-bottom: 25px
+                font-size: 16px
+                line-height: 25px
+            h2
+                margin-top: 20px
+                margin-bottom: 10px
+                font-size: 24px
+                line-height: 34px
+
+            blockquote
+                margin-top: 20px
+                margin-bottom: 35px
+                padding: 30px
+                font-size: 16px
+                line-height: 23px
+
+            pre, code
+            pre
+                // width: 710px
+                margin: 25px auto 35px auto
+                padding: 35px
+                font-size: 14px
+                line-height: 22px
+
+            .p_2c_img
+                // width: 862px
+                margin-top: 20px
+                margin-bottom: 20px
+                flex-direction: column
+                justify-content: center
+                gap: 30px
+                .p_2c_left
+                .p_2c_right
+            .p_1c_img
+                margin: 35px auto
+
+    .p_single_update
+        .p_container_single
+            // width: 862px
+            margin-top: 15px
+            margin-bottom: 40px
+            p
+                font-size: 12px
+                line-height: 14px
+
+@media (min-width: 768px) and (max-width: 1023px)
+    .p_single_header
+        padding-top: 60px
+        padding-bottom: 40px
+        .p_c__container
+            padding: 0 80px
+            .p_meta_cat
+                margin-bottom: 10px
+                font-size: 12px
+                line-height: 14px
+            .p__title
+                margin-bottom: 20px
+                font-size: 48px
+                line-height: 58px
+            .p_meta_date
+                font-size: 14px
+                line-height: 14px
+
+    .p_single_content
+        .p_container_single
+            // width: 862px
+            margin: 0 auto
+            padding: 60px 50px 0px 50px
+            border-bottom: 1px solid hsla(0, 0%, 0%, 0.12)
+
+            p, h2, blockquote
+            p
+                margin-bottom: 25px
+                font-size: 16px
+                line-height: 25px
+            h2
+                margin-top: 20px
+                margin-bottom: 10px
+                font-size: 24px
+                line-height: 34px
+
+            blockquote
+                margin-top: 20px
+                margin-bottom: 35px
+                padding: 30px
+                font-size: 16px
+                line-height: 23px
+
+            pre, code
+            pre
+                // width: 710px
+                margin: 25px auto 35px auto
+                padding: 35px
+                font-size: 14px
+                line-height: 22px
+
+            .p_2c_img
+                // width: 862px
+                margin-top: 20px
+                margin-bottom: 20px
+                gap: 30px
+                .p_2c_left
+                .p_2c_right
+            .p_1c_img
+                margin: 35px auto
+
+    .p_single_update
+        .p_container_single
+            // width: 862px
+            margin-top: 15px
+            margin-bottom: 40px
+            p
+                font-size: 12px
+                line-height: 14px
+
+@media (min-width: 1024px) and (max-width: 1365px)
+    .p_single_header
+        padding-top: 80px
+        padding-bottom: 60px
+        .p_c__container
+            padding: 0 80px
+            .p_meta_cat
+                margin-bottom: 10px
+                font-size: 12px
+                line-height: 14px
+            .p__title
+                margin-bottom: 20px
+                font-size: 58px
+                line-height: 72px
+            .p_meta_date
+                font-size: 14px
+                line-height: 14px
+
+    .p_single_content
+        .p_container_single
+            // width: 862px
+            margin: 0 auto
+            padding: 60px 50px 0px 50px
+            border-bottom: 1px solid hsla(0, 0%, 0%, 0.12)
+
+            p, h2, blockquote
+            p
+                margin-bottom: 25px
+                font-size: 16px
+                line-height: 25px
+            h2
+                margin-top: 20px
+                margin-bottom: 10px
+                font-size: 24px
+                line-height: 34px
+
+            blockquote
+                margin-top: 20px
+                margin-bottom: 35px
+                padding: 30px
+                font-size: 16px
+                line-height: 23px
+
+            pre, code
+            pre
+                // width: 710px
+                margin: 25px auto 35px auto
+                padding: 35px
+                font-size: 14px
+                line-height: 22px
+
+            .p_2c_img
+                // width: 862px
+                margin: 20px auto
+                gap: 30px
+                .p_2c_left
+                .p_2c_right
+            .p_1c_img
+                margin: 35px auto
+
+    .p_single_update
+        .p_container_single
+            // width: 862px
+            margin-top: 15px
+            margin-bottom: 40px
+            p
+                font-size: 12px
+                line-height: 14px
+
+@media (min-width: 1366px)
+    .p_single_header
+        padding-top: 130px
+        padding-bottom: 100px
+        .p_c__container
+            width: 862px
+            .p_meta_cat
+                margin-bottom: 10px
+                font-family: 'NHaasGroteskDSPro'
+                font-weight: 700
+                font-size: 14px
+                line-height: 14px
+                color: black
+                // color: rgba(0, 12, 25, 0.7)
+                text-transform: uppercase
+            .p__title
+                margin-bottom: 20px
+                font-family: 'NHaasGroteskDSPro'
+                font-weight: 700
+                font-size: 62px
+                line-height: 72px
+                color: #000C19
+            .p_meta_date
+                font-weight: normal
+                font-size: 14px
+                line-height: 14px
+                color: rgba(0, 12, 25, 0.7)
+
+    .p_single_content
+        .p_container_single
+            width: 862px
+            margin: 0 auto
+            padding-top: 70px
+            padding-bottom: 30px
+            border-bottom: 1px solid hsla(0, 0%, 0%, 0.12)
+
+            p, h2, blockquote
+                width: 710px
+                margin-right: auto
+                margin-left: auto
+            p
+                margin-bottom: 25px
+                // color: #717171
+                font-size: 17px
+                line-height: 28px
+            h2
+                margin-top: 20px
+                margin-bottom: 10px
+                font-family: 'NHaasGroteskDSPro'
+                font-size: 24px
+                line-height: 34px
+                color: #000C19
+            blockquote
+                margin-top: 20px
+                margin-bottom: 35px
+                padding: 45px
+                font-family: 'NHaasGroteskDSPro'
+                font-weight: 500
+                font-size: 16px
+                line-height: 24px
+                letter-spacing: 0.02em
+                color: #000000
+                background: #F4F6F6
+                border: 1px solid hsla(0, 0%, 0%, 0.12)
+
+            pre, code
+                font-family: "CCI"
+            pre
+                width: 710px
+                margin: 25px auto 35px auto
+                padding: 35px
+                color: #AEAEAE
+                font-size: 14px
+                line-height: 22px
+                background: #0b0b0c
+
+            .p_2c_img
+                width: 862px
+                margin: 20px auto 35px auto
+                display: flex
+                justify-content: space-between
+                align-items: center
+                .p_2c_left
+                    width: 413px
+                    height: auto
+                    margin-right: 36px
+                .p_2c_right
+                    width: 413px
+                    height: auto
+            .p_1c_img
+                width: 862px
+                margin: 35px auto
+
+    .p_single_update
+        .p_container_single
+            width: 862px
+            margin: 20px auto 130px auto
+            p
+                font-weight: normal
+                font-size: 12px
+                line-height: 14px
+                color: #4D4D4D

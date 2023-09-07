@@ -1,0 +1,127 @@
+
+.__aboutInfo
+.__container
+.__infoSection
+    width: 100%
+    display: flex
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.12)
+
+.__cardLeft
+.__h2
+    color: #000000
+
+.__cardRight
+.__pBody
+    color: #4D4D4D
+    &:last-of-type
+        margin-bottom: 0
+
+.__left
+    color: #000000
+    text-align: left
+    font-family: "Neue Haas Grotesk Display Pro"
+.__center
+    text-align: center
+.__right
+    text-align: right
+
+@media screen and (max-width: 767px)
+    .__aboutInfo
+    .__container
+        width: 100%
+        padding: 10px 0 40px 0
+    .__infoSection
+        padding: 30px
+        flex-direction: column
+        gap: 20px
+
+    .__cardLeft
+    .__h2
+        font-size: 16px
+
+    .__cardRight
+    .__pBody
+        margin-bottom: 15px
+        // font-size: 15px
+        line-height: 20px
+        &:last-of-type
+            margin-bottom: 0
+
+    .__left
+    .__center
+    .__right
+
+@media screen and (min-width: 768px) and (max-width: 1023px)    // Tablet
+    .__container
+        padding: 25px 50px
+    .__infoSection
+        padding-top: 45px
+        padding-bottom: 45px
+        justify-content: space-between
+        gap: 30px
+    // .__infoSection
+    //     padding-top: 25px
+    //     padding-bottom: 25px
+        justify-content: space-between
+    .__cardLeft
+        // width: 186px
+        width: 30%
+        max-width: 176px
+        .__h2
+            font-size: 18px
+            line-height: 25px
+    .__cardRight
+        // width: 513px
+        width: calc(100% - 236px)
+        max-width: 650px
+    .__pBody
+        margin-bottom: 15px
+        // font-size: 15px
+        line-height: 23px
+    // p
+    //     margin-bottom: 15px
+
+@media screen and (min-width: 1024px) and (max-width: 1365px)   // Retinal Device
+    .__container
+        padding: 55px 60px
+    .__infoSection
+        padding-top: 45px
+        padding-bottom: 45px
+        justify-content: space-between
+    .__cardLeft
+        width: 250px
+    .__h2
+        font-size: 16px
+        line-height: 25px
+
+    .__cardRight
+        width: 693px
+    .__pBody
+        margin-bottom: 15px
+        line-height: 23px
+    // p
+    //     margin-bottom: 20px
+
+@media screen and (min-width: 1366px)   // Desktop Device and so on
+    .p_page_about
+    .p_about_quote
+    .__container
+        // width: 744px
+        padding-top: 85px
+        padding-bottom: 100px
+    .__aboutInfo
+    .__infoSection
+        padding-top: 45px
+        padding-bottom: 45px
+        justify-content: space-between
+    .__cardLeft
+        width: 250px
+    .__h2
+        font-size: 16px
+        line-height: 25px
+    .__cardRight
+        width: 786px
+    .__pBody
+        margin-bottom: 20px
+        font-size: 15px
+        line-height: 24px
