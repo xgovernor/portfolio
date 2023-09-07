@@ -15,7 +15,7 @@ function About() {
       <Layout data={{ class: "p_page_about" }}>
         <PageHeader
           data={{
-            heading: "FAMILY & FRIENDS, ACHIEVEMENTS, ETC.",
+            heading: "FAMILY, FRIENDS, ACHIEVEMENTS, AND BEYOND",
             subheading: ["Journey.", "Purification.", "Rewards reimagined."],
           }}
         />
