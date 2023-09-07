@@ -88,6 +88,7 @@ function ContactForm({ onSubmit }) {
                 onBlur={handleBlur}
                 value={values.name}
                 placeholder="Jhon Doe"
+                autoComplete
               />
               {touched.name && errors.name ? (
                 <p className="p__error">{errors.name}</p>
@@ -106,6 +107,7 @@ function ContactForm({ onSubmit }) {
                 onBlur={handleBlur}
                 value={values.email}
                 placeholder="e.g. example@mail.com"
+                autoComplete
               />
               {touched.email && errors.email ? (
                 <p className="p__error">{errors.email}</p>
@@ -122,6 +124,7 @@ function ContactForm({ onSubmit }) {
                 onBlur={handleBlur}
                 value={values.phone}
                 placeholder="e.g. (xxx)-xxxx-xxxxxx"
+                autoComplete
               />
               {touched.phone && errors.phone ? (
                 <p className="p__error">{errors.phone}</p>
@@ -138,6 +141,7 @@ function ContactForm({ onSubmit }) {
                 onBlur={handleBlur}
                 value={values.message}
                 placeholder="Write something"
+                autoComplete
               />
               {touched.message && errors.message ? (
                 <p className="p__error">{errors.message}</p>
