@@ -1,15 +1,15 @@
 import Link from "next/link";
+import { memo } from "react";
+import dynamic from "next/dynamic";
 import Container from "../../components/components/Container";
 import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/scene/Layout";
 import IMG from "../../assets/images/contact3.webp";
-import { memo } from "react";
-import dynamic from "next/dynamic";
 import Meta from "../../components/Meta";
 const PageBanner = dynamic(() => import("../../components/PageBanner"));
 const ContactForm = dynamic(() => import("./ContactForm"));
 
-function Contact() {
+const Contact = () => {
   /**
    * ToDo
    * On Every Submit:
@@ -17,40 +17,37 @@ function Contact() {
    * 	2) A copy will be sent to my email.
    * 	3) A copy of response will store on the sanity.
    */
-  const formSubmitHandler = (values) => {
-    // Response Object
-    // {
-    // 	"name": "Abu Taher Muhammad",
-    // 	"email": "abutahermuhammad@outlook.com",
-    // 	"phone": "01627085640",
-    // 	"message": "Nice to meet you Mr. Muhammad. I need some help with a project of mine."
-    // }
-    console.log(values);
-    fetch("/api/mail", {
-      method: "POST",
-      body: JSON.stringify(values),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => {
-        console.log("Response received");
-        if (res.status === 200) {
-          console.log("Response succeeded!");
-        }
+  const formSubmitHandler = async (values) => {
+    try {
+      const response = await fetch("/api/mail", {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      console.log("Response received");
+      if (response.status === 200) {
+        console.log("Response succeeded!");
       }
-    )
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
     <>
       <Meta title="Contact" />
-
       <Layout>
         <PageHeader
           data={{
             heading: "GET IN TOUCH",
-            subheading: ["ENGAGE.", "EXPLORE & DISCOVER.", "IGNITE POSSIBILITIES."],
+            subheading: [
+              "ENGAGE.",
+              "EXPLORE & DISCOVER.",
+              "IGNITE POSSIBILITIES.",
+            ],
           }}
         />
 
@@ -116,6 +113,6 @@ function Contact() {
       </Layout>
     </>
   );
-}
+};
 
 export default memo(Contact);
