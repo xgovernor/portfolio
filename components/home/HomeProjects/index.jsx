@@ -5,9 +5,9 @@ import Container from "../../components/Container";
 import ProjectCard from "./../../card/ProjectCard";
 import { imageBuilder } from "../../../utils/sanity";
 
-const HomeProjects = ({ className, title, description, projects, ...rest }) => {
+const HomeProjects = ({ className, title, description, projects }) => {
   return (
-    <section className={clsx(S.__section, className)} {...rest}>
+    <section className={clsx(S.__section, className)}>
       <div className={S.__header}>
         <Container className={S.__container}>
           <h4 className={S.__subHeading}>{title}</h4>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import S from "./HomeAbout.module.sass";
 import IMG from "./../../../assets/images/about.webp";
 import Container from "../../components/Container";
+import { memo } from "react";
 
 const HomeAbout = ({}) => {
   return (
@@ -55,4 +56,4 @@ const HomeAbout = ({}) => {
   );
 };
 
-export default HomeAbout;
+export default memo(HomeAbout);
