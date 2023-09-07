@@ -1,7 +1,7 @@
 import PageBanner from "../../components/PageBanner";
 import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/scene/Layout";
-import AboutBody from "../../views/pages/about/AboutBody";
+import AboutBody from "../../components/pages/about/AboutBody";
 // import IMG from "../../assets/images/about.jpg";
 import IMG from "../../assets/images/about.webp";
 import { memo } from "react";

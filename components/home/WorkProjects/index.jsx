@@ -1,6 +1,6 @@
 import { memo } from "react";
-import ProjectCard from "../../../../components/card/ProjectCard";
-import { imageBuilder } from "../../../../lib/sanity";
+import ProjectCard from "../../../components/card/ProjectCard";
+import { imageBuilder } from "../../../utils/sanity";
 import S from "./WorkProjects.module.sass";
 
 const WorkProjects = ({ projects }) => {

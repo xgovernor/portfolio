@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/scene/Layout";
-import { getClient } from "../../lib/sanity.server";
+import { getClient } from "../../utils/sanity";
 import IMG from "../../assets/images/blog.png";
 import { memo } from "react";
 import dynamic from "next/dynamic";

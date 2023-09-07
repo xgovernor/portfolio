@@ -1,14 +1,14 @@
 import { groq } from "next-sanity";
 import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/scene/Layout";
-import { getClient } from "../../lib/sanity.server";
 import IMG from "../../assets/images/work.webp";
 import { memo } from "react";
 import dynamic from "next/dynamic";
 import Meta from "../../components/Meta";
+import { getClient } from "../../utils/sanity";
 const PageBanner = dynamic(() => import("../../components/PageBanner"));
 const WorkProjects = dynamic(() =>
-  import("../../views/pages/home/WorkProjects")
+  import("../../components/home/WorkProjects")
 );
 
 // GROQ query for featured Projects & Articles.

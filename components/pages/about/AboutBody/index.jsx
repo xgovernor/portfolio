@@ -1,4 +1,4 @@
-import Container from "../../../../components/components/Container";
+import Container from "../../../components/Container";
 import S from "./AboutBody.module.sass";
 
 const AboutBody = () => {

@@ -7,17 +7,16 @@ import RightNav from "./RightNav";
 function Navigation() {
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    document.addEventListener("scroll", () => {
-      scroll();
-    });
-  }, []);
-
   const scroll = useCallback(() => {
     let scrollTop = window.scrollY;
 
     scrollTop > 75 ? setScrolled(true) : setScrolled(false);
   }, []);
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      scroll();
+    });
+  }, [scroll]);
 
   return (
     <>
