@@ -6,6 +6,9 @@ import SingleUpdateStatus from "../../components/article/SingleUpdateStatus";
 import NavigationalArticles from "../../components/NavigationArticles";
 import Layout from "../../components/scene/Layout";
 import Meta from "../../components/Meta";
+import groq from "groq";
+import { getClient, imageBuilder } from "../../utils/sanity";
+import Date from "../../components/Date";
 
 const DATA_BLOG = [
   {
@@ -36,18 +39,23 @@ const DATA_BLOG = [
   },
 ];
 
-function ArticlesSingle() {
+function ArticlesSingle({ article }) {
   const singleArticleHeader = {
-    title: "How Gorgias uses Vouchers to lessen webinar fatigue",
-    date: "Published March 21, 2021",
-    cat: "Front-end Development",
+    title: article?.title || "",
+    date: (
+      <Date dateString={article?.date._updatedAt || article?.date._createdAt} />
+    ),
+    category: article.category,
   };
+
   const singleArticleCover = {
-    url: "/images/singleCover.jpg",
-    alt: "About banner Image",
+    url: imageBuilder(article?.image).width(1088).height(370).url(), // || "/images/singleCover.jpg",
+    alt: article?.title || "Abu Taher Muhammad",
     width: 1088,
     height: 370,
   };
+
+  console.log("ARTICLE", article);
 
   return (
     <>
@@ -55,12 +63,65 @@ function ArticlesSingle() {
       <Layout style={{ background: "#f6f6f6" }}>
         <SingleHeader data={singleArticleHeader} />
         <SingleCover data={singleArticleCover} />
-        <SingleContent />
+        <SingleContent content={article.body} />
         <SingleUpdateStatus />
         <NavigationalArticles articles={DATA_BLOG} />
       </Layout>
     </>
   );
+}
+
+// export async function getStaticProps({ params, preview = false }) {
+export async function getServerSideProps({ params }) {
+  const { id: slug } = params;
+
+  try {
+    const QUERY = groq`
+        *[_type == "article" && slug.current == $slug] | order(_updatedAt desc)[0] {
+          _id,
+  title,
+  'slug': slug.current,
+  "date": {
+    _createdAt,
+    publishedAt,
+    _updatedAt
+  },
+  featured,
+  excerpt,
+  image,
+  category[]->{
+    _id,
+    title
+  },
+  topic[]->{
+    _id,
+    title
+  },
+  body,
+  references,
+  importantLinks,
+        }
+      `;
+
+    const article = await getClient(false).fetch(QUERY, { slug });
+
+    if (!article) {
+      return {
+        notFound: true,
+      };
+    }
+
+    return {
+      props: {
+        article,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching article data:", error);
+    return {
+      notFound: true,
+    };
+  }
 }
 
 export default memo(ArticlesSingle);

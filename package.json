@@ -18,6 +18,7 @@
     "@sanity/image-url": "^1.0.1",
     "@sendgrid/mail": "^7.7.0",
     "clsx": "^1.2.1",
+    "date-fns": "^2.30.0",
     "formik": "^2.2.9",
     "framer-motion": "^5.5.6",
     "locomotive-scroll": "^4.1.3",
