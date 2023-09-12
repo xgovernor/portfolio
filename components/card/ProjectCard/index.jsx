@@ -21,13 +21,14 @@ const ProjectCard = ({
   return (
     <div className={clsx("p_projectCard", className)} {...rest}>
       <Container className="p_projectCard__container">
+        
         <div className="p_projectCard__content">
           <h4 className="p_subtitle_1">{category}</h4>
           <h2 className="p_projectCard__title">{title}</h2>
           <p className="p_body">
             {excerpt}
             <br />
-            <br />
+            {/* <br /> */}
             <strong>Technologies: </strong>
             {arrayToString(technologies)}.
           </p>
@@ -40,11 +41,13 @@ const ProjectCard = ({
             <p className="p_link">Coming soon</p>
           )}
         </div>
+
         <div className="p_projectCard__thumbnail">
           <div className="p_projectCard__image">
             <Image src={img} alt={title} width={562} height={323} />
           </div>
         </div>
+
       </Container>
     </div>
   );
