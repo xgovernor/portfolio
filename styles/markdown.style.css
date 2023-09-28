@@ -4,7 +4,8 @@
 }
 .markdown .p_container_single p,
 .markdown .p_container_single h2,
-.markdown .p_container_single blockquote {
+.markdown .p_container_single blockquote,
+.markdown .p_container_single ul {
   width: 100%;
   max-width: 710px;
   margin-right: auto;
@@ -70,6 +71,11 @@
     font-size: 16px;
     line-height: 25px;
   }
+  .markdown .p_container_single ul {
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 25px;
+  }
   .markdown .p_container_single h2 {
     margin-top: 20px;
     margin-bottom: 10px;
@@ -108,6 +114,11 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   }
   .markdown .p_container_single p {
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .markdown .p_container_single ul {
     margin-bottom: 25px;
     font-size: 16px;
     line-height: 25px;
@@ -152,6 +163,11 @@
     font-size: 16px;
     line-height: 25px;
   }
+  .markdown .p_container_single ul {
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 25px;
+  }
   .markdown .p_container_single h2 {
     margin-top: 20px;
     margin-bottom: 10px;
@@ -190,7 +206,8 @@
   }
   .markdown .p_container_single p,
   .markdown .p_container_single h2,
-  .markdown .p_container_single blockquote {
+  .markdown .p_container_single blockquote,
+  .markdown .p_container_single ul {
     width: 710px;
     margin-right: auto;
     margin-left: auto;

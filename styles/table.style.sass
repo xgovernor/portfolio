@@ -1,13 +1,31 @@
 .p_table
     width: 100%
+    max-width: inherit
     border-collapse: collapse
     tr
+        border-left: 1px solid #000
+        border-right: 1px solid #000
+        border-bottom: 1px solid rgb( 0, 0, 0)
         th
             font-family: "Neue Haas Grotesk Display Pro"
+        td
+            color: inherit
+            fill: inherit
+            // border: 1px solid rgb(233, 233, 231)
+            border: 1px solid rgb(0, 0, 0)
+            position: relative
+            vertical-align: top
+            text-align: start
+            min-width: 232.667px
+            max-width: 232.667px
+            min-height: 32px
+
         td, th
-            padding-top: 15px
-            padding-bottom: 15px
-            border-bottom: 1px solid hsla(0, 0%, 0%, 0.12)
+            // padding-top: 15px
+            // padding-bottom: 15px
+            padding: 15px
+            // border-bottom: 1px solid hsla(0, 0%, 0%, 0.12)
+            border-bottom: 1px solid #000
             &.__left
                 text-align: left
                 color: #000000
@@ -17,8 +35,8 @@
                 text-align: right
         &:first-of-type
             td
-                padding-top: 0
+                // padding-top: 0
         &:last-of-type
             td
-                padding-bottom: 0
-                border-bottom: 0
+                // padding-bottom: 0
+                // border-bottom: 0

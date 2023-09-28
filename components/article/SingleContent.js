@@ -11,18 +11,39 @@ const serializers = {
         <code>{props.node.code}</code>
       </pre>
     ),
+    sizeChart: (props) => {
+      return (
+        <table className="p_table">
+          {(props.node.rows).map((row, i) => (
+            (row._type === "tableRow") && (
+              <tr key={row?._key}>
+                {(row.cells).map((cel, i) => (
+                  <td key={i + row._key}>{cel}</td>
+                  // console.log(i, row)
+                ))}
+              </tr>
+            )
+          ))}
+          {/* {console.log("SIZE CHART: ", props)} */}
+        </table>
+      )
+    }
   },
 }
 
-function SingleContent({content}) {
+function SingleContent({ content }) {
   return (
-    <>
-      <section className="p_single_content">
-        <div className="p_container_single">
-          {/* <BlockContent blocks={content} projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID} dataset={process.env.NEXT_PUBLIC_SANITY_DATASET} className={markdownStyles.markdown} /> */}
-          <BlockContent blocks={content} projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID} dataset={process.env.NEXT_PUBLIC_SANITY_DATASET} serializers={serializers} />
+    <section className="p_single_content">
+      <div className="p_container_single">
+        {/* <BlockContent blocks={content} projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID} dataset={process.env.NEXT_PUBLIC_SANITY_DATASET} className={markdownStyles.markdown} /> */}
+        <BlockContent
+          blocks={content}
+          projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+          dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+          serializers={serializers}
+        />
 
-          {/* <div className="p_2c_img">
+        {/* <div className="p_2c_img">
             <div className="p_2c_left">
               <Image
                 src={`/images/img1.jpg`}
@@ -43,36 +64,8 @@ function SingleContent({content}) {
             </div>
           </div> */}
 
-          {/* <pre>
-            <code>
-              &lt;!DOCTYPE&gt;
-              <br />
-              &lt;html&gt;
-              <br />
-              {"    "}&lt;title&gt;Page title&lt;/title&gt;
-              {"    "}
-              <br />
-              {"    "}
-              <br />
-              {"    "}&lt;script&gt;
-              {"    "}
-              <br />
-              {"        "}function hello() {`{}`}
-              <br />
-              <br />
-              {"        "}const hi = () =&gt; hello()
-              {"    "}
-              <br />
-              {"    "}&lt;/script&gt;
-              <br />
-              <br />
-              &lt;/html&gt;
-              <br />
-            </code>
-          </pre> */}
 
-
-          {/* <div className="p_1c_img">
+        {/* <div className="p_1c_img">
             <Image
               src={`/images/img3.jpg`}
               width={862}
@@ -81,9 +74,8 @@ function SingleContent({content}) {
               layout="responsive"
             />
           </div> */}
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 

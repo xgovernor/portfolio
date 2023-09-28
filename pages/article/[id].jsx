@@ -55,7 +55,7 @@ function ArticlesSingle({ article }) {
     height: 370,
   };
 
-  console.log("ARTICLE", article);
+  // console.log("ARTICLE", article);
 
   return (
     <>
