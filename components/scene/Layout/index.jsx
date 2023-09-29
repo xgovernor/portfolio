@@ -21,9 +21,4 @@ const Layout = ({ className, children, ...rest }) => (
   </>
 );
 
-Layout.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-};
-
 export default memo(Layout);

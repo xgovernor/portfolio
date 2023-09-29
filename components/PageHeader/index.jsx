@@ -26,8 +26,4 @@ function PageHeader({ data }) {
   );
 }
 
-PageHeader.propTypes = {
-  data: PropTypes.object.isRequired,
-};
-
 export default memo(PageHeader);

@@ -13,9 +13,4 @@ function Container({ className, children, ...rest }) {
   );
 }
 
-Container.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-  rest: PropTypes.object,
-};
 export default memo(Container);

@@ -10,15 +10,11 @@ function BlogGrid({ className, articles, ...rest }) {
       <Container className={S.__content}>
         <Suspense fallback={<div>Loading...</div>}>
           {articles?.map(({ slug, title, category, excerpt, date }, i) => {
-            const meta = date._updatedAt
-              ? `UPDATED ${date._updatedAt}`
-              : `PUBLISHED ${date.publishedAt}`;
-
             return (
               <BlogCard
                 key={i}
                 category={category?.title}
-                meta={meta}
+                date={date._updatedAt ? date._updatedAt : date.publishedAt}
                 slug={slug}
                 title={title}
                 excerpt={excerpt}

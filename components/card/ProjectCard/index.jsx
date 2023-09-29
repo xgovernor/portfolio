@@ -21,7 +21,7 @@ const ProjectCard = ({
   return (
     <div className={clsx("p_projectCard", className)} {...rest}>
       <Container className="p_projectCard__container">
-        
+
         <div className="p_projectCard__content">
           <h4 className="p_subtitle_1">{category}</h4>
           <h2 className="p_projectCard__title">{title}</h2>
@@ -51,17 +51,6 @@ const ProjectCard = ({
       </Container>
     </div>
   );
-};
-
-ProjectCard.propTypes = {
-  className: PropTypes.string,
-  category: PropTypes.string.isRequired,
-  thumbnail: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  excerpt: PropTypes.string.isRequired,
-  technologies: PropTypes.array.isRequired,
-  url: PropTypes.string,
-  rest: PropTypes.object,
 };
 
 export default memo(ProjectCard);
