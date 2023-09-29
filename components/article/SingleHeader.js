@@ -1,8 +1,6 @@
-import { motion } from "framer-motion";
 import { memo } from "react";
 import Container from "../components/Container";
 import Date from "../Date";
-import { date } from "yup";
 
 function SingleHeader({ data }) {
   return (
