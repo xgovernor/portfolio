@@ -1,6 +1,7 @@
 import { memo } from "react";
 import Container from "../components/Container";
 import Date from "../Date";
+import Link from "next/link";
 
 function SingleHeader({ data }) {
   return (
@@ -10,7 +11,7 @@ function SingleHeader({ data }) {
           {data?.category?.map((item, i) => (
             <span key={item._id}>
               {(i !== 0) ? (<span> | </span>) : ""}
-              <span className="p__cat_item">{item.title} </span>
+              <Link className="p__cat_item" href={`/article?category=${(item.title).toLowerCase().split(' ').join("-")}`}>{item.title} </Link>
             </span>
           ))}
         </p>

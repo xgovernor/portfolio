@@ -9,6 +9,7 @@ import Meta from "../../components/Meta";
 import groq from "groq";
 import { getClient, imageBuilder } from "../../utils/sanity";
 import Date from "../../components/Date";
+import Script from "next/script";
 
 const DATA_BLOG = [
   {
@@ -39,7 +40,7 @@ const DATA_BLOG = [
   },
 ];
 
-function ArticlesSingle({ article }) {
+function ArticlesSingle({ article, slug }) {
   const singleArticleHeader = {
     title: article?.title || "",
     date: article?.date,
@@ -57,7 +58,38 @@ function ArticlesSingle({ article }) {
 
   return (
     <>
-      <Meta />
+      <Meta title={article?.title}>
+        <Script
+          id="WebSite-JSON-LD"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": article?.title,
+              // "alternativeHeadline": "and the women who love them",
+              "image": imageBuilder(article?.image).url(),
+              // "award": "Best article ever written",
+              "editor": "Abu Taher Muhammad",
+              "genre": "search engine optimization",
+              "keywords": "seo sales b2b",
+              // "wordcount": "1120",
+              "publisher": "Abu Taher Muhammad",
+              // "url": "http://www.example.com",
+              "url": "https://at-mah.vercel.app/article/slug",
+              "datePublished": article.publishedAt,
+              "dateCreated": article._createdAt,
+              "dateModified": article._updatedAt,
+              "description": article.excerpt,
+              "articleBody": article.body,
+              "author": {
+                "@type": "Person",
+                "name": "Abu Taher Muhammad"
+              },
+            }),
+          }} />
+      </Meta>
+
       <Layout style={{ background: "#f6f6f6" }}>
         <SingleHeader data={singleArticleHeader} />
         <SingleCover data={singleArticleCover} />
@@ -112,6 +144,7 @@ export async function getServerSideProps({ params }) {
     return {
       props: {
         article,
+        slug
       },
     };
   } catch (error) {

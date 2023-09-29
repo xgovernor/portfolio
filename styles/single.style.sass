@@ -11,6 +11,8 @@
             // color: rgba(0, 12, 25, 0.7)
             text-transform: uppercase
             .p__cat_item
+                text-decoration: none
+                color: inherit
                 cursor: pointer
                 &:hover
                     color: #717171
@@ -30,6 +32,23 @@
     .p_container_single
         margin: 0 auto
         border-bottom: 1px solid hsla(0, 0%, 0%, 0.12)
+
+        figure
+            margin-bottom: 30px
+            &.p_1c_img
+                position: relative
+                display: block
+                overflow: hidden
+                img
+                    position: relative !important
+                    display: block
+                    border-radius: 4px
+                caption
+                    width: inherit
+                    padding: 10px
+                    text-align: left
+                    font-size: 12px
+                    border-bottom: 1px solid #000c1940
 
         p, h2, blockquote, ul
             width: 100%
@@ -66,6 +85,7 @@
             color: #AEAEAE
             background: #0b0b0c
             overflow-x: auto
+            border-radius: 4px
 
         .p_2c_img
             width: 100%

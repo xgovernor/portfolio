@@ -1,22 +1,23 @@
 import Head from "next/head";
 import Script from "next/script";
+import { memo } from "react";
 
 const Meta = ({ title, description, image, children }) => {
 	const desc =
-    description ||
-    "I'm a full-stack developer based on Bangladesh. I'm passionate about creating beautiful, intuitive online solutions with highly crafted user experiences.";
-  	const img = image || "https://abutahermuhammad.com/image/avater.png";
+		description ||
+		"I'm a full-stack developer based on Bangladesh. I'm passionate about creating beautiful, intuitive online solutions with highly crafted user experiences.";
+	const img = image || "https://abutahermuhammad.com/image/avater.png";
 
-	
+
 	return (
 		<>
 			<Head>
 				{/* General Tags */}
-				<title> {title ? `${title} - Abu Taher Muhammad`: "Abu Taher Muhammad || Full Stack Developer" }</title>
-				
+				<title> {title ? `${title} - Abu Taher Muhammad` : "Abu Taher Muhammad || Full Stack Developer"}</title>
+
 				<meta
 					name="title"
-					content={title ? `${title} - Abu Taher Muhammad`: "Abu Taher Muhammad || Full Stack Developer" }
+					content={title ? `${title} - Abu Taher Muhammad` : "Abu Taher Muhammad || Full Stack Developer"}
 				/>
 				<meta name="author" content="Abu Taher Muhammad" />
 				<meta
@@ -25,7 +26,7 @@ const Meta = ({ title, description, image, children }) => {
 				/>
 				<meta
 					name="keywords"
-					content="Font-end, web developer, top web developer, Abu Taher Muhammad, MERN stack developer, upwork, ferne health"
+					content="Font-end, web developer, top web developer, Abu Taher Muhammad, MERN stack developer, upwork, ferne health, dot9, simbio"
 				/>
 				<meta name="robots" content="index, follow" />
 				<meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
@@ -65,7 +66,7 @@ const Meta = ({ title, description, image, children }) => {
 				{/* Canonical */}
 				<link rel="canonical" href="https://abutahermuhammad.com" />
 			</Head>
-		
+
 			{/* JSON-LD */}
 			<Script
 				id="Person-JSON-LD"
@@ -135,10 +136,10 @@ const Meta = ({ title, description, image, children }) => {
 						},
 					}),
 				}} />
-			
+
 			{children}
-	</>
+		</>
 	);
 };
 
-export default Meta;
+export default memo(Meta);

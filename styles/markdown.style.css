@@ -3,7 +3,12 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 .markdown .p_container_single p,
+.markdown .p_container_single h1,
 .markdown .p_container_single h2,
+.markdown .p_container_single h3,
+.markdown .p_container_single h4,
+.markdown .p_container_single h5,
+.markdown .p_container_single h6,
 .markdown .p_container_single blockquote,
 .markdown .p_container_single ul {
   width: 100%;
@@ -11,7 +16,13 @@
   margin-right: auto;
   margin-left: auto;
 }
-.markdown .p_container_single h2 {
+.markdown .p_container_single h1,
+.markdown .p_container_single h2,
+.markdown .p_container_single h3,
+.markdown .p_container_single h4,
+.markdown .p_container_single h5,
+.markdown .p_container_single h6,
+a {
   font-family: "NHaasGroteskDSPro";
   color: #000c19;
 }
@@ -205,7 +216,12 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   }
   .markdown .p_container_single p,
+  .markdown .p_container_single h1,
   .markdown .p_container_single h2,
+  .markdown .p_container_single h3,
+  .markdown .p_container_single h4,
+  .markdown .p_container_single h5,
+  .markdown .p_container_single h6,
   .markdown .p_container_single blockquote,
   .markdown .p_container_single ul {
     width: 710px;
@@ -215,7 +231,7 @@
   .markdown .p_container_single p {
     margin-bottom: 25px;
     font-size: 17px;
-    line-height: 28px;
+    line-height: 30px;
   }
   .markdown .p_container_single h2 {
     margin-top: 20px;
@@ -270,5 +286,8 @@
   .markdown .p_container_single .p_1c_img {
     width: 862px;
     margin: 35px auto;
+  }
+  .markdown .p_container_single .p_table {
+    margin-bottom: 30px;
   }
 }
