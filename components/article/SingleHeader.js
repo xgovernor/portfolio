@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { memo } from "react";
 import Container from "../components/Container";
+import Date from "../Date";
+import { date } from "yup";
 
 function SingleHeader({ data }) {
   return (
@@ -15,7 +17,10 @@ function SingleHeader({ data }) {
           ))}
         </p>
         <h1 className="p__title">{data?.title}</h1>
-        <p className="p_meta_date">{data.date}</p>
+        <p className="p_meta_date">
+          {data.date._updatedAt ? "Updated " : ""}
+          <Date dateString={data.date._updatedAt ? data.date._updatedAt : data.date._createAt} />
+        </p>
       </Container>
     </section>
   );

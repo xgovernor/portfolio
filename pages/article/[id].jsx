@@ -42,9 +42,7 @@ const DATA_BLOG = [
 function ArticlesSingle({ article }) {
   const singleArticleHeader = {
     title: article?.title || "",
-    date: (
-      <Date dateString={article?.date._updatedAt || article?.date._createdAt} />
-    ),
+    date: article?.date,
     category: article.category,
   };
 
