@@ -65,7 +65,7 @@ const Meta = ({ title, description, image, children }) => {
 
 				{/* Canonical */}
 				<link rel="canonical" href="https://abutahermuhammad.com" />
-				<meta name="p:domain_verify" content="9b984d0450cabdbcff57d5fa1e1d8ad3"/>
+				<meta name="p:domain_verify" content="5d75432a33e648b4a3177797c6c4790d"/>
 			</Head>
 
 			{/* JSON-LD */}
