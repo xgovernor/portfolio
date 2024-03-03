@@ -1,0 +1,105 @@
+:root {
+  --color-dark: #000c19;
+}
+
+.__pageHeader {
+  width: 100%;
+  position: relative;
+  display: block;
+  background: #f6f6f6;
+}
+.__pageHeader .__title {
+  text-transform: uppercase;
+  color: var(--color-dark);
+  opacity: 0.7;
+  font-family: "NHaasGroteskDSPro";
+  font-weight: bold;
+}
+.__pageHeader .__subTitle {
+  font-family: "NHaasGroteskDSPro";
+  font-weight: 700;
+  color: var(--color-dark);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .__content {
+    min-height: 140px;
+    height: auto;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    padding-top: 35px;
+    padding-bottom: 40px;
+  }
+  .__heading {
+    margin-bottom: 8px;
+  }
+  .__title {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .__subTitle {
+    font-size: 34px;
+    line-height: 42px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .__content {
+    padding-top: 55px;
+    padding-bottom: 80px;
+    padding-left: 92px !important;
+    padding-right: 92px !important;
+  }
+  .__title {
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .__subTitle {
+    font-size: 48px;
+    line-height: 62px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .__content {
+    padding-top: 75px;
+    padding-bottom: 100px;
+    padding-left: 150px !important;
+    padding-right: 150px !important;
+  }
+  .__title {
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 24px;
+  }
+  .__subTitle {
+    width: 724px;
+    font-size: 58px;
+    line-height: 72px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .__pageHeader {
+    padding-top: 105px;
+    padding-bottom: 110px;
+  }
+  .__content {
+    max-width: 972px;
+  }
+  .__title {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .__subTitle {
+    font-size: 72px;
+    line-height: 82px;
+  }
+}
