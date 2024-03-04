@@ -1,28 +1,22 @@
 import { memo } from "react";
 // import { Parallax } from "react-scroll-parallax";
-import S from "./PageBanner.module.css";
 
 function PageBanner({ dataImg, img }) {
   return (
     <>
-      <section className={S.__banner}>
+      <section className="w-full max-md:h-[50vh] md:h-screen relative overflow-hidden flex object-contain [box-shadow:inset_0_0_100px_#00000040]">
         {/* <Parallax speed={-20}> */}
-        <div className="__image" />
+        <div className="__image absolute top-0 right-0 left-0 bottom-0 -z-[1]" />
         {/* </Parallax> */}
       </section>
 
       <style jsx>{`
         .__image {
-          position: absolute;
-          top: 0;
-          right: 0;
-          left: 0;
-          bottom: 0;
           background: url("${img.src ? img.src : img}");
-          background-attachment: fixed;
-          background-position: center;
           background-size: cover;
-          z-index: -1;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
         }
       `}</style>
     </>
