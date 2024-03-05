@@ -1,11 +1,11 @@
 import React, { memo } from "react";
-import Container from "../../components/Container";
+import Container from "../../Container";
 import BlogCard from "../../card/BlogCard";
 import Date from "../../Date";
 
 const HomeArticles = ({ className, articles }) => {
   return (
-    <section className="max-md:pb-[15px] md:max-lg:pb-[55px] lg:max-lg:[padding:80px_0_80px] xl:[padding:130px_0_105px]">
+    <section className="max-md:pb-8 md:max-lg:pb-[55px] lg:max-xl:pb-20 xl:[padding:130px_0_105px]">
       <div className="">
         <Container className="text-center max-md:[padding:40px_30px_40px] md:max-lg:max-w-[693px] md:max-xl:[padding:80px_90px_50px] lg:max-xl:max-w-[1003px] xl:w-[823px] xl:mb-20">
           <h4 className="[font-family:'NHaasGroteskDSPro'] mb-2.5 max-xl:text-[12px] leading-[16px] xl:text-[14px]">
@@ -18,7 +18,8 @@ const HomeArticles = ({ className, articles }) => {
       </div>
 
       <div className="">
-        <Container className="flex justify-between max-md:flex-wrap max-md:px-[30px] md:max-lg:px-[50px] lg:max-xl:px-[60px]">
+        {/* grid max-md:grid-cols-1 grid-cols-2 max-md:gap-5 md:gap-7 lg:gap-9 xl:gap-11 max-md:py-10 md:max-lg:pt-[70px] md:max-lg:pb-[45px] md:max-lg:px-[50px]  lg:max-xl:pt-[100px] lg:max-xl:pb-[75px] lg:max-xl:px-[60px] */}
+        <Container className="grid max-md:grid-cols-1 grid-cols-2 max-md:gap-5 md:gap-7 lg:gap-9 xl:gap-11 md:max-lg:px-[50px] lg:max-xl:px-[60px]">
           {articles.map((article, i) => (
             <BlogCard
               key={i}

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Container from "../../../components/Container";
+import Container from "../Container";
 import { memo } from "react";
 // import S from "./AboutBody.module.css";
 

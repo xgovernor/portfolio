@@ -1,5 +1,5 @@
 import Link from "next/link";
-import S from "./HomeHero.module.css";
+// import S from "./HomeHero.module.css";
 import NodeJsIcon from "../../../assets/icons/nodejs";
 import NextJsIcon from "../../../assets/icons/NextJsIcon";
 import SassIcon from "../../../assets/icons/SassIcon";
@@ -24,7 +24,7 @@ import FigmaIcon from "../../../assets/icons/FigmaIcon";
 import DockerIcon from "../../../assets/icons/DockerIcon";
 import CIcon from "../../../assets/icons/CIcon";
 import AwsIcon from "../../../assets/icons/AwsIcon";
-import Container from "../../components/Container";
+import Container from "../../Container";
 import { memo } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaMediumM } from "react-icons/fa";
@@ -125,11 +125,15 @@ const HomeHero = ({ title, cvURL }) => {
           <VimIcon />
         </div>
 
-        <p className="max-xl:mt-20 xl:mt-[130px]">
-          <Link href={cvURL} className="p__btn" target="_blank">
+        <div className="flex justify-center items-center max-xl:mt-20 xl:mt-[130px]">
+          <Link
+            href={cvURL}
+            className=" text-black font-bold text-sm [font-family:'NHaasGroteskDSPro'] underline"
+            target="_blank"
+          >
             DOWNLOAD CV
           </Link>
-        </p>
+        </div>
       </Container>
     </section>
   );

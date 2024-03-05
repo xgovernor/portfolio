@@ -19,11 +19,6 @@ export const navigationRoutes = [
     title: "BLOG",
     url: "/article",
   },
-  {
-    _id: "NR005",
-    title: "CONTACT",
-    url: "/contact",
-  },
 ];
 
 export const footerRoutes = [

@@ -1,13 +1,12 @@
 import { groq } from "next-sanity";
 import PageHeader from "../../components/PageHeader";
-import Layout from "../../components/scene/Layout";
+import Layout from "../../components/Layout";
 import { getClient } from "../../utils/sanity";
 import IMG from "../../assets/images/blog.png";
 import { memo } from "react";
-import dynamic from "next/dynamic";
 import Meta from "../../components/Meta";
-const PageBanner = dynamic(() => import("../../components/PageBanner"));
-const BlogGrid = dynamic(() => import("../../components/BlogGrid"));
+import PageBanner from "../../components/PageBanner";
+import BlogGrid from "../../components/BlogGrid";
 
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[_type == "article"] {

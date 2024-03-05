@@ -1,5 +1,5 @@
 import { memo } from "react";
-import Container from "../../components/components/Container";
+import Container from "../../components/Container";
 import Layout from "../../components/Layout";
 import S from "./404.module.css";
 import Meta from "../../components/Meta";

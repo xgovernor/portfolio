@@ -1,12 +1,12 @@
 import { memo } from "react";
 import ProjectCard from "../../../components/card/ProjectCard";
 import { imageBuilder } from "../../../utils/sanity";
-import S from "./WorkProjects.module.css";
+// import S from "./WorkProjects.module.css";
 
 const WorkProjects = ({ projects }) => {
   return (
-    <section className={S.__projects}>
-      <div className={S.__projectsBody}>
+    <section className="bg-[#0000000d]">
+      <div className="flex flex-col max-md:py-10 md:py-[60px] lg:py-[80px] xl:py-[130px] max-md:gap-10 md:gap-[60px] lg:gap-[80px] xl:gap-[130px]">
         {projects.map((project, i) => (
           <ProjectCard
             key={i}

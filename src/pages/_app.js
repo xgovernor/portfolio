@@ -2,7 +2,6 @@ import { AnimatePresence } from "framer-motion";
 import Script from "next/script";
 import NextNProgress from "nextjs-progressbar";
 import "./../styles/index.css";
-import "../styles/theme.css";
 import "../styles/global.css";
 
 const GOOGLE_GTAG_MEASUREMENT_ID = "GTM-N3QF76C";

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { memo } from "react";
-import Footer from "../views/shared/Footer/Footer";
-import Navigation from "../components/Navigation";
+import Footer from "../Footer";
+import Navigation from "../Navigation";
 import clsx from "clsx";
 
 const Layout = ({ className, children, ...rest }) => (

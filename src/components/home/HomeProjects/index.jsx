@@ -1,6 +1,6 @@
 import { memo } from "react";
 import clsx from "clsx";
-import Container from "../../components/Container";
+import Container from "../../Container";
 import ProjectCard from "./../../card/ProjectCard";
 import { imageBuilder } from "../../../utils/sanity";
 

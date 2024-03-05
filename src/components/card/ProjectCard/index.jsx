@@ -3,7 +3,7 @@ import Link from "next/link";
 import { memo } from "react";
 import { arrayToString } from "../../../utils/string.utils";
 import clsx from "clsx";
-import Container from "../../components/Container";
+import Container from "../../Container";
 
 const ProjectCard = ({
   className,

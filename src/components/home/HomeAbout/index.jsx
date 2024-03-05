@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import IMG from "./../../../assets/images/about.webp";
-import Container from "../../components/Container";
+import Container from "../../Container";
 import { memo } from "react";
 
 const HomeAbout = ({}) => {

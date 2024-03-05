@@ -1,5 +1,5 @@
 import { useEffect, useState, memo, useCallback } from "react";
-import { navigationRoutes } from "./../../../assets/data/routes";
+import { navigationRoutes } from "./../../assets/data/routes";
 import Container from "../Container";
 import LeftNav from "./LeftNav";
 import RightNav from "./RightNav";
