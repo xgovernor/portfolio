@@ -2,43 +2,12 @@ import { memo } from "react";
 import SingleContent from "../../components/article/SingleContent";
 import SingleCover from "../../components/article/SingleCover";
 import SingleHeader from "../../components/article/SingleHeader";
-import SingleUpdateStatus from "../../components/article/SingleUpdateStatus";
 import NavigationalArticles from "../../components/NavigationArticles";
 import Layout from "../../components/Layout";
 import Meta from "../../components/Meta";
 import groq from "groq";
 import { getClient, imageBuilder } from "../../utils/sanity";
-import Date from "../../components/Date";
 import Script from "next/script";
-
-const DATA_BLOG = [
-  {
-    slug: "jh",
-    title: "You need to learn Kubernetes RIGHT NOW!! 🚀",
-    excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum.`,
-    url: "/articles/jh",
-    meta: "PUBLISHED MARCH 21, 2021",
-  },
-  {
-    slug: "jh",
-    title: "20 Awesome Website You Didn't Know About",
-    excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum.`,
-    url: "/articles/jh",
-    meta: "PUBLISHED MARCH 21, 2021",
-  },
-];
 
 const QUERY = groq`
         *[_type == "article" && slug.current == $slug] | order(_updatedAt desc)[0] {
@@ -99,7 +68,6 @@ function ArticlesSingle({ articles, article, slug }) {
     height: 370,
   };
 
-  console.log("ARTICLES", articles);
 
   return (
     <>
@@ -136,11 +104,10 @@ function ArticlesSingle({ articles, article, slug }) {
         />
       </Meta>
 
-      <Layout style={{ background: "#f6f6f6" }}>
+      <Layout className="">
         <SingleHeader data={singleArticleHeader} />
         <SingleCover data={singleArticleCover} />
         <SingleContent content={article.body} />
-        <SingleUpdateStatus />
         <NavigationalArticles articles={articles} />
       </Layout>
     </>

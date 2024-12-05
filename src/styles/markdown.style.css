@@ -23,11 +23,11 @@
 .markdown .p_container_single h5,
 .markdown .p_container_single h6,
 a {
-  font-family: "NHaasGroteskDSPro";
+  font-family: ;
   color: #000c19;
 }
 .markdown .p_container_single blockquote {
-  font-family: "NHaasGroteskDSPro";
+  font-family: ;
   font-weight: 500;
   letter-spacing: 0.02em;
   color: #000000;
@@ -236,7 +236,7 @@ a {
   .markdown .p_container_single h2 {
     margin-top: 20px;
     margin-bottom: 10px;
-    font-family: "NHaasGroteskDSPro";
+    font-family: ;
     font-size: 24px;
     line-height: 34px;
     color: #000c19;
@@ -245,7 +245,7 @@ a {
     margin-top: 20px;
     margin-bottom: 35px;
     padding: 45px;
-    font-family: "NHaasGroteskDSPro";
+    font-family: ;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;

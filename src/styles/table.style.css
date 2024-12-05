@@ -1,43 +1,26 @@
 .p_table {
-  width: 100%;
-  max-width: inherit;
-  overflow: auto;
+  @apply w-full max-w-[inherit] overflow-auto;
 }
 .p_table table {
-  width: inherit;
-  border-collapse: collapse;
+  @apply w-[inherit] border-collapse;
 }
 .p_table table tr {
-  line-height: 160%;
-  border-left: 1px solid hsla(0, 0%, 0%, 0.12);
-  border-right: 1px solid hsla(0, 0%, 0%, 0.12);
-  border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
+  @apply leading-[160%] border-x border-b border-[#0000001f];
 }
 .p_table table th {
-  font-family: "Neue Haas Grotesk Display Pro";
 }
 .p_table table td {
-  color: inherit;
-  fill: inherit;
-  border: 1px solid hsla(0, 0%, 0%, 0.12);
-  position: relative;
-  vertical-align: top;
-  text-align: start;
-  min-width: 232.667px;
-  max-width: 232.667px;
-  min-height: 32px;
+  @apply relative text-[inherit] fill-inherit border border-[#0000001f] align-top text-start min-w-[232.667px] max-w-[232.667px] min-h-8;
 }
 .p_table table td, .p_table table th {
-  padding: 15px;
-  border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
+  @apply p-[15px] border-b border-[#0000001f];
 }
 .p_table table td.__left, .p_table table th.__left {
-  text-align: left;
-  color: #000000;
+  @apply text-left text-black;
 }
 .p_table table td.__center, .p_table table th.__center {
-  text-align: center;
+  @apply text-center;
 }
 .p_table table td.__right, .p_table table th.__right {
-  text-align: right;
+  @apply text-right;
 }/*# sourceMappingURL=table.style.css.map */

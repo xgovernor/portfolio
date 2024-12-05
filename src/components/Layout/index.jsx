@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
-import { memo } from "react";
 import Footer from "../Footer";
 import Navigation from "../Navigation";
-import clsx from "clsx";
 
-const Layout = ({ className, children, ...rest }) => (
+const Layout = ({ children, ...rest }) => (
   <>
     <Navigation />
     <motion.div
@@ -12,7 +10,7 @@ const Layout = ({ className, children, ...rest }) => (
       animate={{ opacity: 1, transition: "opacity 1s ease" }}
       exit={{ opacity: 0, transition: "opacity 1s ease" }}
     >
-      <main className={clsx("p_page", className)} {...rest}>
+      <main {...rest}>
         {children}
       </main>
     </motion.div>
@@ -20,4 +18,4 @@ const Layout = ({ className, children, ...rest }) => (
   </>
 );
 
-export default memo(Layout);
+export default Layout;

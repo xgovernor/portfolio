@@ -1,32 +1,24 @@
 import { useEffect, useState, memo, useCallback } from "react";
 import { navigationRoutes } from "./../../assets/data/routes";
 import Container from "../Container";
-import LeftNav from "./LeftNav";
 import RightNav from "./RightNav";
+import Link from "next/link";
 
 function Navigation() {
-  const [scrolled, setScrolled] = useState(false);
-
-  const scroll = useCallback(() => {
-    let scrollTop = window.scrollY;
-
-    scrollTop > 75 ? setScrolled(true) : setScrolled(false);
-  }, []);
-  useEffect(() => {
-    document.addEventListener("scroll", () => {
-      scroll();
-    });
-  }, [scroll]);
 
   return (
     <>
       <header className="py-[25px] h-[75px]">
         <nav
-          className={`flex justify-center items-center ${scrolled ? "p_fixed" : "p_not_fixed"}`}
+          className={`flex justify-center items-center`}
         >
           <Container className="flex justify-between items-center">
-            {/* Brand */}
-            <LeftNav />
+            <Link
+              className="font-primary font-bold uppercase text-black md:text-base lg:text-lg xl:text-xl"
+              href={"/"}
+            >
+              A.T. Muhammad
+            </Link>
 
             {/* Menu */}
             <RightNav links={navigationRoutes} />

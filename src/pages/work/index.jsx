@@ -2,12 +2,10 @@ import { groq } from "next-sanity";
 import PageHeader from "../../components/PageHeader";
 import Layout from "../../components/Layout";
 import IMG from "../../assets/images/work.webp";
-import { memo } from "react";
-import dynamic from "next/dynamic";
 import Meta from "../../components/Meta";
 import { getClient } from "../../utils/sanity";
 import PageBanner from "../../components/PageBanner";
-import WorkProjects from "../../components/home/WorkProjects";
+import WorkProjects from "../../components/WorkProjects";
 
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[_type == "project"] {
@@ -67,4 +65,4 @@ export async function getStaticProps({ preview = false }) {
   };
 }
 
-export default memo(Work);
+export default Work;

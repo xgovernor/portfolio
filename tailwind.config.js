@@ -6,11 +6,12 @@ module.exports = {
     "./src/**/**/**/*.{css,js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      primary: ['var(--nh-grotesk-dsp)'],
+      sans: ['var(--font-nh-grotesk-txp)'],
+      mono: ['var(--font-cascadia-code)']
+    },
     extend: {
-      fontFamily: {
-        primary: ["NHaasGroteskDSPro"],
-        secondary: ["Neue Haas Grotesk Display Pro"],
-      },
       animation: {
         fadeIn: "fadeIn 0.5s ease-in-out",
         borderBMotion: "border--b--motion",

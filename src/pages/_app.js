@@ -3,6 +3,48 @@ import Script from "next/script";
 import NextNProgress from "nextjs-progressbar";
 import "./../styles/index.css";
 import "../styles/global.css";
+import localFont from "next/font/local";
+
+const nHGDP = localFont({
+  src: [
+    {
+      path: "./../assets/fonts/NHaasGroteskDSPro/NHaasGroteskDSPro-75Bd.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./../assets/fonts/NHaasGroteskDSPro/NHaasGroteskDSPro-95Blk.otf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  display: 'swap',
+  variable: "--nh-grotesk-dsp",
+});
+
+const nHG = localFont({
+  src: [
+    {
+      path: "./../assets/fonts/NHaasGroteskTXPro/NHaasGroteskTXPro-55Rg.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  display: 'swap',
+  variable: "--font-nh-grotesk-txp",
+});
+
+const cascadiaCode = localFont({
+  src: [
+    {
+      path: "./../assets/fonts/CascadiaCode/CascadiaCodeItalic.woff2",
+      weight: "400",
+      style: "italic",
+    }
+  ],
+  display: 'swap',
+  variable: "--font-cascadia-code",
+});
 
 const GOOGLE_GTAG_MEASUREMENT_ID = "GTM-N3QF76C";
 
@@ -40,7 +82,12 @@ function MyApp({ Component, pageProps }) {
         options={{ easing: "ease", speed: 500 }}
       />
       <AnimatePresence mode="wait">
-        <Component {...pageProps} />
+        <div className={`${cascadiaCode.variable} ${nHGDP.variable} ${nHG.variable}`}>
+        <Component
+          // className={clsx(spaceGrotesk.variable, hKGrotesk.variable, CascadiaCode.variable)}
+          {...pageProps}
+          />
+          </div>
       </AnimatePresence>
     </>
   );

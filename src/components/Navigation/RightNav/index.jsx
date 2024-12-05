@@ -1,6 +1,35 @@
 import { useEffect, useState, memo } from "react";
 import MobileMenu from "./MobileMenu";
-import NavMenu from "./NavMenu";
+import Link from "next/link";
+import { navigationRoutes } from "../../../assets/data/routes";
+
+function NavMenu() {
+  return (
+    <>
+      <ul className="max-md:hidden flex justify-end items-center gap-6 lg:gap-9 ">
+        {navigationRoutes &&
+          navigationRoutes.map((link) => (
+            <li
+              className="font-primary font-bold text-[#000c19] uppercase hover:opacity-70 md:max-lg:text-sm "
+              key={link._id}
+            >
+              <span>
+                <Link
+                  href={link.url}
+                  style={{
+                    color: "inherit",
+                    textDecoration: "inherit",
+                  }}
+                >
+                  {link.title}
+                </Link>
+              </span>
+            </li>
+          ))}
+      </ul>
+    </>
+  );
+}
 
 function RightNav() {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,13 +42,13 @@ function RightNav() {
 
   return (
     <>
-      <div className="p_navMenu">
+      <div className="flex items-center gap-[30px]">
         <NavMenu />
         {/* <ThemeChanger /> */}
 
-        <button className="p_menu_tag" onClick={handleMenu}>
+        <button className="h-[22px] text-[15px] font-bold md:hidden" onClick={handleMenu}>
           {isVisible ? (
-            "CLOSE"
+            <p>CLOSE</p>
           ) : (
             <svg
               width="26"
@@ -58,24 +87,6 @@ function RightNav() {
 
         {isVisible && <MobileMenu />}
       </div>
-
-      <style jsx>{`
-        .p_navMenu {
-          display: flex;
-          align-items: center;
-          gap: 30px;
-        }
-        .p_menu_tag {
-          height: 22px;
-          font-size: 15px;
-          font-weight: 700;
-        }
-        @media (min-width: 758px) {
-          .p_menu_tag {
-            display: none;
-          }
-        }
-      `}</style>
     </>
   );
 }

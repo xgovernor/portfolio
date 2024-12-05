@@ -1,11 +1,14 @@
 import clsx from "clsx";
 import { memo } from "react";
 
-function Container({ className, children, ...rest }) {
+function Container({ className,size = "lg", children, ...rest }) {
   return (
     <div
       className={clsx(
-        "w-full max-w-[1128px] mx-auto max-md:px-5 md:max-lg:px-10 lg:max-xl:px-[60px] max-xl:border-box xl:[box-sizing:content-box]",
+        "w-full mx-auto px-5 box-border",
+        size === "sm" && "max-w-[762px]",
+        size === "md" && "max-w-[862px]",
+        size === "lg" && "max-w-[1168px]",
         className
       )}
       {...rest}

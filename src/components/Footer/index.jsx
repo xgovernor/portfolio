@@ -1,71 +1,16 @@
 import Image from "next/image";
 import Container from "../Container";
-import { footerRoutes } from "../../assets/data/routes";
+import { socialLinks } from "../../assets/data/routes";
 import Link from "next/link";
 
-const FooterCTA = ({ text }) => {
-  return (
-    <div className="">
-      <h4 className="[font-family:'NHaasGroteskDSPro'] [word-spacing:0.1em] text-[38px] leading-[48px] [letter-spacing:0.02em] text-white font-bold">
-        {text.map((line, index) => (
-          <span key={index}>
-            {index !== 0 && <br />}
-            <span>{line}</span>
-          </span>
-        ))}
-      </h4>
-
-      <div className="mt-3 text-white flex gap-2.5 [font-family:'Neue_Haas_Grotesk_Display_Pro'] [&_a]:opacity-70 [&_a]:font-medium [&>*]:uppercase">
-        <Link
-          className="hover:opacity-100"
-          href="mailto:abutahermuhammad@outlook.com"
-        >
-          Email
-        </Link>
-        <Link
-          className="hover:opacity-100"
-          target="_blank"
-          href="https://www.linkedin.com/in/abutahermuhammad?utm_source=portfolio&utm_medium=portfolio"
-        >
-          Linkedin
-        </Link>
-      </div>
-    </div>
-  );
-};
-
-const FooterMenu = ({ links }) => {
-  return (
-    <ul className="p_menu p__im max-lg:hidden ">
-      {links &&
-        links.map(
-          (
-            link // Looping through footer menu list object.
-          ) => (
-            <li
-              key={link._id}
-              className="mt-3 me-[35px] last-of-type:me-0 inline-block text-white gap-2.5 [font-family:'Neue_Haas_Grotesk_Display_Pro']"
-            >
-              <Link
-                className="font-medium uppercase hover:opacity-70"
-                href={link.url}
-              >
-                {link.title}
-              </Link>
-            </li>
-          )
-        )}
-    </ul>
-  );
-};
 
 const Footer = () => {
   return (
     <>
-      <footer className="pt-[75px] pb-[35px] bg-[#000c19]">
-        <Container className="p_content mb-[95px] flex justify-between">
-          <div className="p__left w-1/2">
-            <div className="p_img_wrapper w-[35px] h-auto mb-[20px]">
+      <footer className="pt-[60px] pb-[60px] bg-[#000c19]">
+        <Container className=" mb-[130px] xl:px-0">
+
+            <div className=" w-[35px] h-auto mb-[20px]">
               <Image
                 src={`/images/branding/logo.svg`}
                 width={34.59}
@@ -75,16 +20,15 @@ const Footer = () => {
               />
             </div>
 
-            <FooterCTA text={["LET’S MAKE", "SOMETHING GREAT"]} />
-          </div>
 
-          <div className="p__right">
-            <FooterMenu links={footerRoutes} />
-          </div>
+            <p className="font-primary uppercase text-sm text-[#b9b9b9]">Let&apos;s make something great</p>
+            <h4 className="mt-4 md:mt-6 font-primary [word-spacing:0.1em] text-2xl md:text-6xl [letter-spacing:0.02em] text-white font-bold hover:opacity-70">
+              <Link href="mailto:abut1081@gmail.com">abut1081@gmail.com</Link>
+            </h4>
         </Container>
 
-        <Container className="border-t border-[#ffffff1a]">
-          <p className="[font-family:'Neue_Haas_Grotesk_Display_Pro'] text-white text-sm mt-2.5">
+        <Container className="flex flex-col gap-2 md:grid grid-cols-12 border-t border-[#ffffff1a] xl:px-0">
+          <p className="col-span-4 font-primary text-[#b9b9b9] text-sm mt-5">
             © 2021-2024. Made with ❤️ at{" "}
             <Link
               className="hover:text-[#b9b9b9]"
@@ -95,6 +39,37 @@ const Footer = () => {
             </Link>
             .
           </p>
+
+          <ul className="mt-5 col-span-3 grid grid-cols-2">
+            {socialLinks.map(
+                ( link ) => (
+                  <li
+                    key={link._id}
+                    className="text-[#b9b9b9] gap-2.5"
+                  >
+                    <Link
+                      className="font-primary text-xs font-bold uppercase hover:opacity-70"
+                      href={link.url}
+                    >
+                      {link.title}
+                    </Link>
+                  </li>
+                )
+              )}
+          </ul>
+
+          <ul className="mt-5 col-start-10 col-span-3 offset-1">
+                  <li
+                    className="font-primary text-xs font-bold uppercase text-[#b9b9b9] gap-2.5"
+                  >
+                      Shahajalal Uposhahar,
+                  </li>
+                  <li
+                    className="font-primary text-xs font-bold uppercase text-[#b9b9b9] gap-2.5"
+                  >
+                      Sylhet, Bangladesh
+                  </li>
+          </ul>
         </Container>
       </footer>
     </>

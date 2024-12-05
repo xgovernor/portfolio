@@ -128,7 +128,7 @@ const BodySection = ({ children, title, className }) => {
     >
       {/* Left Side */}
       <div className="md:max-lg:w-[30%] md:max-lg:max-w-[176px] lg:w-[250px]">
-        <h4 className="text-black text-base [font-family:'NHaasGroteskDSPro']">
+        <h4 className="text-black text-base ">
           {title}
         </h4>
       </div>
@@ -144,7 +144,7 @@ const Paragraph = ({ children, className }) => {
   return (
     <p
       className={clsx(
-        "[font-family:'Neue_Haas_Grotesk_Display_Pro'] text-[#4D4D4D] [&:last-of-type]:mb-0] max-lg:mb-[15px] max-md:leading-5 md:leading-[23px] lg:leading-[25px] lg:mb-5 xl:text-[15px] xl:leading-[27px] ",
+        "font-sans text-[#4D4D4D] [&:last-of-type]:mb-0] max-lg:mb-[15px] max-md:leading-5 md:leading-[23px] lg:leading-[25px] lg:mb-5 xl:text-[15px] xl:leading-[27px] ",
         className
       )}
     >
@@ -161,8 +161,8 @@ const TableRow = ({ className, title, description, meta }) => {
         className
       )}
     >
-      <td className="text-black text-left [font-family:'Neue_Haas_Grotesk_Display_Pro']">
-        <h4 className="[font-family:'Neue_Haas_Grotesk_Display_Pro'] text-[#4D4D4D] [&:last-of-type]:mb-0] max-md:leading-5 md:leading-[23px] lg:leading-[25px] xl:text-[15px] xl:leading-[27px] ">
+      <td className="text-black text-left font-sans">
+        <h4 className="font-sans text-[#4D4D4D] [&:last-of-type]:mb-0] max-md:leading-5 md:leading-[23px] lg:leading-[25px] xl:text-[15px] xl:leading-[27px] ">
           {title}
         </h4>
       </td>

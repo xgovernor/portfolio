@@ -1,7 +1,8 @@
 import BlockContent from '@sanity/block-content-to-react'
-import { Suspense, memo } from "react";
+import { Suspense } from "react";
 import { imageBuilder } from '../../utils/sanity';
 import Image from 'next/image';
+import Container from '../Container';
 
 const CodeBlock = (props) => {
   return (
@@ -29,15 +30,9 @@ const TableBlock = (props) => {
   )
 }
 
-const serializers = {
-  types: {
-    code: CodeBlock,
-    sizeChart: TableBlock,
-    image: (props) => {
-      const src = imageBuilder(props.node.asset).url();
-      console.log("IMAGE: ", props);
-      console.log("IMAGE BUILDER: ", props.node.caption);
-      return (
+const imageBlock = (props) => {
+  const src = imageBuilder(props.node.asset).url();
+  return (
         <figure className='p_1c_img'>
           <Image
             src={src}
@@ -51,17 +46,24 @@ const serializers = {
             <caption>{props.node.caption}</caption>
           )}
         </figure>
-      )
-    }
+  )
+}
+
+const serializers = {
+  types: {
+    code: CodeBlock,
+    sizeChart: TableBlock,
+    image: imageBlock
   },
 }
 
 function SingleContent({ content }) {
   return (
     <section className="p_single_content">
-      <div className="p_container_single">
+      <Container className="p_container">
         <Suspense fallback={<div>Loading</div>}>
           <BlockContent
+            className="font-sans"
             blocks={content}
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
@@ -91,9 +93,9 @@ function SingleContent({ content }) {
             </div>
           </div> */}
 
-      </div>
+      </Container>
     </section>
   );
 }
 
-export default memo(SingleContent);
+export default SingleContent;

@@ -1,206 +1,110 @@
-@import "./fonts.css";
+
 @import "./table.style.css";
 @import "./single.style.css";
 @import "./animation.css";
 
 ::selection {
-  color: #ffffff;
-  background: #000000;
+  @apply text-white bg-black;
 }
 
 body {
-  font-family: "Neue Haas Grotesk Display Pro";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  letter-spacing: 0.04em;
-  line-height: 16px;
-  color: #4d4d4d;
-  background: #ffffff;
+  @apply font-primary text-[#393D3F] bg-[#F5F3F5] tracking-[0.04em];
 }
+
 
 @media (max-width: 767px) {
   .p_header .p__subtitle {
-    font-size: 28px;
-    line-height: 34px;
+    @apply text-[28px] leading-[34px];
   }
   .p_content {
-    padding: 0 30px;
-    flex-direction: column;
-    gap: 50px;
+    @apply py-0 px-[30px] flex-col gap-[50px];
   }
   .p_content .p__right .p_right_content .p__title {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding-bottom: 6px;
-    font-size: 14px;
-    line-height: 22px;
+    @apply mt-5 mb-2.5 pb-1.5 text-sm leading-[22px];
   }
   .p_content .p__right .p_right_content .p__list li {
-    margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 24px;
+    @apply mb-2.5 text-sm leading-[24px];
   }
   .p_content .p__right .p_right_content .p__list li a {
-    font-size: 14px;
-    line-height: 24px;
+    @apply text-sm leading-[24px];
   }
   .p_content .p__right .p_right_content p {
-    margin-top: 20px;
-    font-size: 14px;
-    line-height: 24px;
+    @apply mt-5 text-sm leading-[24px];
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .p_header .p__subtitle {
-    max-width: 526px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 28px;
-    line-height: 34px;
+    @apply mx-auto mb-5 max-w-[526px] text-[28px] leading-[34px];
   }
   .p_content {
-    padding: 0 50px;
-    flex-direction: column;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 50px;
+    @apply py-0 px-[50px] flex-col justify-center items-center gap-[50px];
   }
   .p_content .p__left {
-    width: 100%;
-    max-width: 526px;
+    @apply w-full !max-w-[526px];
   }
   .p_content .p__right {
-    width: 100%;
-    max-width: 526px !important;
+    @apply w-full !max-w-[526px];
   }
   .p_content .p__right .p_right_content .p__title {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding-bottom: 6px;
-    font-size: 14px;
-    line-height: 22px;
+    @apply mt-10 mb-2.5 pb-1.5 text-[14px] leading-[22px];
   }
   .p_content .p__right .p_right_content .p__list li {
-    margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 24px;
+    @apply mb-2.5 text-[14px] leading-[24px];
   }
   .p_content .p__right .p_right_content .p__list li a {
-    font-size: 14px;
-    line-height: 24px;
+    @apply text-[14px] leading-[24px];
   }
   .p_content .p__right .p_right_content p {
-    margin-top: 20px;
-    font-size: 14px;
-    line-height: 24px;
+    @apply mt-10 text-[14px] leading-[24px];
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1365px) {
   .p_header .p__subtitle {
-    font-size: 28px;
-    line-height: 34px;
+    @apply text-[28px] leading-[34px];
   }
   .p_content {
-    padding: 0 80px;
-    gap: 50px;
+    @apply py-0 px-20 gap-[50px];
   }
   .p_content .p__right .p_right_content .p__title {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding-bottom: 6px;
-    font-size: 14px;
-    line-height: 22px;
+    @apply mt-5 mb-2.5 pb-1.5 text-[14px] leading-[22px];
   }
   .p_content .p__right .p_right_content .p__list li {
-    margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 24px;
+    @apply mb-2.5 text-[14px] leading-[24px];
   }
   .p_content .p__right .p_right_content .p__list li a {
-    font-size: 14px;
-    line-height: 24px;
+    @apply text-[14px] leading-[24px];
   }
   .p_content .p__right .p_right_content p {
-    margin-top: 20px;
-    font-size: 14px;
-    line-height: 24px;
+    @apply mt-5 text-[14px] leading-[24px];
   }
 }
 
 @media (min-width: 1366px) {
   .p_header .p__subtitle {
-    font-size: 32px;
-    line-height: 34px;
+    @apply text-[38px] leading-[34px];
   }
   .p_content .p__left {
-    max-width: 526px;
+    @apply w-[526px];
   }
   .p_content .p__right {
-    max-width: 449px;
+    @apply w-[449px];
   }
   .p_content .p__right .p_right_content .p__title {
-    margin-top: 30px;
-    margin-bottom: 10px;
-    padding-bottom: 6px;
-    font-size: 14px;
-    line-height: 22px;
+    @apply mt-[30px] mb-2.5 pb-1.5 text-[14px] leading-[22px];
   }
   .p_content .p__right .p_right_content .p__list {
-    list-style: none;
+    @apply list-none;
   }
   .p_content .p__right .p_right_content .p__list li {
-    margin-bottom: 10px;
-    font-size: 16px;
-    line-height: 24px;
+    @apply mb-2.5 text-base;
   }
   .p_content .p__right .p_right_content .p__list li a {
-    font-size: 16px;
-    line-height: 24px;
+    @apply text-base;
   }
   .p_content .p__right .p_right_content p {
-    margin-top: 20px;
-    font-size: 16px;
-    line-height: 24px;
+    @apply mt-5 text-base;
   }
 }
 
-.p_navaigation_articles .p_content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.p_navaigation_articles .p_content .p_c__blogCard {
-  width: 100%;
-  max-width: 526px;
-}
-
-@media (max-width: 767px) {
-  .p_navaigation_articles {
-    padding: 40px 0;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .p_navaigation_articles {
-    padding: 60px 0;
-  }
-  .p_navaigation_articles .p_content {
-    flex-direction: row;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1365px) {
-  .p_navaigation_articles {
-    padding: 80px 0;
-  }
-}
-
-@media (min-width: 1366px) {
-  .p_navaigation_articles {
-    padding: 100px 0;
-  }
-}
