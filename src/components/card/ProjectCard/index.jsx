@@ -11,7 +11,7 @@ const ProjectCard = ({
   excerpt,
   technologies,
   url,
-  slug,
+  projectUrl,
   ...rest
 }) => {
   const img = thumbnail ? thumbnail : "/images/placeholder.png";
@@ -32,7 +32,7 @@ const ProjectCard = ({
               {category}
             </h4>
             <h2 className="text-black text-lg leading-[22px] md:mt-2.5 md:text-[28px] md:leading-8 lg:text-[32px] lg:leading-[38px]  xl:text-[34px] xl:leading-[38px]">
-              <Link href={`/project/${slug}`} className="hover:text-[#717171]">
+              <Link href={url} className="hover:text-[#717171]">
                 {title}
               </Link>
             </h2>
@@ -47,9 +47,9 @@ const ProjectCard = ({
             {arrayToString(technologies)}.
           </p>}
 
-          {url ? (
+          {projectUrl ? (
             <Link
-              href={url}
+              href={projectUrl}
               className="font-primary text-black hover:opacity-80 uppercase font-bold text-xs  underline"
               target="_blank"
             >

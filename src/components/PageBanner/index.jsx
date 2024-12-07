@@ -6,7 +6,7 @@ function PageBanner({ dataImg, img }) {
     <>
       <section className="w-full max-md:h-[50vh] md:h-screen relative overflow-hidden flex object-contain [box-shadow:inset_0_0_100px_#00000040]">
         {/* <Parallax speed={-20}> */}
-        <div className="__image absolute top-0 right-0 left-0 bottom-0 -z-[1]" />
+        <div className="__image absolute top-0 right-0 left-0 bottom-0" />
         {/* </Parallax> */}
       </section>
 

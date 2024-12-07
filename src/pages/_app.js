@@ -1,7 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import Script from "next/script";
 import NextNProgress from "nextjs-progressbar";
-import "./../styles/index.css";
 import "../styles/global.css";
 import localFont from "next/font/local";
 

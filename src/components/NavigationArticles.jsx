@@ -8,7 +8,7 @@ function NavigationalArticles({ articles }) {
       aria-labelledby="navigational-articles-heading"
     >
       {/* Header Section */}
-      <Container className="p_header mb-5 py-0 max-md:px-[30px] md:py-0 md:px-[50px] lg:mb-5 lg:py-0 lg:px-[80px] xl:mb-[30px]">
+      <Container className="mb-5 py-0 max-md:px-[30px] md:py-0 md:px-[50px] lg:mb-5 lg:py-0 lg:px-[80px] xl:mb-[30px]">
         <h2
           id="navigational-articles-heading"
           className="tracking-wide items-center max-md:mb-2.5 text-[28px] leading-[34px] md:mb-2.5 md:text-[28px] md:leading-[34px] lg:max-xl:mb-2.5 lg:text-[28px] lg:leading-[34px] xl:mb-[35px] xl:text-[38px] xl:leading-[48px] uppercase"

@@ -38,7 +38,7 @@ function BlogCard({
         >
           <h3
             id="blog-card-title"
-            className="text-[#000c19] font-black hover:text-[#717171] mb-[15px] text-[22px] leading-[26px] md:leading-7 lg:mb-4 lg:text-[24px] lg:leading-8 xl:text-3xl xl:leading-10"
+            className="text-[#000c19] font-black hover:text-[#717171] text-[22px] leading-[26px] md:leading-7 lg:text-[24px] lg:leading-8 xl:text-3xl xl:leading-10"
           >
             {truncate(title, 85)}
           </h3>

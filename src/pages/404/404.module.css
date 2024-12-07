@@ -3,6 +3,7 @@
 }
 
 .__line {
+  @apply font-primary;
   color: #000;
 }
 

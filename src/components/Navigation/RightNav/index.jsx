@@ -1,17 +1,18 @@
+"use client";
 import { useEffect, useState, memo } from "react";
 import MobileMenu from "./MobileMenu";
 import Link from "next/link";
-import { navigationRoutes } from "../../../assets/data/routes";
+import { NAVBAR_ROUTES } from "../../../assets/data/links";
 
 function NavMenu() {
   return (
     <>
       <ul className="max-md:hidden flex justify-end items-center gap-6 lg:gap-9 ">
-        {navigationRoutes &&
-          navigationRoutes.map((link) => (
+        {NAVBAR_ROUTES &&
+          NAVBAR_ROUTES.map((link, i) => (
             <li
               className="font-primary font-bold text-[#000c19] uppercase hover:opacity-70 md:max-lg:text-sm "
-              key={link._id}
+              key={i}
             >
               <span>
                 <Link
@@ -46,7 +47,7 @@ function RightNav() {
         <NavMenu />
         {/* <ThemeChanger /> */}
 
-        <button className="h-[22px] text-[15px] font-bold md:hidden" onClick={handleMenu}>
+        <button className="h-[22px] text-[15px] font-primary font-bold md:hidden" onClick={handleMenu}>
           {isVisible ? (
             <p>CLOSE</p>
           ) : (

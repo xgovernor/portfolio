@@ -1,5 +1,5 @@
-import { useEffect, useState, memo, useCallback } from "react";
-import { navigationRoutes } from "./../../assets/data/routes";
+"use client"
+import { info } from "autoprefixer";
 import Container from "../Container";
 import RightNav from "./RightNav";
 import Link from "next/link";
@@ -14,14 +14,14 @@ function Navigation() {
         >
           <Container className="flex justify-between items-center">
             <Link
-              className="font-primary font-bold uppercase text-black md:text-base lg:text-lg xl:text-xl"
+              className="font-primary font-bold  text-black md:text-base lg:text-lg xl:text-xl"
               href={"/"}
             >
-              A.T. Muhammad
+              Abu Taher Muhammad
             </Link>
 
             {/* Menu */}
-            <RightNav links={navigationRoutes} />
+            <RightNav />
           </Container>
         </nav>
       </header>
@@ -29,4 +29,4 @@ function Navigation() {
   );
 }
 
-export default memo(Navigation);
+export default Navigation;

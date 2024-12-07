@@ -8,13 +8,12 @@ const HomeAbout = () => {
     <section className="w-full pb-10 lg:pb-[90px] xl:pb-[130px]">
       <Container className="xl:px-0">
         <Image
-          className="rounded-2xl"
+          className="w-full h-auto rounded-2xl"
           src={IMG}
           alt="An about section cover featuring modern tech"
           width={1088}
           height={556}
-          layout="responsive"
-          priority // Preloads the image
+          priority
         />
       </Container>
 
@@ -33,11 +32,11 @@ const HomeAbout = () => {
 
           {/* About Section Content */}
           <div className="max-lg:mt-2.5 lg:w-full lg:max-w-[562px]">
-            <p className="font-sans text-justify text-[#1A1A1A] mb-[30px] text-sm leading-[160%] lg:mb-5">
-              Anyone who knows me knows that I&apos;m a tech nerd who loves the
-              internet—or rather, the possibilities it opens up today. How I
-              used to play with WordPress has become muscle memory. These days,
-              I primarily focus on MERN stack development. Isn&apos;t it
+            <p className="font-sans text-justify text-[#1A1A1A] mb-2 text-[13px] leading-[160%]">
+              Hi, I am a full-stack developer based in Bangladesh. I started my career in 2019 as a WordPress developer and since then I am working with Laravel, Node.js, and React, NextJS, etc.</p>
+            <p className="font-sans text-justify text-[#1A1A1A] mb-2 text-[13px] leading-[160%]">I am experienced with technologies like PHP, JavaScript, and Typescript, Python, and MySQL, etc. These days, I primarily focus on MERN stack development.
+            </p>
+            <p className="font-sans text-justify text-[#1A1A1A] mb-[30px] text-[13px] leading-[160%] lg:mb-5">Isn&apos;t it
               fascinating to work with your favorite tools? Oh! I forgot—I love
               sharing my enthusiasm with others. Sometimes, I arrange concise
               workshops or boot camps to showcase unique approaches to solving

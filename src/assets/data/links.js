@@ -2,32 +2,49 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaMediumM } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa";
 
 export const SOCIAL_MEDIA = [
   {
     icon: <FaLinkedin />,
-    name: "LinkedIn",
+    title: "LinkedIn",
     url: "https://www.linkedin.com/in/abutahermuhammad/",
   },
   {
     icon: <FaGithub />,
-    name: "GitHub",
+    title: "GitHub",
     url: "https://github.com/abutahermuhammad",
   },
   {
     icon: <FaMediumM />,
-    name: "Medium",
+    title: "Medium",
     url: "https://abutaher-muhammad.medium.com/",
   },
   {
     icon: <FaBehance />,
-    name: "Behance",
+    title: "Behance",
     url: "https://www.behance.net/abut10812466",
   },
+];
+
+export const NAVBAR_ROUTES = [
+  // {
+  //     _id: 'NR001',
+  //     title: 'Home',
+  //     url: '/'
+  // },
+  // {
+  //   _id: "NR002",
+  //   title: "ABOUT",
+  //   url: "/about",
+  // },
   {
-    icon: <FaEnvelope />,
-    name: "Email",
-    url: "mailto:abutahermuhammad@outlook.com",
+    _id: "NR003",
+    title: "WORK",
+    url: "/work",
+  },
+  {
+    _id: "NR004",
+    title: "BLOG",
+    url: "/article",
   },
 ];

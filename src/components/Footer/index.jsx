@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Container from "../Container";
-import { socialLinks } from "../../assets/data/routes";
+// import { socialLinks } from "../../assets/data/routes";
 import Link from "next/link";
+import { SOCIAL_MEDIA } from "../../assets/data/links";
 
 
 const Footer = () => {
@@ -15,7 +16,6 @@ const Footer = () => {
                 src={`/images/branding/logo.svg`}
                 width={34.59}
                 height={35}
-                layout="responsive"
                 alt="Logo"
               />
             </div>
@@ -41,10 +41,10 @@ const Footer = () => {
           </p>
 
           <ul className="mt-5 col-span-3 grid grid-cols-2">
-            {socialLinks.map(
-                ( link ) => (
+            {SOCIAL_MEDIA.map(
+                ( link, i ) => (
                   <li
-                    key={link._id}
+                    key={i}
                     className="text-[#b9b9b9] gap-2.5"
                   >
                     <Link

@@ -24,7 +24,6 @@ function SingleCover({ data }) {
           width={imageWidth}
           height={imageHeight}
           alt={imageAlt}
-          layout="responsive"
           priority // Adds preload for the image (optional for above-the-fold content)
           aria-hidden={!data?.alt && imageUrl === defaultImage.url ? "true" : "false"} // Decorative if fallback image
         />

@@ -1,15 +1,18 @@
+@import "./table.style.css";
+@import "./single.style.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
-html {
-    scroll-behavior: smooth;
-}
 
+::selection {
+  @apply text-white bg-black;
+}
 @layer base {
      html, body {
-        @apply font-sans;
+        /* @apply font-sans; */
+        @apply font-primary text-[#393D3F] bg-[#F5F3F5] tracking-[0.04em] scroll-smooth;
     }
 
     h1, h2, h3, h4, h5, h6 {
