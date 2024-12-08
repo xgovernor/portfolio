@@ -10,24 +10,12 @@ import WorkProjects from "../../components/WorkProjects";
 // GROQ query for featured Projects & Articles.
 const QUERY = groq`*[_type == "project"] {
 	_id,
-	_type,
-	"date": {
-	  _createdAt,
-	  publishedAt,
-	  _updatedAt
-	},
 	featured,
-	"category": category[0] -> {
-	  _id,
-	  title
-	},
+	projectName,
 	thumbnail,
 	title,
 	excerpt,
-	liveUrl,
-	role,
 	"slug": slug.current,
-	technology,
   }`;
 
 function Work({ data }) {
@@ -37,14 +25,12 @@ function Work({ data }) {
 
       <Layout className="page__work">
         <PageHeader
-          data={{
-            heading: "WORK",
-            subheading: [
+            heading="WORK"
+            subheading={[
               "FORGING EXPERIENCES",
               "WHERE CREATIVITY",
               "EMBRACES TECHNOLOGY.",
-            ],
-          }}
+            ]}
         />
         <PageBanner img={IMG} />
 

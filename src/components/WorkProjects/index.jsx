@@ -11,16 +11,13 @@ function WorkProjects ({ projects }) {
         {projects.map((project, i) => (
           <ProjectCard
             key={project._id}
-            className=""
-            category={project.category?.title}
+            projectName={project.projectName}
             thumbnail={imageBuilder(project.thumbnail)
               .width(562)
               .height(323)
               .url()}
             title={project.title}
             excerpt={project.excerpt}
-            technologies={project.technology}
-            projectUrl={project.liveUrl}
             url={`/work/${project.slug}`}
           />
         ))}
