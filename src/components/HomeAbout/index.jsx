@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import IMG from "./../../assets/images/home-about.jpg";
+import IMG from "./../../assets/images/home-about.webp";
 import Container from "../Container";
 
 function HomeAbout() {

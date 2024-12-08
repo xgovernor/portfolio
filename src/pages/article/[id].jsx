@@ -109,7 +109,11 @@ function ArticlesSingle({ articles, article }) {
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=31536000, stale-while-revalidate=59"
+  );
   const { id: slug } = params;
 
   try {

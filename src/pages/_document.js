@@ -4,8 +4,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* Common Meta Data */}
-        {/* <Meta /> */}
         <meta name="theme-color" content="#000" />
       </Head>
 

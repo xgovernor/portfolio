@@ -2,7 +2,6 @@ import React from 'react'
 import Layout from '../../../components/Layout'
 import ProjectHeader from '../../../components/ProjectHeader'
 import ProjectInfo from '../../../components/ProjectInfo'
-import COVER from './../../../assets/images/case.webp'
 import ProjectContent from '../../../components/ProjectContent'
 import { groq } from 'next-sanity'
 import { getClient, imageBuilder } from '../../../utils/sanity'
@@ -22,7 +21,7 @@ const PROJECT_QUERY = groq`*[_type == "project" && slug.current == $slug] | orde
 }`;
 
 function Project ({ project }) {
-  console.log(project)
+
   return (
     <Layout>
       <ProjectHeader title={project.title} cover={imageBuilder(project.thumbnail).width(1920).height(1080).url()} />
@@ -32,7 +31,11 @@ function Project ({ project }) {
   )
 }
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params,res }) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=31536000, stale-while-revalidate=59'
+  )
   const { id: slug } = params;
 
   try {
