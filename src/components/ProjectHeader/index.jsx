@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../Container'
 
-const ProjectHeader = ({title, cover}) => {
+function ProjectHeader({title, cover}) {
   return (
     <>
       <section className="w-full h-[calc(100vh-75px)] max-md:max-h-[650px] relative overflow-hidden flex items-end object-contain [box-shadow:inset_0_0_100px_#00000040]">

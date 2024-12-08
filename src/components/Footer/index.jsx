@@ -5,7 +5,7 @@ import Link from "next/link";
 import { SOCIAL_MEDIA } from "../../assets/data/links";
 
 
-const Footer = () => {
+function Footer() {
   return (
     <>
       <footer className="pt-[60px] pb-[60px] bg-[#000c19]">

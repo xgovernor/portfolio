@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import Footer from "../Footer";
 import Navigation from "../Navigation";
 
-const Layout = ({ children, ...rest }) => (
-  <>
+function Layout({ children, ...rest }) {
+  return (
+    <>
     <Navigation />
     <motion.div
       initial={{ opacity: 0 }}
@@ -16,7 +17,8 @@ const Layout = ({ children, ...rest }) => (
       </main>
     </motion.div>
     <Footer />
-  </>
-);
+    </>
+  );
+};
 
 export default Layout;

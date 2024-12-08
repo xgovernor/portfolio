@@ -21,7 +21,7 @@ const PROJECT_QUERY = groq`*[_type == "project" && slug.current == $slug] | orde
   technology,
 }`;
 
-const Project = ({ project }) => {
+function Project ({ project }) {
   console.log(project)
   return (
     <Layout>

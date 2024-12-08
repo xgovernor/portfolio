@@ -3,7 +3,7 @@ import Script from "next/script";
 import { memo } from "react";
 import { info } from "../../assets/data/information";
 
-const Meta = ({ title=info.title, description=info.description, image=info.avatar, children }) => {
+function Meta({ title=info.title, description=info.description, image=info.avatar, children }) {
 	const fullTitle = title
 		? `${title} - ${info.title}`
 		: `${info.title} || ${info.jobTitle}`;

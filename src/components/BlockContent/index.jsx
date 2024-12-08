@@ -2,7 +2,8 @@ import Block from '@sanity/block-content-to-react'
 import { imageBuilder } from '../../utils/sanity';
 import Image from 'next/image';
 
-const CodeBlock = (props) => {
+
+function CodeBlock(props) {
   return (
     <pre data-language={props.node.language}>
       <code>{props.node.code}</code>
@@ -10,7 +11,7 @@ const CodeBlock = (props) => {
   )
 }
 
-const TableBlock = (props) => {
+function TableBlock(props) {
   return (
     <div className="p_table">
       <table>
@@ -28,7 +29,7 @@ const TableBlock = (props) => {
   )
 }
 
-const imageBlock = (props) => {
+function imageBlock(props) {
   const src = imageBuilder(props.node.asset).url();
   return (
         <figure className="relative w-full h-auto mb-2 last:mb-0">
@@ -46,7 +47,7 @@ const imageBlock = (props) => {
   )
 }
 
-const projectContentBlock = (props) => {
+function projectContentBlock(props) {
   return (
     <div className="px-5 md:px-10 py-10 md:py-16 flex flex-col">
       {props.node.subheading && <h6 className='text-[13px] mb-2'>{props.node.subheading}</h6>}
@@ -61,7 +62,7 @@ const projectContentBlock = (props) => {
   )
 }
 
-const dualImageBlock = (props) => {
+function dualImageBlock(props) {
   return (
     <div className="grid grid-cols-2 gap-2">
       <Image src={imageBuilder(props.node.image1).url()} width={910} height={1080} alt="" />
@@ -79,7 +80,8 @@ const serializers = {
     dualImage: dualImageBlock
   },
 }
-const BlockContent = ({ content }) => {
+
+function BlockContent({ content }) {
   return (
     <Block
         className="font-sans"

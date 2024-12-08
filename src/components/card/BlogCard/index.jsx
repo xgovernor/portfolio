@@ -16,7 +16,7 @@ function BlogCard({
   return (
     <article
       className={clsx(
-        "w-full max-w-[526px] flex flex-col justify-between border border-[#0000001f] hover:border-black p-[25px] lg:p-[35px] xl:max-w-[526px] xl:min-h-[400px] xl:p-[45px]",
+        "w-full max-w-[526px] flex flex-col justify-between border border-[#0000001f] hover:border-black rounded-lg p-[25px] lg:p-[35px] xl:max-w-[526px] xl:min-h-[400px] xl:p-[45px]",
         className
       )}
       {...rest}

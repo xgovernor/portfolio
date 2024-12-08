@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../Container'
 
-const ProjectInfo = ({role, tech, intro}) => {
+function ProjectInfo ({role, tech, intro}) {
   return (
 <>
       <section className="relative w-full">

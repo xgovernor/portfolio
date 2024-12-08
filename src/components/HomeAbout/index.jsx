@@ -3,7 +3,7 @@ import Link from "next/link";
 import IMG from "./../../assets/images/home-about.jpg";
 import Container from "../Container";
 
-const HomeAbout = () => {
+function HomeAbout() {
   return (
     <section className="w-full pb-10 lg:pb-[90px] xl:pb-[130px]">
       <Container className="xl:px-0">

@@ -54,20 +54,7 @@ const RELATED_ARTICLE_QUERY = groq`*[_type == "article"] {
 	"slug": slug.current,
   }[0...2]`;
 
-function ArticlesSingle({ articles, article, slug }) {
-  const singleArticleHeader = {
-    title: article?.title || "",
-    date: article?.date,
-    category: article.category,
-  };
-
-  const singleArticleCover = {
-    url: imageBuilder(article?.image).width(1088).height(370).url(), // || "/images/singleCover.jpg",
-    alt: article?.title || "Abu Taher Muhammad",
-    width: 1088,
-    height: 370,
-  };
-
+function ArticlesSingle({ articles, article }) {
 
   return (
     <>
@@ -105,8 +92,16 @@ function ArticlesSingle({ articles, article, slug }) {
       </Meta>
 
       <Layout className="">
-        <SingleHeader data={singleArticleHeader} />
-        <SingleCover data={singleArticleCover} />
+        <SingleHeader
+          title={article?.title}
+          categories={article?.category}
+          updatedAt={article?.date._updatedAt}
+          createdAt={article?.date._createdAt}
+        />
+        <SingleCover
+          src={imageBuilder(article?.image).width(1088).height(370).url()}
+          alt={article?.title}
+        />
         <SingleContent content={article.body} />
         <NavigationalArticles articles={articles} />
       </Layout>
@@ -114,7 +109,6 @@ function ArticlesSingle({ articles, article, slug }) {
   );
 }
 
-// export async function getStaticProps({ params, preview = false }) {
 export async function getServerSideProps({ params }) {
   const { id: slug } = params;
 
@@ -143,4 +137,4 @@ export async function getServerSideProps({ params }) {
   }
 }
 
-export default memo(ArticlesSingle);
+export default ArticlesSingle;

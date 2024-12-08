@@ -3,7 +3,7 @@ import Link from "next/link";
 import { arrayToString } from "../../../utils/string.utils";
 import clsx from "clsx";
 
-const ProjectCard = ({
+function ProjectCard({
   className,
   category,
   thumbnail,
@@ -13,7 +13,7 @@ const ProjectCard = ({
   url,
   projectUrl,
   ...rest
-}) => {
+}) {
   const img = thumbnail ? thumbnail : "/images/placeholder.png";
 
   return (

@@ -4,7 +4,7 @@ import { IconContext } from "react-icons";
 import { FiSun } from "react-icons/fi";
 import { MdOutlineDarkMode } from "react-icons/md";
 
-const ThemeChanger = () => {
+function ThemeChanger() {
   const { theme, setTheme } = useTheme();
 
   const handleTheme = () => {

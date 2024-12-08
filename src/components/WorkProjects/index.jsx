@@ -3,7 +3,7 @@ import {memo} from "react";
 import { imageBuilder } from "../../utils/sanity";
 import Container from "../Container";
 
-const WorkProjects = ({ projects }) => {
+function WorkProjects ({ projects }) {
 
   return (
     <section className="">

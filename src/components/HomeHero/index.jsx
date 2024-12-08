@@ -3,7 +3,7 @@ import Container from "../Container";
 import { IconContext } from "react-icons";
 import { SOCIAL_MEDIA } from "../../assets/data/links";
 
-const HomeHero = ({ title, cvURL }) => {
+function HomeHero({ title, cvURL }) {
   return (
     <section className="">
       <Container className="w-full max-w-screen-xl pt-[55px] pb-10 md:pt-[85px] md:pb-[100px] lg:pt-[105px] lg:pb-[100px] xl:pt-[165px] xl:pb-[80px]">
