@@ -41,14 +41,16 @@ function ProjectCard({
         </div>
 
         <div className=" max-lg:max-w-[585px] max-lg:max-h-[338px] lg:max-w-[378px] lg:max-h-[218px] xl:max-w-[562px] xl:max-h-[316px]">
+          <Link href={url}>
           <Image
-            className="rounded-xl"
+            className="rounded-xl hover:opacity-70"
               src={img}
               alt={title}
               width={562}
               height={323}
               loading="lazy"
             />
+          </Link>
         </div>
       </div>
     </div>

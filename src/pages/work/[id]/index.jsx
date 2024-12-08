@@ -24,9 +24,12 @@ function Project ({ project }) {
 
   return (
     <Layout>
-      <ProjectHeader title={project.title} cover={imageBuilder(project.thumbnail).width(1920).height(1080).url()} />
-      <ProjectInfo role={Array(project.role || []).join(', ')} tech={Array(project.technology || []).join(', ')} intro={project.excerpt} />
-      <ProjectContent content={project.body} />
+      <ProjectHeader
+        title={project.title}
+        cover={imageBuilder(project.thumbnail).width(1920).height(1080).url()}
+      />
+      <ProjectInfo role={Array(project.role || []).join(', ')} tech={Array(project.technology || []).join(', ')} intro={project.excerpt} website={project.liveUrl}/>
+      <ProjectContent content={project.body || {}} />
     </Layout>
   )
 }

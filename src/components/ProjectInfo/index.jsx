@@ -1,7 +1,8 @@
 import React from 'react'
 import Container from '../Container'
+import Link from 'next/link'
 
-function ProjectInfo ({role, tech, intro}) {
+function ProjectInfo ({role, tech, intro, website}) {
   return (
 <>
       <section className="relative w-full">
@@ -16,7 +17,9 @@ function ProjectInfo ({role, tech, intro}) {
           </div>
           <div className="col-span-1 md:col-start-8 md:col-span-5">
             <h4 className='font-primary font-black text-sm mb-2'>Introduction:</h4>
-            <p className='mb-2 font-sans text-sm'>{intro}</p>
+            <p className='mb-5 font-sans text-sm'>{intro}</p>
+
+            {website && <Link className='relative font-primary text-sm font-bold underline' href={website} target="_blank">Visit Project</Link>}
           </div>
         </Container>
       </section>
