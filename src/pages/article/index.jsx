@@ -34,14 +34,12 @@ function Blog({ data }) {
 
       <Layout>
         <PageHeader
-          data={{
-            heading: "KNOWLEDGE BOOK",
-            subheading: [
+            heading="KNOWLEDGE BOOK"
+            subheading={[
               "Occasional",
               "thoughts & insights.",
               "from Muhammad's life.",
-            ],
-          }}
+            ]}
         />
         <PageBanner img={IMG} />
         <BlogGrid articles={data?.articles} />
