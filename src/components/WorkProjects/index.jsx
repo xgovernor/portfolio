@@ -7,10 +7,11 @@ function WorkProjects ({ projects }) {
 
   return (
     <section className="">
-      <Container className="lg:max-w-[888px] xl:max-w-[1088px] flex flex-col py-10 md:py-[60px] lg:py-[80px] xl:py-[130px] max-md:gap-10 md:gap-[60px] lg:gap-[80px] xl:gap-[130px]">
+      <Container className="xl:max-w-[1366px] flex flex-col px-10 py-10 md:py-[60px] lg:py-[80px] xl:py-[100px] gap-8">
         {projects.map((project, i) => (
           <ProjectCard
             key={project._id}
+            serial={i + 1}
             projectName={project.projectName}
             thumbnail={imageBuilder(project.thumbnail)
               .width(562)

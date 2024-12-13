@@ -9,7 +9,7 @@ function PageHeader({heading, subheading }) {
             {heading}
           </h4>
 
-          <h1 className=" font-black -tracking-[0.0015em] [word-spacing:4px] text-[#000c19] text-left flex flex-col items-start uppercase text-[34px] leading-10 md:text-[42px] md:leading-[48px] lg:max-xl:w-[724px] lg:text-[52px] lg:leading-[62px] xl:text-[68px] xl:leading-[76px]">
+          <h1 className=" font-black -tracking-[0.0015em] [word-spacing:4px] text-[#000c19] text-left flex flex-col items-start uppercase text-[34px] leading-10 md:text-[42px] md:leading-[48px] lg:max-xl:w-[724px] lg:text-[52px] lg:leading-[62px] xl:text-[68px] xl:leading-[64px]">
             {subheading?.map((line, i) => (
                 <span className="" key={i}>
                   {line}

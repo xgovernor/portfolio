@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
+import WORK_1 from './../../../assets/images/work_01.webp';
 
 function ProjectCard({
   className,
+  serial,
   projectName,
   thumbnail,
   title,
@@ -16,40 +18,43 @@ function ProjectCard({
   return (
     <div
       className={clsx(
-        "lg:[&:nth-child(even)>div]:flex-row-reverse",
+        // "lg:[&:nth-child(even)>div]:flex-row-reverse",
         className
       )}
       {...rest}
     >
-      <div className="flex justify-between items-center max-lg:flex-col-reverse gap-5 md:max-lg:gap-8">
-        <div className="w-full h-auto max-w-[439px]">
-
-          <div className="w-full max-md:flex max-md:justify-between max-md:flex-row-reverse max-md:items-center">
-            <h4 className=" uppercase  font-bold text-[12px] leading-[14px]">
-              {projectName}
-            </h4>
-            <h2 className="text-black text-lg leading-[22px] md:mt-2.5 md:text-[28px] md:leading-8 lg:text-[32px] lg:leading-[38px]  xl:text-[34px] xl:leading-[38px]">
-              <Link href={url} className="hover:text-[#717171]">
-                {title}
-              </Link>
-            </h2>
+      <div className="flex max-md:flex-col gap-8">
+        <div className="w-full md:max-w-[45%] h-auto pt-7 grid grid-cols-[48px,1fr] gap-5 border-t border-[#0000001f]">
+          <div className="w-full max-w-6 md:max-w-36">
+            <p className="font-primary text-black/70 text-xl leading-[14px]">{serial}</p>
           </div>
 
-          <p className="text-justify break-all mt-3 font-sans text-[rgba(0,0,0,0.8)] mb-2 max-lg:text-[14px] max-lg:leading-5 lg:max-xl:text-[13px] xl:text-[15px]">
-            {excerpt}
-          </p>
+          <div className="w-full max-w-[calc(100%-44px)]">
+            <div className="w-full">
+              <h3 className="md:max-w-64 md:mb-2.5 font-black text-2xl md:text-3xl text-[#000c19] leading-8 uppercase">
+                <Link href={url} className="hover:text-[#717171]">
+                {projectName}
+                </Link>
+              </h3>
+              <h2 className="font-sans text-md text-[#555]">
+                  {title}
+              </h2>
+            </div>
+
+          </div>
         </div>
 
-        <div className=" max-lg:max-w-[585px] max-lg:max-h-[338px] lg:max-w-[378px] lg:max-h-[218px] xl:max-w-[562px] xl:max-h-[316px]">
+        <div className="w-full md:max-w-[55%] h-full max-h-96 overflow-hidden flex  items-center justify-center rounded-lg">
           <Link href={url}>
-          <Image
-            className="rounded-xl hover:opacity-70"
-              src={img}
-              alt={title}
-              width={562}
-              height={323}
-              loading="lazy"
-            />
+            <Image
+              className="rounded hover:opacity-70"
+                src={img}
+                // src={WORK_1}
+                alt={title}
+                width={697}
+                height={444}
+                loading="lazy"
+              />
           </Link>
         </div>
       </div>

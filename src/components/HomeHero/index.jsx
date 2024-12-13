@@ -7,7 +7,7 @@ function HomeHero({ title, cvURL }) {
   return (
     <section className="">
       <Container className="w-full max-w-screen-xl pt-[55px] pb-10 md:pt-[85px] md:pb-[100px] lg:pt-[105px] lg:pb-[100px] xl:pt-[165px] xl:pb-[80px]">
-        <h1 className="font-black flex flex-col items-center text-center text-black uppercase text-[32px] leading-tight lg:leading-snug md:text-6xl lg:text-7xl">
+        <h1 className="font-black flex flex-col items-center text-center text-black uppercase text-[32px] leading-tight lg:leading-[86px] md:text-6xl lg:text-7xl">
           {title.map((line, index) => (
             <span key={index}>{line}</span>
           ))}
