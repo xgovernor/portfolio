@@ -33,15 +33,10 @@ function HomeAbout() {
           {/* About Section Content */}
           <div className="max-lg:mt-2.5 lg:w-full lg:max-w-[562px]">
             <p className="font-sans text-justify text-[#1A1A1A] mb-2 text-[13px] leading-[160%]">
-              Hi, I am a full-stack developer based in Bangladesh. I started my career in 2019 as a WordPress developer and since then I am working with Laravel, Node.js, and React, NextJS, etc.</p>
+              Hi, I am a full-stack developer based in Bangladesh. I started my career in 2019 as a WordPress developer and since then I have been working with Laravel, Node.js, React, NextJS, etc.</p>
             <p className="font-sans text-justify text-[#1A1A1A] mb-2 text-[13px] leading-[160%]">I am experienced with technologies like PHP, JavaScript, and Typescript, Python, and MySQL, etc. These days, I primarily focus on MERN stack development.
             </p>
-            <p className="font-sans text-justify text-[#1A1A1A] mb-[30px] text-[13px] leading-[160%] lg:mb-5">Isn&apos;t it
-              fascinating to work with your favorite tools? Oh! I forgot—I love
-              sharing my enthusiasm with others. Sometimes, I arrange concise
-              workshops or boot camps to showcase unique approaches to solving
-              problems.
-            </p>
+            <p className="font-sans text-justify text-[#1A1A1A] mb-[30px] text-[13px] leading-[160%] lg:mb-5">So far I have had the experience of working with some amazing peoples from <Link className="font-bold font-primary underline" href="https://freelancerlabbd.com/" target="_blank">Freelancer Lab</Link>, <Link className="font-bold font-primary underline" href="https://www.linkedin.com/company/ferne-health/" target="_blank">Ferne Health</Link>. Currently experimenting with some interesting ideas like <Link className="font-bold font-primary underline" href="https://at-mah.vercel.app/work/simbio" title="SIMBIO is a non-profit, web-based platform designed to revolutionize blood donation by connecting donors with patients in need in a seamless and efficient manner." target="_blank">SIOMBIO</Link>, <Link className="font-bold font-primary underline" href="https://at-mah.vercel.app/work/wpl-toolkit" target="_blank">WPL Toolkit</Link> at <Link className="font-bold font-primary underline" href="https://dot9.dev" target="_blank">Dot9.dev</Link>.</p>
 
             {/* About Section Link */}
             <div className="flex flex-col gap-2 [word-spacing:4px]">
