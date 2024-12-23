@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
+// const withBundleAnalyzer = require('@next/bundle-analyzer')({
+//   enabled: process.env.ANALYZE === 'true',
+// })
 
 const options = {
   images: {
@@ -52,5 +52,5 @@ const options = {
   ],
 };
 
-// module.exports = options;
-module.exports = withBundleAnalyzer(options);
+module.exports = options;
+// module.exports = withBundleAnalyzer(options);
