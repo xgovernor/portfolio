@@ -2,7 +2,7 @@ import Link from "next/link";
 import { truncate } from "../../../utils/string.utils";
 import clsx from "clsx";
 import { memo } from "react";
-import Date from "../../Date";
+import DateFormat from "../../Date";
 
 function BlogCard({
   className,
@@ -28,7 +28,7 @@ function BlogCard({
           id="blog-card-date"
           className="uppercase font-bold text-[#000c19b3] mb-2 text-[12px] leading-[14px] lg:mb-2.5"
         >
-          <Date dateString={date || ""} />
+          <DateFormat dateString={date || ""} />
         </h4>
         <Link
           href={url}

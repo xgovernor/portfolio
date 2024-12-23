@@ -1,5 +1,5 @@
 import Container from "../Container";
-import Date from "../Date";
+import DateFormat from "../Date";
 import Link from "next/link";
 
 function SingleHeader({ title, categories, createdAt, updatedAt }) {
@@ -43,7 +43,7 @@ function SingleHeader({ title, categories, createdAt, updatedAt }) {
         {/* Date */}
         <p className="font-sans text-[#000c19b3] text-sm leading-4">
           {updatedAt ? "Updated " : ""}
-          <Date dateString={updatedAt || createdAt || "N/A"} />
+          <DateFormat dateString={updatedAt || createdAt || "N/A"} />
         </p>
       </Container>
     </header>
