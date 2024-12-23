@@ -13,24 +13,19 @@
     "url": "git+https://github.com/abutahermuhammad/portfolio"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^15.1.2",
     "@next/third-parties": "^15.0.4",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^6.15.1",
     "@sanity/image-url": "^1.0.2",
-    "clsx": "^2.1.0",
-    "date-fns": "^3.3.1",
-    "framer-motion": "^11.0.8",
-    "next": "14.1.1",
+    "framer-motion": "^11.15.0",
+    "next": "^14.2.21",
     "next-sanity": "^8.5.5",
-    "next-themes": "^0.2.1",
     "nextjs-progressbar": "^0.0.16",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^5.0.1",
-    "sharp": "^0.33.5"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^15.1.2",
     "autoprefixer": "^10.4.18",
     "eslint": "8.57.0",
     "eslint-config-next": "^14.1.1",

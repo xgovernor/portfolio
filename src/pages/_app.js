@@ -56,7 +56,6 @@ function MyApp({ Component, pageProps }) {
       <AnimatePresence mode="wait">
         <div className={`${cascadiaCode.variable} ${nHGDP.variable} ${nHG.variable}`}>
         <Component
-          // className={clsx(spaceGrotesk.variable, hKGrotesk.variable, CascadiaCode.variable)}
           {...pageProps}
           />
           </div>

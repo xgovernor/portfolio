@@ -1,4 +1,4 @@
-export default {
+const config ={
   sanity: {
     PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "9q9s9j9m", // 1at06ab8
     DATASET: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
@@ -7,3 +7,5 @@ export default {
     CDN: process.env.NODE_ENV === "production",
   },
 };
+
+export default config

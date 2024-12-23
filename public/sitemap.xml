@@ -8,29 +8,94 @@
 
 
 <url>
-  <loc>https://abutahermuhammad.com/</loc>
-  <lastmod>2022-03-05T21:55:34+00:00</lastmod>
+  <loc>https://at-mah.vercel.app/</loc>
+  <lastmod>2024-12-22T21:09:38+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://abutahermuhammad.com/about</loc>
-  <lastmod>2022-03-05T21:55:34+00:00</lastmod>
+  <loc>https://at-mah.vercel.app/work</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://abutahermuhammad.com/work</loc>
-  <lastmod>2022-03-05T21:55:34+00:00</lastmod>
+  <loc>https://at-mah.vercel.app/article</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://abutahermuhammad.com/article</loc>
-  <lastmod>2022-03-05T21:55:34+00:00</lastmod>
+  <loc>https://at-mah.vercel.app/work/simbio</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://abutahermuhammad.com/contact</loc>
-  <lastmod>2022-03-05T21:55:34+00:00</lastmod>
+  <loc>https://at-mah.vercel.app/work/wpl-toolkit</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://at-mah.vercel.app/work/portfolio</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://at-mah.vercel.app/work/toybytebd</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://at-mah.vercel.app/work/haris-ali-construction</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://at-mah.vercel.app/work/ferne-health-indonesia</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://at-mah.vercel.app/work/uk-basis</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://at-mah.vercel.app/work/svlgdp</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://at-mah.vercel.app/work/the-gisthive</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://at-mah.vercel.app/work/solution-flows</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://at-mah.vercel.app/work/islamer-kantho</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://at-mah.vercel.app/work/git-customizer</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://at-mah.vercel.app/article/the-difference-between-npm-and-npx</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://at-mah.vercel.app/article?category=npm</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://at-mah.vercel.app/article?category=npx</loc>
+  <lastmod>2024-12-23T10:08:13+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
 

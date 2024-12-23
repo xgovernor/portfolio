@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Container from "../Container";
-import { IconContext } from "react-icons";
 import { SOCIAL_MEDIA } from "../../assets/data/links";
 
 function HomeHero({ title, cvURL }) {
@@ -14,7 +13,6 @@ function HomeHero({ title, cvURL }) {
         </h1>
 
         <div className="mt-2.5 flex gap-4 justify-center">
-          <IconContext.Provider value={{ className: "w-6 h-6" }}>
             {SOCIAL_MEDIA.map((social, index) => (
               <a
                 key={index}
@@ -26,7 +24,6 @@ function HomeHero({ title, cvURL }) {
                 {social.icon}
               </a>
             ))}
-          </IconContext.Provider>
         </div>
 
         <div className="flex justify-center items-center max-xl:mt-20 xl:mt-[130px]">

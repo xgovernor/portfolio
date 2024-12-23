@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { truncate } from "../../../utils/string.utils";
-import clsx from "clsx";
 import { memo } from "react";
 import DateFormat from "../../Date";
 
@@ -15,10 +14,7 @@ function BlogCard({
 }) {
   return (
     <article
-      className={clsx(
-        "w-full max-w-[526px] flex flex-col justify-between border border-[#0000001f] hover:border-black rounded-lg p-[25px] lg:p-[35px] xl:max-w-[526px] xl:min-h-[400px] xl:p-[45px]",
-        className
-      )}
+      className={`w-full max-w-[526px] flex flex-col justify-between border border-[#0000001f] hover:border-black rounded-lg p-[25px] lg:p-[35px] xl:max-w-[526px] xl:min-h-[400px] xl:p-[45px] ${className}`}
       {...rest}
       role="region"
       aria-labelledby="blog-card-title"

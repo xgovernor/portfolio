@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Container from "../Container";
-// import { socialLinks } from "../../assets/data/routes";
 import Link from "next/link";
 import { SOCIAL_MEDIA } from "../../assets/data/links";
 
@@ -16,14 +15,19 @@ function Footer() {
                 src={`/images/branding/logo.svg`}
                 width={34.59}
                 height={35}
-                alt="Logo"
+                alt="Dot9 Logo"
               />
             </div>
 
 
             <p className="font-primary uppercase text-sm text-[#b9b9b9]">Let&apos;s make something great</p>
             <h4 className="mt-4 md:mt-6 font-primary [word-spacing:0.1em] text-2xl md:text-6xl [letter-spacing:0.02em] text-white font-bold hover:opacity-70">
-              <Link href="mailto:abut1081@gmail.com">abut1081@gmail.com</Link>
+              <Link
+            href="mailto:abut1081@gmail.com"
+            aria-label="Email: abut1081@gmail.com"
+          >
+            abut1081@gmail.com
+          </Link>
             </h4>
         </Container>
 
@@ -31,12 +35,13 @@ function Footer() {
           <p className="col-span-4 font-primary text-[#b9b9b9] text-sm mt-5">
             © 2021-2024. Made with ❤️ at{" "}
             <Link
-              className="hover:text-[#b9b9b9]"
-              target="_blank"
-              href="https://www.dot9.dev"
-            >
-              Dot9
-            </Link>
+            href="https://www.dot9.dev"
+            target="_blank"
+            className="hover:text-white"
+            aria-label="Visit Dot9 website"
+          >
+            Dot9
+          </Link>
             .
           </p>
 
@@ -50,6 +55,7 @@ function Footer() {
                     <Link
                       className="font-primary text-xs font-bold uppercase hover:opacity-70"
                       href={link.url}
+                  aria-label={`Visit ${link.title}`}
                     >
                       {link.title}
                     </Link>

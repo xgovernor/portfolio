@@ -1,26 +1,26 @@
-import { FaLinkedin } from "react-icons/fa";
-import { FaMediumM } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FaBehance } from "react-icons/fa";
+import LinkedInIcon from "../icons/LinkedInIcon";
+import GitHubIcon from "../icons/GitHubIcon";
+import MediumIcon from "../icons/MediumIcon";
+import BehanceIcon from "../icons/BehanceIcon";
 
 export const SOCIAL_MEDIA = [
   {
-    icon: <FaLinkedin />,
+    icon: <LinkedInIcon />,
     title: "LinkedIn",
     url: "https://www.linkedin.com/in/abutahermuhammad/",
   },
   {
-    icon: <FaGithub />,
+    icon: <GitHubIcon />,
     title: "GitHub",
     url: "https://github.com/abutahermuhammad",
   },
   {
-    icon: <FaMediumM />,
+    icon: <MediumIcon />,
     title: "Medium",
     url: "https://abutaher-muhammad.medium.com/",
   },
   {
-    icon: <FaBehance />,
+    icon: <BehanceIcon />,
     title: "Behance",
     url: "https://www.behance.net/abut10812466",
   },

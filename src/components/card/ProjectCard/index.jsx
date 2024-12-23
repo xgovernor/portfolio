@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import clsx from "clsx";
-import WORK_1 from './../../../assets/images/work_01.webp';
 
 function ProjectCard({
   className,
@@ -17,10 +15,7 @@ function ProjectCard({
 
   return (
     <div
-      className={clsx(
-        // "lg:[&:nth-child(even)>div]:flex-row-reverse",
-        className
-      )}
+      className={className}
       {...rest}
     >
       <div className="flex max-md:flex-col gap-8">

@@ -15,6 +15,7 @@ function TableBlock(props) {
   return (
     <div className="p_table">
       <table>
+        <tbody>
         {(props.node.rows).map((row, i) => (
           (row._type === "tableRow") && (
             <tr key={row?._key}>
@@ -24,6 +25,7 @@ function TableBlock(props) {
             </tr>
           )
         ))}
+        </tbody>
       </table>
     </div>
   )

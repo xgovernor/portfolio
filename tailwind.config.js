@@ -13,9 +13,26 @@ module.exports = {
     },
     extend: {
       animation: {
-        fadeIn: "fadeIn 0.5s ease-in-out",
+        fadein: 'fade-in 1s ease-in-out 0.25s 1',
         borderBMotion: "border--b--motion",
-      },
+      }, keyframes: {
+        "fade-in": {
+          "0%": {
+            opacity: 0
+          },
+          "100%": {
+            opacity: 1
+          },
+        },
+        "fade-out": {
+          "0%": {
+            opacity: 1
+          },
+          "100%": {
+            opacity: 0
+          },
+        },
+      }
     },
   },
   plugins: [],

@@ -1,12 +1,11 @@
 import { Suspense, memo } from "react";
 import BlogCard from "../card/BlogCard";
 import Container from "../Container";
-import clsx from "clsx";
 
 function BlogGrid({ className, articles = [], sectionTitle = "Latest Articles", ...rest }) {
   return (
     <section
-      className={clsx("blog-grid", className)}
+      className={`blog-grid ${className}`}
       role="region"
       aria-labelledby="blog-grid-title"
       {...rest}

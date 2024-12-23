@@ -1,5 +1,4 @@
 "use client"
-import { info } from "autoprefixer";
 import Container from "../Container";
 import RightNav from "./RightNav";
 import Link from "next/link";

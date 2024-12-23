@@ -17,11 +17,10 @@ function Meta({ title=info.title, description=info.description, image=info.avata
 				<meta name="author" content={title} />
 				<meta
 				name="keywords"
-				content="Font-end, web developer, top web developer, Abu Taher Muhammad, MERN stack developer, upwork, ferne health, dot9, simbio"
+				content="Font-end, web developer, top web developer, Abu Taher Muhammad, MERN stack developer, upwork, ferne health, dot9.dev, SIMBIO"
 				/>
 				<meta name="robots" content="index, follow" />
 				<meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-				<meta name="language" content="English" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 				{/* Open Graph */}
@@ -83,42 +82,6 @@ function Meta({ title=info.title, description=info.description, image=info.avata
 					birthPlace: "Sylhet",
 					nationality: "Bangladeshi",
 				}),
-				}}
-			/>
-
-			<Script
-				id="WebPage-JSON-LD"
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-					"@context": "http://schema.org",
-					"@type": "WebPage",
-					name: title,
-					description,
-					publisher: {
-						"@type": "Person",
-						name: title,
-					},
-					}),
-				}}
-			/>
-
-
-			<Script
-				id="WebSite-JSON-LD"
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-					"@context": "https://schema.org",
-					"@type": "WebSite",
-					name: {title},
-					url: info.website,
-					potentialAction: {
-						"@type": "SearchAction",
-						target: `${info.website}/search?query={search_term_string}`,
-						"query-input": "required name=search_term_string",
-					},
-					}),
 				}}
 			/>
 
