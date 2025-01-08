@@ -60,4 +60,4 @@ export async function getStaticProps({ preview = false }) {
   };
 }
 
-export default memo(Blog);
+export default Blog;

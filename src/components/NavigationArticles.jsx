@@ -28,7 +28,7 @@ function NavigationalArticles({ articles }) {
               slug={slug}
               title={title}
               excerpt={excerpt}
-              url={`/article/${slug}`}
+              url={`/blog/${slug}`}
             />
           )
         )}

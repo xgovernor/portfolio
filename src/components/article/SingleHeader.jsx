@@ -22,7 +22,7 @@ function SingleHeader({ title, categories, createdAt, updatedAt }) {
               <span key={item._id}>
                 {i !== 0 && <span aria-hidden="true"> | </span>}
                 <Link
-                  href={`/article?category=${formatSlug(item.title)}`}
+                  href={`/blog?category=${formatSlug(item.title)}`}
                   className="text-[#000c19] cursor-pointer hover:text-[#717171]"
                   aria-label={`Category: ${item.title}`}
                 >

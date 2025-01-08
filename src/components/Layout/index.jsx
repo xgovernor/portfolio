@@ -1,7 +1,8 @@
 "use client"
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import Footer from "../Footer";
 import Navigation from "../Navigation";
+const Footer = dynamic(() => import("../Footer"));
 
 function Layout({ children, ...rest }) {
   return (

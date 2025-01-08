@@ -25,7 +25,7 @@ function Work({ data }) {
 
       <Layout className="page__work">
         <PageHeader
-            heading="WORK"
+            heading="PROJECTS"
             subheading={[
               "FORGING EXPERIENCES",
               "WHERE CREATIVITY",

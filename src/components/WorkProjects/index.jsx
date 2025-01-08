@@ -19,7 +19,7 @@ function WorkProjects ({ projects }) {
               .url()}
             title={project.title}
             excerpt={project.excerpt}
-            url={`/work/${project.slug}`}
+            url={`/projects/${project.slug}`}
           />
         ))}
       </Container>

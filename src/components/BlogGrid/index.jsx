@@ -20,7 +20,7 @@ function BlogGrid({ className, articles = [], sectionTitle = "Latest Articles", 
                 slug={slug}
                 title={title || "Untitled"}
                 excerpt={excerpt || "No description available."}
-                url={`/article/${slug}`}
+                url={`/blog/${slug}`}
               />
             </Suspense>
           ))

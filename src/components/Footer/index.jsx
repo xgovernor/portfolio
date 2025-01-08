@@ -7,7 +7,7 @@ import { SOCIAL_MEDIA } from "../../assets/data/links";
 function Footer() {
   return (
     <>
-      <footer className="pt-[60px] pb-[60px] bg-[#000c19]">
+      <footer className="pt-[60px] pb-[60px] bg-[#000c19]" id="contact">
         <Container className=" mb-[130px] xl:px-0">
 
             <div className=" w-[35px] h-auto mb-[20px]">
