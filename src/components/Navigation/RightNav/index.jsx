@@ -11,7 +11,7 @@ function NavMenu() {
         {NAVBAR_ROUTES &&
           NAVBAR_ROUTES.map((link, i) => (
             <li
-              className="font-primary font-bold text-[#000c19] uppercase hover:opacity-70 md:max-lg:text-sm "
+              className="font-sans font-bold text-[#000c19] uppercase hover:opacity-70 md:max-lg:text-sm "
               key={i}
             >
               <span>
@@ -47,7 +47,7 @@ function RightNav() {
         <NavMenu />
         {/* <ThemeChanger /> */}
 
-        <button className="h-[22px] text-[15px] font-primary font-bold md:hidden" onClick={handleMenu}>
+        <button className="h-[22px] text-[15px] font-sans font-bold md:hidden" onClick={handleMenu}>
           {isVisible ? (
             <p>CLOSE</p>
           ) : (

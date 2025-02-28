@@ -1,21 +1,20 @@
+@import "tailwindcss";
 @import "./table.style.css";
 @import "./single.style.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 
-
-::selection {
-  @apply text-white bg-black;
+@theme {
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
 }
-@layer base {
-     html, body {
-        /* @apply font-sans; */
-        @apply font-primary text-[#393D3F] bg-[#F5F3F5] tracking-[0.04em] scroll-smooth;
-    }
 
-    h1, h2, h3, h4, h5, h6 {
-        @apply font-primary font-bold;
-    }
+@layer base {
+  html, body {
+    @apply font-serif text-[#393D3F] bg-[#F5F3F5] tracking-[0.04em] scroll-smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold;
+  }
 }

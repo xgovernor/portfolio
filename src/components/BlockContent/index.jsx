@@ -57,7 +57,7 @@ function projectContentBlock(props) {
 
       {props.node.paragraphs && props.node.paragraphs.length > 0 && <div className="relative w-full mt-7 flex max-md:flex-col justify-end gap-5 max-md:flex-wrap">
         {props.node.paragraphs && props.node.paragraphs.map((paragraph, i) => (
-          <p key={i} className='w-full md:w-[calc((100%-60px)/4)] font-sans !text-[14px] !leading-[160%]'>{paragraph}</p>
+          <p key={i} className='w-full md:w-[calc((100%-60px)/4)] font-serif !text-[14px] !leading-[160%]'>{paragraph}</p>
         ))}
       </div>}
   </div>
@@ -86,7 +86,7 @@ const serializers = {
 function BlockContent({ content }) {
   return (
     <Block
-        className="font-sans"
+        className="font-serif"
         blocks={content}
         projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
         dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}

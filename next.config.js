@@ -17,7 +17,6 @@ const options = {
       },
     ],
   },
-  reactStrictMode: false, // Recommend enabling strict mode for development
   poweredByHeader: false, // Hides "X-Powered-By: Next.js" header for security
   headers: async () => [
     {

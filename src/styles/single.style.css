@@ -1,5 +1,5 @@
 .p_single_content .p_container {
-  @apply pt-10 px-[30px] md:pt-[60px] md:px-[50px] lg:w-[862px] lg:pt-[70px] lg:pb-[30px];;
+  @apply pt-10 px-[30px] md:pt-[60px] md:px-[50px] lg:w-[862px] lg:pt-[70px] lg:pb-[30px];
 }
 .p_single_content figure {
   @apply mb-[30px];

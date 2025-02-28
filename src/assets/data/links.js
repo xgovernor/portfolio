@@ -39,12 +39,12 @@ export const NAVBAR_ROUTES = [
   // },
   {
     _id: "NR003",
-    title: "WORK",
-    url: "/work",
+    title: "PROJECTS",
+    url: "/projects",
   },
   {
     _id: "NR004",
     title: "BLOG",
-    url: "/article",
+    url: "/blog",
   },
 ];

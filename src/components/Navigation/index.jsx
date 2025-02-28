@@ -13,7 +13,7 @@ function Navigation() {
         >
           <Container className="flex justify-between items-center">
             <Link
-              className="font-primary font-bold  text-black md:text-base lg:text-lg xl:text-xl"
+              className="font-sans font-bold  text-black md:text-base lg:text-lg xl:text-xl"
               href={"/"}
             >
               Abu Taher Muhammad

@@ -15,14 +15,14 @@ function SingleHeader({ title, categories, createdAt, updatedAt }) {
         {/* Categories */}
         <nav
           aria-label="Article categories"
-          className="font-primary font-bold text-black uppercase max-xl:mb-2.5 max-xl:text-xs xl:text-sm"
+          className="font-sans font-bold text-black uppercase max-xl:mb-2.5 max-xl:text-xs xl:text-sm"
         >
           {categories?.length > 0 ? (
             categories.map((item, i) => (
               <span key={item._id}>
                 {i !== 0 && <span aria-hidden="true"> | </span>}
                 <Link
-                  href={`/article?category=${formatSlug(item.title)}`}
+                  href={`/blog?category=${formatSlug(item.title)}`}
                   className="text-[#000c19] cursor-pointer hover:text-[#717171]"
                   aria-label={`Category: ${item.title}`}
                 >
@@ -41,7 +41,7 @@ function SingleHeader({ title, categories, createdAt, updatedAt }) {
         </h1>
 
         {/* Date */}
-        <p className="font-sans text-[#000c19b3] text-sm leading-4">
+        <p className="font-serif text-[#000c19b3] text-sm leading-4">
           {updatedAt ? "Updated " : ""}
           <DateFormat dateString={updatedAt || createdAt || "N/A"} />
         </p>

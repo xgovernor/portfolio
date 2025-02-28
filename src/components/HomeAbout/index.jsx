@@ -2,10 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import IMG from "./../../assets/images/home-about.webp";
 import Container from "../Container";
+import WorkExperience from "./WorkExperience";
 
 function HomeAbout() {
   return (
-    <section className="w-full pb-10 lg:pb-[90px] xl:pb-[130px]">
+    <section className="w-full pb-10 lg:pb-[90px] xl:pb-[130px]" id="about">
       <Container className="xl:px-0">
         <Image
           className="w-full h-auto rounded-2xl"
@@ -13,13 +14,12 @@ function HomeAbout() {
           alt="An about section cover featuring modern tech"
           width={1088}
           height={556}
-          priority
         />
       </Container>
 
       <Container className="mt-5 md:mt-10 max-md:px-[30px] md:max-lg:max-w-[570px] lg:max-xl:px-10">
         <article className="flex justify-between items-start max-lg:flex-col lg:mt-[50px]">
-          {/* About Section Heading */}
+
           <header className="lg:w-full lg:max-w-[310px] xl:max-w-[320px]">
             <h4 className="font-bold text-xs leading-[14px] text-[#4e545b]">
               ABOUT ME
@@ -31,25 +31,30 @@ function HomeAbout() {
           </header>
 
           {/* About Section Content */}
-          <div className="max-lg:mt-2.5 lg:w-full lg:max-w-[562px]">
-            <p className="font-sans text-justify text-[#1A1A1A] mb-2 text-[13px] leading-[160%]">
-              Hi, I am a full-stack developer based in Bangladesh. I started my career in 2019 as a WordPress developer and since then I have been working with Laravel, Node.js, React, NextJS, etc.</p>
-            <p className="font-sans text-justify text-[#1A1A1A] mb-2 text-[13px] leading-[160%]">I am experienced with technologies like PHP, JavaScript, and Typescript, Python, and MySQL, etc. These days, I primarily focus on MERN stack development.
-            </p>
-            <p className="font-sans text-justify text-[#1A1A1A] mb-[30px] text-[13px] leading-[160%] lg:mb-5">So far I have had the experience of working with some amazing peoples from <Link className="font-bold font-primary underline" href="https://freelancerlabbd.com/" target="_blank">Freelancer Lab</Link>, <Link className="font-bold font-primary underline" href="https://www.linkedin.com/company/ferne-health/" target="_blank">Ferne Health</Link>. Currently experimenting with some interesting ideas like <Link className="font-bold font-primary underline" href="https://at-mah.vercel.app/work/simbio" title="SIMBIO is a non-profit, web-based platform designed to revolutionize blood donation by connecting donors with patients in need in a seamless and efficient manner." target="_blank">SIOMBIO</Link>, <Link className="font-bold font-primary underline" href="https://at-mah.vercel.app/work/wpl-toolkit" target="_blank">WPL Toolkit</Link> at <Link className="font-bold font-primary underline" href="https://dot9.dev" target="_blank">Dot9.dev</Link>.</p>
+          <div className="space-y-5 max-lg:mt-2.5 lg:w-full lg:max-w-[562px]">
+            <div className="">
+              <p className="font-serif text-justify text-black mb-2 text-[15px] font-medium">
+                Hi, I am a Software Developer based in Bangladesh; Currently, doing my B.Sc. in Computer Science & Engineering. I started my career in 2019 as a WordPress developer and since then I have been working with Laravel, Node.js, React, NextJS, etc.</p>
+              <p className="font-serif text-justify text-[#1A1A1A] mb-2 text-[15px] leading-[160%]">I am experienced with technologies like PHP, JavaScript, and Typescript, Python, and MySQL, etc. These days, I primarily focus on MERN stack development.
+              </p>
+            </div>
+
+            <WorkExperience />
+{/*
+            <p className="font-serif text-justify text-[#1A1A1A] mb-[30px] text-[13px] leading-[160%] lg:mb-5">So far I have had the experience of working with some amazing peoples from <Link className="font-bold font-sans underline" href="https://freelancerlabbd.com/" target="_blank">Freelancer Lab</Link>, <Link className="font-bold font-sans underline" href="https://www.linkedin.com/company/ferne-health/" target="_blank">Ferne Health</Link>. Currently experimenting with some interesting ideas like <Link className="font-bold font-sans underline" href="https://at-mah.vercel.app/projects/simbio" title="SIMBIO is a non-profit, web-based platform designed to revolutionize blood donation by connecting donors with patients in need in a seamless and efficient manner." target="_blank">SIOMBIO</Link>, <Link className="font-bold font-sans underline" href="https://at-mah.vercel.app/projects/wpl-toolkit" target="_blank">WPL Toolkit</Link> at <Link className="font-bold font-sans underline" href="https://dot9.dev" target="_blank">Dot9.dev</Link>.</p> */}
 
             {/* About Section Link */}
             <div className="flex flex-col gap-2 [word-spacing:4px]">
             <Link
-              href={`/article`}
-              className="font-primary text-[#000c19] font-bold text-xs underline"
+              href={`/blog`}
+              className="font-sans text-[#000c19] font-bold text-xs underline"
               aria-label="Learn more about me"
             >
               READ ARTICLES
               </Link>
             <Link
-              href={`/work`}
-              className="font-primary text-[#000c19] font-bold text-xs underline"
+              href={`/projects`}
+              className="font-sans text-[#000c19] font-bold text-xs underline"
               aria-label="Learn more about me"
             >
               CHECK PROJECTS

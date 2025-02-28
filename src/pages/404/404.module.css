@@ -3,8 +3,8 @@
 }
 
 .__line {
-  @apply font-primary;
   color: #000;
+  font-family: var(--font-sans);
 }
 
 .__eCode {
