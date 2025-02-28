@@ -19,12 +19,7 @@ function ProjectCard({
       {...rest}
     >
       <div className="flex max-md:flex-col gap-8">
-        <div className="w-full md:max-w-[45%] h-auto pt-7 grid grid-cols-[48px,1fr] gap-5 border-t border-[#0000001f]">
-          <div className="w-full max-w-6 md:max-w-36">
-            <p className="font-sans text-black/70 text-xl leading-[14px]">{serial}</p>
-          </div>
-
-          <div className="w-full max-w-[calc(100%-44px)]">
+        <div className="w-full md:max-w-[45%] h-auto pt-7 border-t border-[#0000001f]">
             <div className="w-full">
               <h3 className="md:max-w-64 md:mb-2.5 font-black text-2xl md:text-3xl text-[#000c19] leading-8 uppercase">
                 <Link href={url} className="hover:text-[#717171]">
@@ -35,8 +30,6 @@ function ProjectCard({
                   {title}
               </h2>
             </div>
-
-          </div>
         </div>
 
         <div className="w-full md:max-w-[55%] h-full max-h-96 overflow-hidden flex  items-center justify-center rounded-lg">

@@ -19,7 +19,7 @@ function HomeAbout() {
 
       <Container className="mt-5 md:mt-10 max-md:px-[30px] md:max-lg:max-w-[570px] lg:max-xl:px-10">
         <article className="flex justify-between items-start max-lg:flex-col lg:mt-[50px]">
-          {/* About Section Heading */}
+
           <header className="lg:w-full lg:max-w-[310px] xl:max-w-[320px]">
             <h4 className="font-bold text-xs leading-[14px] text-[#4e545b]">
               ABOUT ME
@@ -31,15 +31,17 @@ function HomeAbout() {
           </header>
 
           {/* About Section Content */}
-          <div className="space-y-2.5 max-lg:mt-2.5 lg:w-full lg:max-w-[562px]">
-            <p className="font-serif text-justify text-black mb-2 text-sm tracking-normal leading-[150%]">
-              Hi, I am a full-stack developer based in Bangladesh. I started my career in 2019 as a WordPress developer and since then I have been working with Laravel, Node.js, React, NextJS, etc.</p>
-            <p className="font-serif text-justify text-[#1A1A1A] mb-2 text-[13px] leading-[160%]">I am experienced with technologies like PHP, JavaScript, and Typescript, Python, and MySQL, etc. These days, I primarily focus on MERN stack development.
-            </p>
+          <div className="space-y-5 max-lg:mt-2.5 lg:w-full lg:max-w-[562px]">
+            <div className="">
+              <p className="font-serif text-justify text-black mb-2 text-[15px] font-medium">
+                Hi, I am a Software Developer based in Bangladesh; Currently, doing my B.Sc. in Computer Science & Engineering. I started my career in 2019 as a WordPress developer and since then I have been working with Laravel, Node.js, React, NextJS, etc.</p>
+              <p className="font-serif text-justify text-[#1A1A1A] mb-2 text-[15px] leading-[160%]">I am experienced with technologies like PHP, JavaScript, and Typescript, Python, and MySQL, etc. These days, I primarily focus on MERN stack development.
+              </p>
+            </div>
 
             <WorkExperience />
-
-            <p className="font-serif text-justify text-[#1A1A1A] mb-[30px] text-[13px] leading-[160%] lg:mb-5">So far I have had the experience of working with some amazing peoples from <Link className="font-bold font-sans underline" href="https://freelancerlabbd.com/" target="_blank">Freelancer Lab</Link>, <Link className="font-bold font-sans underline" href="https://www.linkedin.com/company/ferne-health/" target="_blank">Ferne Health</Link>. Currently experimenting with some interesting ideas like <Link className="font-bold font-sans underline" href="https://at-mah.vercel.app/projects/simbio" title="SIMBIO is a non-profit, web-based platform designed to revolutionize blood donation by connecting donors with patients in need in a seamless and efficient manner." target="_blank">SIOMBIO</Link>, <Link className="font-bold font-sans underline" href="https://at-mah.vercel.app/projects/wpl-toolkit" target="_blank">WPL Toolkit</Link> at <Link className="font-bold font-sans underline" href="https://dot9.dev" target="_blank">Dot9.dev</Link>.</p>
+{/*
+            <p className="font-serif text-justify text-[#1A1A1A] mb-[30px] text-[13px] leading-[160%] lg:mb-5">So far I have had the experience of working with some amazing peoples from <Link className="font-bold font-sans underline" href="https://freelancerlabbd.com/" target="_blank">Freelancer Lab</Link>, <Link className="font-bold font-sans underline" href="https://www.linkedin.com/company/ferne-health/" target="_blank">Ferne Health</Link>. Currently experimenting with some interesting ideas like <Link className="font-bold font-sans underline" href="https://at-mah.vercel.app/projects/simbio" title="SIMBIO is a non-profit, web-based platform designed to revolutionize blood donation by connecting donors with patients in need in a seamless and efficient manner." target="_blank">SIOMBIO</Link>, <Link className="font-bold font-sans underline" href="https://at-mah.vercel.app/projects/wpl-toolkit" target="_blank">WPL Toolkit</Link> at <Link className="font-bold font-sans underline" href="https://dot9.dev" target="_blank">Dot9.dev</Link>.</p> */}
 
             {/* About Section Link */}
             <div className="flex flex-col gap-2 [word-spacing:4px]">

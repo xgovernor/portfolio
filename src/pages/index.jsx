@@ -10,15 +10,8 @@ function HomePage() {
       <Meta />
 
       <Layout>
-        <HomeHero
-          title={["Designer, developer", "and freethinker."]}
-          cvURL={
-            "https://drive.google.com/file/d/1WZctwHtbSrtyLavPO4epSTORAwCDeF8k/view?usp=sharing"
-          }
-        />
-
+        <HomeHero />
         <HomeAbout />
-
       </Layout>
     </>
   );
