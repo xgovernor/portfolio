@@ -19,7 +19,7 @@ function MobileMenu(state) {
             <Link
               key={i}
               href={`/${e.url}`}
-              className="font-primary text-black  text-4xl font-bold"
+              className="font-sans text-black  text-4xl font-bold"
             >
               {e.title}
             </Link>

@@ -18,19 +18,54 @@ const nHGDP = localFont({
     },
   ],
   display: 'swap',
-  variable: "--nh-grotesk-dsp",
+  variable: "--font-sans"// "--nh-grotesk-dsp",
 });
 
 const nHG = localFont({
   src: [
     {
-      path: "./../assets/fonts/NHaasGroteskTXPro/NHaasGroteskTXPro-55Rg.otf",
+      path: "./../assets/fonts/NeueMontreal/NeueMontreal-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./../assets/fonts/NeueMontreal/NeueMontreal-LightItalic.otf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "./../assets/fonts/NeueMontreal/NeueMontreal-Regular.otf",
       weight: "400",
       style: "normal",
     },
+    {
+      path: "./../assets/fonts/NeueMontreal/NeueMontreal-Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./../assets/fonts/NeueMontreal/NeueMontreal-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./../assets/fonts/NeueMontreal/NeueMontreal-MediumItalic.otf",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "./../assets/fonts/NeueMontreal/NeueMontreal-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./../assets/fonts/NeueMontreal/NeueMontreal-BoldItalic.otf",
+      weight: "700",
+      style: "italic",
+    }
   ],
   display: 'swap',
-  variable: "--font-nh-grotesk-txp",
+  variable: "--font-serif" // "--font-nh-grotesk-txp",
 });
 
 const cascadiaCode = localFont({
@@ -42,7 +77,7 @@ const cascadiaCode = localFont({
     }
   ],
   display: 'swap',
-  variable: "--font-cascadia-code",
+  variable: "--font-mono", // "--font-cascadia-code",
 });
 
 function MyApp({ Component, pageProps }) {

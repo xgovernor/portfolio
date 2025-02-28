@@ -41,7 +41,7 @@ function BlogCard({
         </Link>
       </header>
       <p
-        className="text-[#4d4d4dcc] font-sans text-xs mb-[25px] max-xl:text-[14px] max-lg:leading-5 lg:mb-[35px] lg:max-xl:leading-[22px] xl:text-[15px] xl:leading-[24px]"
+        className="text-[#4d4d4dcc] font-serif text-xs mb-[25px] max-xl:text-[14px] max-lg:leading-5 lg:mb-[35px] lg:max-xl:leading-[22px] xl:text-[15px] xl:leading-[24px]"
         aria-label="Blog excerpt"
       >
         {truncate(excerpt, 205)}
@@ -52,7 +52,7 @@ function BlogCard({
           aria-label={`Read more about ${title}`}
           rel={isExternal ? "noopener noreferrer" : undefined}
           target={isExternal ? "_blank" : undefined}
-          className="font-primary text-[#000c19] underline font-bold text-sm leading-4 uppercase hover:text-[#717171]"
+          className="font-sans text-[#000c19] underline font-bold text-sm leading-4 uppercase hover:text-[#717171]"
         >
           Read more
         </Link>

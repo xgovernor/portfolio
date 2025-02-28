@@ -15,13 +15,13 @@ function ProjectCard({
 
   return (
     <div
-      className={className}
+      className={`${className} sticky top-0 bg-[#f5f3f5]` }
       {...rest}
     >
       <div className="flex max-md:flex-col gap-8">
         <div className="w-full md:max-w-[45%] h-auto pt-7 grid grid-cols-[48px,1fr] gap-5 border-t border-[#0000001f]">
           <div className="w-full max-w-6 md:max-w-36">
-            <p className="font-primary text-black/70 text-xl leading-[14px]">{serial}</p>
+            <p className="font-sans text-black/70 text-xl leading-[14px]">{serial}</p>
           </div>
 
           <div className="w-full max-w-[calc(100%-44px)]">
@@ -31,7 +31,7 @@ function ProjectCard({
                 {projectName}
                 </Link>
               </h3>
-              <h2 className="font-sans text-md text-[#555]">
+              <h2 className="font-serif text-md text-[#555]">
                   {title}
               </h2>
             </div>

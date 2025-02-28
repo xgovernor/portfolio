@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import IMG from "./../../assets/images/home-about.webp";
 import Container from "../Container";
+import WorkExperience from "./WorkExperience";
 
 function HomeAbout() {
   return (
@@ -30,25 +31,28 @@ function HomeAbout() {
           </header>
 
           {/* About Section Content */}
-          <div className="max-lg:mt-2.5 lg:w-full lg:max-w-[562px]">
-            <p className="font-sans text-justify text-[#1A1A1A] mb-2 text-[13px] leading-[160%]">
+          <div className="space-y-2.5 max-lg:mt-2.5 lg:w-full lg:max-w-[562px]">
+            <p className="font-serif text-justify text-black mb-2 text-sm tracking-normal leading-[150%]">
               Hi, I am a full-stack developer based in Bangladesh. I started my career in 2019 as a WordPress developer and since then I have been working with Laravel, Node.js, React, NextJS, etc.</p>
-            <p className="font-sans text-justify text-[#1A1A1A] mb-2 text-[13px] leading-[160%]">I am experienced with technologies like PHP, JavaScript, and Typescript, Python, and MySQL, etc. These days, I primarily focus on MERN stack development.
+            <p className="font-serif text-justify text-[#1A1A1A] mb-2 text-[13px] leading-[160%]">I am experienced with technologies like PHP, JavaScript, and Typescript, Python, and MySQL, etc. These days, I primarily focus on MERN stack development.
             </p>
-            <p className="font-sans text-justify text-[#1A1A1A] mb-[30px] text-[13px] leading-[160%] lg:mb-5">So far I have had the experience of working with some amazing peoples from <Link className="font-bold font-primary underline" href="https://freelancerlabbd.com/" target="_blank">Freelancer Lab</Link>, <Link className="font-bold font-primary underline" href="https://www.linkedin.com/company/ferne-health/" target="_blank">Ferne Health</Link>. Currently experimenting with some interesting ideas like <Link className="font-bold font-primary underline" href="https://at-mah.vercel.app/projects/simbio" title="SIMBIO is a non-profit, web-based platform designed to revolutionize blood donation by connecting donors with patients in need in a seamless and efficient manner." target="_blank">SIOMBIO</Link>, <Link className="font-bold font-primary underline" href="https://at-mah.vercel.app/projects/wpl-toolkit" target="_blank">WPL Toolkit</Link> at <Link className="font-bold font-primary underline" href="https://dot9.dev" target="_blank">Dot9.dev</Link>.</p>
+
+            <WorkExperience />
+
+            <p className="font-serif text-justify text-[#1A1A1A] mb-[30px] text-[13px] leading-[160%] lg:mb-5">So far I have had the experience of working with some amazing peoples from <Link className="font-bold font-sans underline" href="https://freelancerlabbd.com/" target="_blank">Freelancer Lab</Link>, <Link className="font-bold font-sans underline" href="https://www.linkedin.com/company/ferne-health/" target="_blank">Ferne Health</Link>. Currently experimenting with some interesting ideas like <Link className="font-bold font-sans underline" href="https://at-mah.vercel.app/projects/simbio" title="SIMBIO is a non-profit, web-based platform designed to revolutionize blood donation by connecting donors with patients in need in a seamless and efficient manner." target="_blank">SIOMBIO</Link>, <Link className="font-bold font-sans underline" href="https://at-mah.vercel.app/projects/wpl-toolkit" target="_blank">WPL Toolkit</Link> at <Link className="font-bold font-sans underline" href="https://dot9.dev" target="_blank">Dot9.dev</Link>.</p>
 
             {/* About Section Link */}
             <div className="flex flex-col gap-2 [word-spacing:4px]">
             <Link
               href={`/blog`}
-              className="font-primary text-[#000c19] font-bold text-xs underline"
+              className="font-sans text-[#000c19] font-bold text-xs underline"
               aria-label="Learn more about me"
             >
               READ ARTICLES
               </Link>
             <Link
               href={`/projects`}
-              className="font-primary text-[#000c19] font-bold text-xs underline"
+              className="font-sans text-[#000c19] font-bold text-xs underline"
               aria-label="Learn more about me"
             >
               CHECK PROJECTS
