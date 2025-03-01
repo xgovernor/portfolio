@@ -21,6 +21,7 @@ function HomeHero({
                   key={index}
                   href={social.url}
                   title={social.name}
+                  area-label={`${social.name} profile`}
                   className="text-[#B2B5B7] hover:text-black"
                   target="_blank"
                 >

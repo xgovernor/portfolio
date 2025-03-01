@@ -8,19 +8,13 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/abutahermuhammad/portfolio"
-  },
   "dependencies": {
     "@next/third-parties": "15.2.0",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^6.15.1",
     "@sanity/image-url": "^1.0.2",
-    "motion": "^12.4.7",
     "next": "15.2.0",
-    "next-sanity": "^8.5.5",
-    "nextjs-progressbar": "^0.0.16",
+    "next-sanity": "^9.8.60",
     "react": "19.0.0",
     "react-dom": "19.0.0"
   },
@@ -38,10 +32,14 @@
   "keywords": [],
   "author": "Abu Taher Muhammad <abut1081@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xgovernor/portfolio"
+  },
   "bugs": {
     "url": "git+https://github.com/xgovernor/portfolio/issues"
   },
-  "homepage": "https://at-mah.vercel.app",
+  "homepage": "https://at-muhammad.is-a.dev",
   "browserslist": [
     "chrome 64",
     "edge 79",
