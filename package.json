@@ -46,5 +46,11 @@
     "firefox 67",
     "opera 51",
     "safari 12"
-  ]
+  ],
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  }
 }
