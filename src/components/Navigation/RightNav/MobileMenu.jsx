@@ -24,6 +24,16 @@ function MobileMenu(state) {
               {e.title}
             </Link>
           ))}
+
+          <Link
+              href="#contact"
+              className="font-medium font-serif rounded-full text-sm px-5 py-2.5 me-2 mb-2 border-[#B2B5B7] border text-[#000c19] hover:text-[#313131]"
+              download
+              target="_blank"
+            >
+              DOWNLOAD CV
+            </Link>
+
         </Container>
       </div>
     </>

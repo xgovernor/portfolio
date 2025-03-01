@@ -11,7 +11,7 @@ function NavMenu() {
         {NAVBAR_ROUTES &&
           NAVBAR_ROUTES.map((link, i) => (
             <li
-              className="font-sans font-bold text-[#000c19] uppercase hover:opacity-70 md:max-lg:text-sm "
+              className="font-serif font-medium text-[#000c19] uppercase hover:opacity-70 text-[15px] "
               key={i}
             >
               <span>
@@ -87,6 +87,12 @@ function RightNav() {
         </button>
 
         {isVisible && <MobileMenu />}
+        <Link
+              href="/#contact"
+              className="font-medium font-serif rounded-full text-sm px-4 py-[7px] me-2 text-[#FFF] bg-[#000c19]"
+            >
+              Contact
+            </Link>
       </div>
     </>
   );

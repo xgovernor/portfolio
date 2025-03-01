@@ -32,7 +32,7 @@ function Footer() {
         </Container>
 
         <Container className="flex flex-col gap-2 md:grid grid-cols-12 border-t border-[#ffffff1a] xl:px-0">
-          <p className="col-span-4 font-sans text-[#b9b9b9] text-sm mt-5">
+          <p className="col-span-4 font-serif font-medium text-[#b9b9b9] text-sm mt-5">
             © 2021-2024. Made with ❤️ at{" "}
             <Link
             href="https://www.dot9.dev"

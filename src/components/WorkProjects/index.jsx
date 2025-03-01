@@ -15,7 +15,6 @@ function WorkProjects ({ projects }) {
   return (
     <section
       // ref={sectionRef}
-      className=""
     >
       <Container className="xl:max-w-[1366px] flex flex-col px-10 py-10 md:py-[60px] lg:py-[80px] xl:py-[100px] gap-8">
         {projects.map((project, i) => (

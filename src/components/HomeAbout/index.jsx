@@ -32,7 +32,7 @@ function HomeAbout() {
 
           {/* About Section Content */}
           <div className="space-y-5 max-lg:mt-2.5 lg:w-full lg:max-w-[562px]">
-            <div className="">
+            <div>
               <p className="font-serif text-justify text-black mb-2 text-[15px] font-medium">
                 Hi, I am a Software Developer based in Bangladesh; Currently, doing my B.Sc. in Computer Science & Engineering. I started my career in 2019 as a WordPress developer and since then I have been working with Laravel, Node.js, React, NextJS, etc.</p>
               <p className="font-serif text-justify text-[#1A1A1A] mb-2 text-[15px] leading-[160%]">I am experienced with technologies like PHP, JavaScript, and Typescript, Python, and MySQL, etc. These days, I primarily focus on MERN stack development.

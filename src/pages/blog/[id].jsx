@@ -91,7 +91,7 @@ function ArticlesSingle({ articles, article }) {
         />
       </Meta>
 
-      <Layout className="">
+      <Layout>
         <SingleHeader
           title={article?.title}
           categories={article?.category}

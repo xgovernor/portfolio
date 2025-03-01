@@ -4,7 +4,7 @@ import BlockContent from "../BlockContent";
 
 function ProjectContent({ content }) {
   return (
-    <section className="">
+    <section>
       <Container className="relative max-w-full !px-0">
         <Suspense fallback={<div>Loading</div>}>
           <BlockContent content={content} />

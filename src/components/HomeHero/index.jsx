@@ -6,8 +6,8 @@ function HomeHero({
   cvURL = "https://drive.google.com/file/d/1WZctwHtbSrtyLavPO4epSTORAwCDeF8k/view?usp=sharing"
 }) {
     return (
-      <section className="">
-        <Container className="w-full max-w-screen-xl pt-[55px] pb-10 md:pt-[85px] md:pb-[100px] lg:pt-[105px] lg:pb-[80px] xl:pt-[130px] xl:pb-[70px]">
+      <section>
+        <Container className="w-full max-w-screen-xl pt-[55px] pb-10 md:pt-[85px] md:pb-[100px] lg:pt-[105px] lg:pb-[80px] xl:pt-[130px] xl:pb-[65px]">
           <h1 className="font-black flex flex-col items-center text-center text-black uppercase text-[32px] leading-tight lg:leading-[86px] md:text-6xl lg:text-7xl">
               <span>Designer, developer</span>
               <span>and freethinker.</span>
@@ -28,10 +28,10 @@ function HomeHero({
               ))}
           </div>
 
-          <div className="flex justify-center items-center max-xl:mt-20 xl:mt-[130px]">
+          <div className="flex justify-center items-center max-xl:mt-20 xl:mt-[120px]">
             <Link
               href={cvURL}
-              className="font-primary text-black font-bold text-sm underline"
+              className="font-medium font-serif rounded-full text-sm px-5 py-2.5 me-2 mb-2 border-[#B2B5B7] border text-[#000c19] hover:text-[#313131]"
               download
               target="_blank"
             >

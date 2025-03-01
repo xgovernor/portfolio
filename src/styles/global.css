@@ -4,9 +4,9 @@
 
 
 @theme {
-  --font-sans: var(--font-sans);
-  --font-serif: var(--font-serif);
-  --font-mono: var(--font-mono);
+  --default-font-sans: var(--font-sans);
+  --default-font-serif: var(--font-serif);
+  --default-font-mono: var(--font-mono);
 }
 
 @layer base {
