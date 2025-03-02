@@ -42,5 +42,5 @@ export const NAVBAR_ROUTES = [
     _id: "NR004",
     title: "BLOG",
     url: "/blog",
-  },
+  }
 ];

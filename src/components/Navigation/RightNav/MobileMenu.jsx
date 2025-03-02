@@ -10,11 +10,11 @@ function MobileMenu(state) {
       <div
         className={
           state
-            ? "fixed top-[75px] right-0 left-0 bottom-0 block bg-[#f6f6f6] z-50 md:hidden"
+            ? "fixed top-[75px] right-0 left-0 bottom-0 block bg-[#f6f6f6] z-50 md:hidden flex justify-center items-center"
             : "hidden overflow-hidden"
         }
       >
-        <Container className="w-full h-full py-20 px-5 gap-5 flex flex-col justify-start items-center">
+        <Container className="w-full mx-auto px-5 box-border max-w-[1168px] py-20 gap-5 flex flex-col justify-start items-center">
           {NAVBAR_ROUTES.map((e, i) => (
             <Link
               key={i}
@@ -24,15 +24,6 @@ function MobileMenu(state) {
               {e.title}
             </Link>
           ))}
-
-          <Link
-              href="#contact"
-              className="font-medium font-serif rounded-full text-sm px-5 py-2.5 me-2 mb-2 border-[#B2B5B7] border text-[#000c19] hover:text-[#313131]"
-              download
-              target="_blank"
-            >
-              DOWNLOAD CV
-            </Link>
 
         </Container>
       </div>

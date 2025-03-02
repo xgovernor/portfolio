@@ -87,12 +87,13 @@ function RightNav() {
         </button>
 
         {isVisible && <MobileMenu />}
+
         <Link
-              href="/#contact"
-              className="font-medium font-serif rounded-full text-sm px-4 py-[7px] me-2 text-[#FFF] bg-[#000c19]"
-            >
-              Contact
-            </Link>
+          href="/#contact"
+          className="hidden md:block font-medium font-serif rounded-full text-sm px-4 py-[7px] me-2 text-[#FFF] bg-[#171717] hover:bg-[#383838]"
+        >
+          Contact
+        </Link>
       </div>
     </>
   );

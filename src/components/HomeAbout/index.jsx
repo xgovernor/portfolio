@@ -31,7 +31,7 @@ function HomeAbout() {
           </header>
 
           {/* About Section Content */}
-          <div className="space-y-5 max-lg:mt-2.5 lg:w-full lg:max-w-[562px]">
+          <div className="space-y-7 max-lg:mt-2.5 lg:w-full lg:max-w-[562px]">
             <div>
               <p className="font-serif text-justify text-black mb-2 text-[15px] font-medium">
                 Hi, I am a Software Developer based in Bangladesh; Currently, doing my B.Sc. in Computer Science & Engineering. I started my career in 2019 as a WordPress developer and since then I have been working with Laravel, Node.js, React, NextJS, etc.</p>
@@ -44,21 +44,21 @@ function HomeAbout() {
             <p className="font-serif text-justify text-[#1A1A1A] mb-[30px] text-[13px] leading-[160%] lg:mb-5">So far I have had the experience of working with some amazing peoples from <Link className="font-bold font-sans underline" href="https://freelancerlabbd.com/" target="_blank">Freelancer Lab</Link>, <Link className="font-bold font-sans underline" href="https://www.linkedin.com/company/ferne-health/" target="_blank">Ferne Health</Link>. Currently experimenting with some interesting ideas like <Link className="font-bold font-sans underline" href="https://at-mah.vercel.app/projects/simbio" title="SIMBIO is a non-profit, web-based platform designed to revolutionize blood donation by connecting donors with patients in need in a seamless and efficient manner." target="_blank">SIOMBIO</Link>, <Link className="font-bold font-sans underline" href="https://at-mah.vercel.app/projects/wpl-toolkit" target="_blank">WPL Toolkit</Link> at <Link className="font-bold font-sans underline" href="https://dot9.dev" target="_blank">Dot9.dev</Link>.</p> */}
 
             {/* About Section Link */}
-            <div className="flex flex-col gap-2 [word-spacing:4px]">
-            <Link
+            <div className="flex flex-col gap-3">
+              <Link
               href={`/blog`}
-              className="font-sans text-[#000c19] font-bold text-xs underline"
-              aria-label="Learn more about me"
-            >
-              READ ARTICLES
+                className="w-fit font-medium font-serif rounded-full text-sm px-4 py-2 me-2 text-[#171717] hover:text-[#383838] hover:bg-[rgb(242,242,242)] border border-[#B2B5B7] hover:border-[#383838]"
+              aria-label="Learn more about the articles I have written"
+              >
+                Read Articles
               </Link>
-            <Link
+              <Link
               href={`/projects`}
-              className="font-sans text-[#000c19] font-bold text-xs underline"
-              aria-label="Learn more about me"
-            >
-              CHECK PROJECTS
-            </Link>
+                className="w-fit font-medium font-serif rounded-full text-sm px-4 py-2 me-2 text-[#FFF] bg-[#171717] hover:bg-[#383838] border border-[#171717] hover:border-[#383838]"
+                aria-label="Learn more about the projects I have worked on"
+              >
+                Check projects
+              </Link>
             </div>
           </div>
         </article>
