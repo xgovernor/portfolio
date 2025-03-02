@@ -23,7 +23,7 @@ const options = {
       source: "/(.*)", // Applies to all routes
       headers: [
         { key: "X-Developed-By", value: "Dot9" },
-        { key: "X-Developed-By-Url", value: "https://at-mah.vercel.app" },
+        { key: "X-Developed-By-Url", value: "https://at-muhammad.is-a.dev" },
         { key: "X-DNS-Prefetch-Control", value: "on" },
         {
           key: "Strict-Transport-Security",
