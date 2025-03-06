@@ -3,7 +3,7 @@ import Container from "../Container";
 import { SOCIAL_MEDIA } from "../../assets/data/links";
 
 function HomeHero({
-  cvURL = "https://drive.google.com/file/d/1WZctwHtbSrtyLavPO4epSTORAwCDeF8k/view?usp=sharing"
+  cvURL = "https://drive.google.com/file/d/1tFy9tBWntPE0hhPFde8tLjCrR6CzGdzs/view?usp=drive_link"
 }) {
     return (
       <section>
