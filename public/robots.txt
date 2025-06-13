@@ -1,4 +1,6 @@
 User-agent: *
-Disallow:
 Disallow: /cgi-bin/
-Sitemap: https://at-mah.vercel.app/sitemap.xml
+Disallow: /.github/
+Disallow: /.vscode/
+
+Sitemap: https://www.abutaher.me/sitemap.xml

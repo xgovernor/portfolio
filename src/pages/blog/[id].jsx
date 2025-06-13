@@ -4,94 +4,83 @@ import SingleCover from "../../components/article/SingleCover";
 import SingleHeader from "../../components/article/SingleHeader";
 import NavigationalArticles from "../../components/NavigationArticles";
 import Layout from "../../components/Layout";
+// Import Meta from the correct path if it's outside components folder
 import Meta from "../../components/Meta";
 import groq from "groq";
 import { getClient, imageBuilder } from "../../utils/sanity";
-import Script from "next/script";
+// No need for Script import here, as it's handled by Meta component now
+// import Script from "next/script"; // REMOVE THIS
+import { info } from "./../../components/Meta/meta.constant.js"; // Import info for base URLs
 
 const QUERY = groq`
         *[_type == "article" && slug.current == $slug] | order(_updatedAt desc)[0] {
           _id,
-  title,
-  'slug': slug.current,
+          title,
+          'slug': slug.current,
+          "date": {
+            _createdAt,
+            publishedAt,
+            _updatedAt
+          },
+          featured,
+          excerpt,
+          image,
+          category[]->{ // Make sure you're fetching category title
+            _id,
+            title
+          },
+          topic[]->{ // Make sure you're fetching topic title
+            _id,
+            title
+          },
+          body,
+          references,
+          importantLinks,
+        }
+      `;
+// GROQ query for featured Projects & Articles.
+// (No change here, as it's for NavigationalArticles, not the main article's meta)
+const RELATED_ARTICLE_QUERY = groq`*[_type == "article"] {
+  _id,
   "date": {
     _createdAt,
     publishedAt,
     _updatedAt
   },
   featured,
+  "category": category[0] -> {
+    _id,
+    title
+  },
+  thumbnail,
+  title,
   excerpt,
-  image,
-  category[]->{
-    _id,
-    title
-  },
-  topic[]->{
-    _id,
-    title
-  },
-  body,
-  references,
-  importantLinks,
-        }
-      `;
-// GROQ query for featured Projects & Articles.
-const RELATED_ARTICLE_QUERY = groq`*[_type == "article"] {
-	_id,
-	"date": {
-	  _createdAt,
-	  publishedAt,
-	  _updatedAt
-	},
-	featured,
-	"category": category[0] -> {
-	  _id,
-	  title
-	},
-	thumbnail,
-	title,
-	excerpt,
-	"slug": slug.current,
+  "slug": slug.current,
   }[0...2]`;
 
 function ArticlesSingle({ articles, article }) {
+  if (!article) {
+    // This case should ideally be handled by getServerSideProps's notFound
+    return (
+      <Layout>
+        <p>Article not found.</p>
+      </Layout>
+    );
+  }
+
+  // Define meta information specific to this single article page
+  const articlePageMeta = {
+    pageTitle: article.title, // Use the article's title
+    pageDescription: article.excerpt, // Use the article's excerpt for description
+    pageImage: imageBuilder(article.image).width(1200).height(630).url(), // Use the article's image for social sharing
+    pageUrl: `${info.website}/blog/${article.slug}`, // Canonical URL for the article
+    blogArticleData: article, // <--- NEW: Pass the entire article object for JSON-LD
+  };
 
   return (
     <>
-      <Meta title={article?.title}>
-        <Script
-          id="WebSite-JSON-LD"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              headline: article?.title,
-              // "alternativeHeadline": "and the women who love them",
-              image: imageBuilder(article?.image).url(),
-              // "award": "Best article ever written",
-              editor: "Abu Taher Muhammad",
-              genre: "search engine optimization",
-              keywords: "seo sales b2b",
-              // "wordcount": "1120",
-              publisher: "Abu Taher Muhammad",
-              // "url": "http://www.example.com",
-              url: "https://at-mah.vercel.app/article/slug",
-              datePublished: article.publishedAt,
-              dateCreated: article._createdAt,
-              dateModified: article._updatedAt,
-              description: article.excerpt,
-              articleBody: article.body,
-              author: {
-                "@type": "Person",
-                name: "Abu Taher Muhammad",
-              },
-            }),
-          }}
-        />
-      </Meta>
-
-      <Layout>
+      {/* Pass the full meta object to the Layout component */}
+      <Layout meta={articlePageMeta}>
         <SingleHeader
           title={article?.title}
           categories={article?.category}
@@ -112,9 +101,9 @@ function ArticlesSingle({ articles, article }) {
 export async function getServerSideProps({ params, res }) {
   res.setHeader(
     "Cache-Control",
-    "public, s-maxage=31536000, stale-while-revalidate=59"
+    "public, s-maxage=31536000, stale-while-revalidate=59",
   );
-  const { id: slug } = params;
+  const { id: slug } = params; // params.id is the slug from the URL
 
   try {
     const article = await getClient(false).fetch(QUERY, { slug });
@@ -130,7 +119,7 @@ export async function getServerSideProps({ params, res }) {
       props: {
         articles,
         article,
-        slug,
+        // slug, // No need to pass slug explicitly if it's already in article.slug
       },
     };
   } catch (error) {
