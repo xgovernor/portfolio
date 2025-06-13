@@ -325,50 +325,46 @@ function Meta({
         {/* Canonical Tag (Crucial) */}
         <link rel="canonical" href={finalUrl} key="canonical" />
         {/* <link rel="alternate" type="application/rss+xml" href="/rss.xml" /> */}
+        {/* JSON-LD:Person */}
+        <script
+          id="structured-data-person"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personStructuredData),
+          }}
+        />
+        {/* JSON-LD:Project (conditionally rendered if projectData is passed) */}
+        {projectStructuredData && (
+          <script
+            id="structured-data-project"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(projectStructuredData),
+            }}
+          />
+        )}
+        {/* NEW: JSON-LD for Blog Page (conditionally rendered) */}
+        {blogPageStructuredData && (
+          <script
+            id="structured-data-blog-page"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(blogPageStructuredData),
+            }}
+          />
+        )}
+        {/* NEW: JSON-LD for Single Blog Article (conditionally rendered) */}
+        {singleArticleStructuredData && (
+          <script
+            id="structured-data-single-article"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(singleArticleStructuredData),
+            }}
+          />
+        )}
         {children}
       </Head>
-
-      {/* JSON-LD:Person */}
-      <Script
-        id="structured-data-person"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(personStructuredData),
-        }}
-      />
-
-      {/* JSON-LD:Project (conditionally rendered if projectData is passed) */}
-      {projectStructuredData && (
-        <Script
-          id="structured-data-project"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(projectStructuredData),
-          }}
-        />
-      )}
-
-      {/* NEW: JSON-LD for Blog Page (conditionally rendered) */}
-      {blogPageStructuredData && (
-        <Script
-          id="structured-data-blog-page"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(blogPageStructuredData),
-          }}
-        />
-      )}
-
-      {/* NEW: JSON-LD for Single Blog Article (conditionally rendered) */}
-      {singleArticleStructuredData && (
-        <Script
-          id="structured-data-single-article"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(singleArticleStructuredData),
-          }}
-        />
-      )}
     </>
   );
 }
