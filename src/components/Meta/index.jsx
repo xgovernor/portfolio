@@ -24,38 +24,70 @@ function Meta({
     : pageImage; // Ensure absolute URL for image
   const finalUrl = pageUrl || info.website; // Use the specific page URL or fallback to main website URL
 
-  // Define structured data (Person Schema) - moving this here for clarity
-  const personStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: info.author, // Use info.author directly for name
-    jobTitle: info.jobTitle,
-    gender: "Male",
-    url: info.website, // Base URL for the person
-    sameAs: [
-      "https://www.linkedin.com/in/abutahermuhammad/",
-      "https://github.com/xgovernor",
-      "https://www.facebook.com/abutahermuhammadh",
-      "https://abutaher-muhammad.medium.com/",
-      "https://x.com/abu_taher_m",
-      "https://dev.to/abutahermuhammad",
-      // Add other relevant social media profiles like Twitter if you have a public one for professional use.
-      // E.g., `https://twitter.com/abutahermuhammad`
-    ],
-    image: finalImage, // Use the absolute image URL
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Shahjalal Uposhahar", // Consider if this level of detail is necessary or if a broader area is sufficient for public display
-      addressLocality: "Sylhet",
-      addressRegion: "Sylhet",
-      postalCode: "3100",
-      addressCountry: "Bangladesh",
-    },
-    email: info.email,
-    birthDate: "2003-02-10", // Consider if this is necessary for public display
-    birthPlace: "Sylhet", // Consider if this is necessary for public display
-    nationality: "Bangladeshi", // Consider if this is necessary for public display
-  };
+  // --- Start: UPDATED JSON-LD for ProfilePage wrapping Person ---
+  let profilePageStructuredData = null;
+
+  // Only generate ProfilePage schema for the main homepage/about page (finalUrl === info.website)
+  // or if you have a dedicated /about page where this should apply.
+  // Assuming it's primarily for the homepage based on info.website fallback.
+  if (finalUrl === info.website) {
+    // Or add a prop like `isProfilePage`
+    profilePageStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      // These dates would typically come from your build process or last update of the profile content
+      // For simplicity, let's use a static date or get it from your info.js if available.
+      dateCreated: "2023-01-01T00:00:00+06:00", // Example: Date you launched the site or profile
+      dateModified: new Date().toISOString(), // Dynamically set to current time, or last updated content timestamp
+      url: finalUrl, // The URL of the profile page
+      mainEntity: {
+        "@type": "Person",
+        name: info.author,
+        alternateName: "abutahermuhammad", // Your username/handle if applicable
+        // "identifier": "your-unique-id", // Optional: If you have a system-wide unique ID
+        jobTitle: info.jobTitle,
+        gender: "Male",
+        url: info.website, // Link to your main website/profile
+        sameAs: [
+          "https://www.linkedin.com/in/abutahermuhammad/",
+          "https://github.com/abutahermuhammad",
+          // Add Twitter if it's your professional profile
+          // "https://twitter.com/abutahermuhammad",
+        ],
+        image: finalImage, // Use the absolute image URL from the page
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Shahjalal Uposhahar",
+          addressLocality: "Sylhet",
+          addressRegion: "Sylhet",
+          postalCode: "3100",
+          addressCountry: "Bangladesh",
+        },
+        email: info.email,
+        birthDate: "2003-02-10",
+        birthPlace: "Sylhet",
+        nationality: "Bangladeshi",
+        // You could potentially add interactionStatistic if you track public interactions
+        // For a personal portfolio, `agentInteractionStatistic` for `WriteAction` (articles) or
+        // `DevelopAction` (projects) could be relevant if you track counts.
+        // For example:
+        // "agentInteractionStatistic": [
+        //   {
+        //     "@type": "InteractionCounter",
+        //     "interactionType": "https://schema.org/WriteAction",
+        //     "userInteractionCount": 50 // Example: Total articles written
+        //   },
+        //   {
+        //     "@type": "InteractionCounter",
+        //     "interactionType": "https://schema.org/DevelopAction", // Custom/less common, but conceptual
+        //     "userInteractionCount": 20 // Example: Total projects developed
+        //   }
+        // ],
+        description: info.description, // Use your main description
+      },
+    };
+  }
+  // --- End: UPDATED JSON-LD for ProfilePage wrapping Person ---
 
   // --- Start: NEW JSON-LD for Projects Index Page (WebPage + ItemList of SoftwareSourceCode) ---
   let projectsIndexStructuredData = null;
@@ -383,7 +415,7 @@ function Meta({
           id="structured-data-person"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(personStructuredData),
+            __html: JSON.stringify(profilePageStructuredData),
           }}
         />
         {/* NEW: JSON-LD for Projects Index Page (conditionally rendered) */}
