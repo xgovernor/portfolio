@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Script from "next/script";
 import { memo } from "react";
 import { info } from "./meta.constant.js";
 import { imageBuilder } from "../../utils/sanity.js";
@@ -35,7 +34,11 @@ function Meta({
     url: info.website, // Base URL for the person
     sameAs: [
       "https://www.linkedin.com/in/abutahermuhammad/",
-      "https://github.com/abutahermuhammad",
+      "https://github.com/xgovernor",
+      "https://www.facebook.com/abutahermuhammadh",
+      "https://abutaher-muhammad.medium.com/",
+      "https://x.com/abu_taher_m",
+      "https://dev.to/abutahermuhammad",
       // Add other relevant social media profiles like Twitter if you have a public one for professional use.
       // E.g., `https://twitter.com/abutahermuhammad`
     ],
@@ -107,7 +110,7 @@ function Meta({
     projectStructuredData = {
       "@context": "https://schema.org",
       "@type": "SoftwareSourceCode", // Or "CreativeWork" or "Product"
-      name: projectData.title || projectData.projectName,
+      name: projectData.projectName || projectData.title,
       description: projectData.excerpt,
       url: `${info.website}/projects/${projectData.slug}`, // Full URL to the project page
       image: imageBuilder(projectData.thumbnail).width(1200).height(630).url(), // Optimized image URL
@@ -122,7 +125,7 @@ function Meta({
           ? projectData.technology.join(", ")
           : projectData.technology
         : null,
-      license: "https://opensource.org/licenses/MIT", // Example: if your code is MIT licensed, or null
+      license: projectData?.license || null, // Example: if your code is MIT licensed, or null
       // Add more specific properties if available from your Sanity data:
       // "applicationCategory": "Web Application",
       // "operatingSystem": "All",
