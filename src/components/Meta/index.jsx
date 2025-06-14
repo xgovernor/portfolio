@@ -50,9 +50,11 @@ function Meta({
         url: info.website, // Link to your main website/profile
         sameAs: [
           "https://www.linkedin.com/in/abutahermuhammad/",
-          "https://github.com/abutahermuhammad",
-          // Add Twitter if it's your professional profile
-          // "https://twitter.com/abutahermuhammad",
+          "https://github.com/xgovernor",
+          "https://www.facebook.com/abutahermuhammadh",
+          "https://abutaher-muhammad.medium.com/",
+          "https://x.com/abu_taher_m",
+          "https://dev.to/abutahermuhammad",
         ],
         image: finalImage, // Use the absolute image URL from the page
         address: {
