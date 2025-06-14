@@ -63,12 +63,13 @@ function Meta({
       item: {
         "@type": "SoftwareSourceCode", // Each item in the list is a SoftwareSourceCode
         url: `${info.website}/projects/${project.slug}`, // Absolute URL to the individual project
-        name: project.title || project.projectName,
+        name: project.projectName,
         description: project.excerpt,
         image: imageBuilder(project.thumbnail).width(800).height(450).url(), // Thumbnail for the project
         author: {
           "@type": "Person",
           name: info.author, // Assuming you are the author/developer of all projects
+          url: info.website, // Link to your author page/profile
         },
         // You can add more project-specific properties if they are available in the `project` snippet
         // "codeRepository": project.githubUrl,
