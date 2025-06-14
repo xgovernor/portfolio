@@ -1,11 +1,8 @@
-import { memo } from "react";
 import SingleContent from "../../components/article/SingleContent";
 import SingleCover from "../../components/article/SingleCover";
 import SingleHeader from "../../components/article/SingleHeader";
 import NavigationalArticles from "../../components/NavigationArticles";
 import Layout from "../../components/Layout";
-// Import Meta from the correct path if it's outside components folder
-import Meta from "../../components/Meta";
 import groq from "groq";
 import { getClient, imageBuilder } from "../../utils/sanity";
 // No need for Script import here, as it's handled by Meta component now

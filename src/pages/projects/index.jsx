@@ -9,8 +9,9 @@ import WorkProjects from "../../components/WorkProjects";
 // Import 'info' from your meta.constant.js to access default values
 import { info } from "./../../components/Meta/meta.constant";
 
-// GROQ query for featured Projects & Articles.
-// (No change needed here, as it fetches data for WorkProjects, not for the meta tags of this page itself)
+// GROQ query for projects.
+// IMPORTANT: Ensure this query fetches all fields needed for the JSON-LD snippet
+// (title, projectName, excerpt, thumbnail, slug)
 const QUERY = groq`*[_type == "project"] {
   _id,
   featured,
@@ -19,6 +20,9 @@ const QUERY = groq`*[_type == "project"] {
   title,
   excerpt,
   "slug": slug.current,
+  // Add other fields here if you want to include them in the ItemList, e.g., githubUrl, technology
+  // githubUrl,
+  // technology,
   }`;
 
 function Work({ data }) {
@@ -28,9 +32,9 @@ function Work({ data }) {
       "Projects | Abu Taher Muhammad - Full-Stack Web Developer Portfolio",
     pageDescription:
       "Explore a diverse portfolio of web development projects by Abu Taher Muhammad, showcasing expertise in React.js, Node.js, and modern full-stack solutions.",
-    // Use a specific image for the projects page if you have one, otherwise fall back to your general avatar
-    pageImage: `${info.website}/images/projects-page-banner.jpg`, // Assuming you might have a specific banner or header image for the projects page
-    pageUrl: `${info.website}/projects`, // Explicitly set the canonical URL for the projects page
+    pageImage: `${info.website}/images/projects-page-banner.jpg`,
+    pageUrl: `${info.website}/projects`,
+    projectsData: data?.projects, // <--- NEW: Pass the projects data here
   };
 
   return (

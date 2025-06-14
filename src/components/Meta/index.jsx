@@ -12,6 +12,7 @@ function Meta({
   projectData = null,
   blogArticlesData = null,
   blogArticleData = null,
+  projectsData = null,
   children,
 }) {
   // Fallbacks if props are not provided
@@ -52,6 +53,52 @@ function Meta({
     birthPlace: "Sylhet", // Consider if this is necessary for public display
     nationality: "Bangladeshi", // Consider if this is necessary for public display
   };
+
+  // --- Start: NEW JSON-LD for Projects Index Page (WebPage + ItemList of SoftwareSourceCode) ---
+  let projectsIndexStructuredData = null;
+  if (projectsData && Array.isArray(projectsData) && projectsData.length > 0) {
+    const listItems = projectsData.map((project, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "SoftwareSourceCode", // Each item in the list is a SoftwareSourceCode
+        url: `${info.website}/projects/${project.slug}`, // Absolute URL to the individual project
+        name: project.title || project.projectName,
+        description: project.excerpt,
+        image: imageBuilder(project.thumbnail).width(800).height(450).url(), // Thumbnail for the project
+        author: {
+          "@type": "Person",
+          name: info.author, // Assuming you are the author/developer of all projects
+        },
+        // You can add more project-specific properties if they are available in the `project` snippet
+        // "codeRepository": project.githubUrl,
+        // "programmingLanguage": project.technology ? (Array.isArray(project.technology) ? project.technology.join(', ') : project.technology) : null,
+      },
+    }));
+
+    projectsIndexStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "WebPage", // The page itself is a WebPage
+      name: finalTitle,
+      description: finalDescription,
+      url: finalUrl,
+      image: finalImage,
+      mainEntity: {
+        // This page's main content is a list
+        "@type": "ItemList",
+        name: finalTitle,
+        itemListElement: listItems,
+        numberOfItems: projectsData.length,
+      },
+      author: {
+        // Author of the projects page itself
+        "@type": "Person",
+        name: info.author,
+        url: info.website,
+      },
+    };
+  }
+  // --- End: NEW JSON-LD for Projects Index Page ---
 
   // --- Start: New JSON-LD for Project ---
   let projectStructuredData = null;
@@ -108,14 +155,16 @@ function Meta({
         "@type": "Article", // Each item in the list is an Article
         url: `${info.website}/blog/${article.slug}`, // Absolute URL to the individual article
         name: article.title,
+        headline: article.title, // Headline for the article
         description: article.excerpt,
         image: article?.thumbnail
           ? imageBuilder(article.thumbnail).width(800).height(450).url()
-          : null, // Thumbnail for the article
+          : "/banner.jpg", // Thumbnail for the article
         // You might want to add author, datePublished, etc., here if available in blogArticlesData
         author: {
           "@type": "Person",
           name: info.author, // Assuming you are the author of all blog posts
+          url: info.website, // Link to your author page/profile
         },
         datePublished: article.date?.publishedAt || article.date?._createdAt, // Use publishedAt if available, otherwise createdAt
         dateModified: article.date?._updatedAt || article.date?._createdAt,
@@ -333,6 +382,16 @@ function Meta({
             __html: JSON.stringify(personStructuredData),
           }}
         />
+        {/* NEW: JSON-LD for Projects Index Page (conditionally rendered) */}
+        {projectsIndexStructuredData && (
+          <script
+            id="structured-data-projects-index-page"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(projectsIndexStructuredData),
+            }}
+          />
+        )}
         {/* JSON-LD:Project (conditionally rendered if projectData is passed) */}
         {projectStructuredData && (
           <script
