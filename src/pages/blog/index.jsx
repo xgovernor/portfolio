@@ -27,24 +27,124 @@ const QUERY = groq`*[_type == "article"] {
   }`;
 
 function Blog({ data }) {
-  // Define meta information specific to the /blog page
-  const blogPageMeta = {
-    // A more specific and keyword-rich title for your blog index
-    pageTitle: "Blog | Insights & Thoughts from Abu Taher Muhammad",
-    // A detailed description for search results and social shares
-    pageDescription:
-      "Explore Abu Taher Muhammad's blog for occasional thoughts, insights, and technical articles on web development, software engineering, and industry trends.",
-    // A specific image for the blog page, if you have one, otherwise fallback to a generic one
-    pageImage: `${info.website}${IMG.src}`, // Assuming IMG.src gives the relative path to blog.png
-    // The canonical URL for the blog index page
-    pageUrl: `${info.website}/blog`,
-    blogArticlesData: data?.articles,
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog", // More specific for a blog index page
+    name: `Blog - Insights & Thoughts from Abu Taher Muhammad`,
+    description: `Explore occasional thoughts, insights, and technical articles on web development, software engineering, and industry trends by Abu Taher Muhammad.`,
+    url: `${info.website}/blog`,
+    // Use an ImageObject for better image context, potentially multiple sizes
+    // image: {
+    //   "@type": "ImageObject",
+    //   url: `${info.website}${IMG.src}`, // Use the blog banner image
+    //   caption: `Header image for Abu Taher Muhammad's Blog`,
+    //   // Consider adding width and height for better image indexing
+    //   // width: 1200,
+    //   // height: 630
+    // },
+
+    // The main content of this Blog page is a list of blog posts
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: data?.articles?.map((article, index) => ({
+        // Add index for position
+        "@type": "ListItem",
+        position: index + 1, // Ensure position starts from 1
+        item: {
+          "@type": "BlogPosting", // More specific than Article for blog posts
+          headline: article.title, // Use headline for the article title
+          url: `${info.website}/blog/${article.slug}`,
+          description: article.excerpt,
+
+          // Image for individual articles should be an ImageObject
+          image: {
+            "@type": "ImageObject",
+            url: `${info.website}/${article.thumbnail}`,
+            caption: `Thumbnail for '${article.title}'`,
+            // Consider adding width and height for better image indexing
+            // width: 800,
+            // height: 450
+          },
+
+          // Author of the individual blog post (you)
+          author: {
+            "@type": "Person",
+            name: info.author,
+            url: info.website,
+            // Add sameAs for E-A-T (Expertise, Authoritativeness, Trustworthiness)
+            // sameAs: [
+            //   "https://linkedin.com/in/yourprofile",
+            //   "https://twitter.com/yourhandle",
+            //   "https://github.com/yourgithub",
+            // ],
+          },
+
+          // Publisher of the blog post (your website/organization)
+          publisher: {
+            "@type": "Organization", // Or Person if it's strictly a personal blog with no org name
+            name: info.websiteName || info.author, // Your website name or your name
+            url: info.website,
+            logo: {
+              "@type": "ImageObject",
+              url: `${info.website}/images/your-logo.png`, // Path to your website's logo
+              width: 600, // Recommended max width
+              height: 60, // Recommended max height
+            },
+          },
+
+          datePublished: article.date?.publishedAt || article.date?._createdAt, // Ensure valid ISO 8601 date format
+          dateModified: article.date?._updatedAt || article.date?._createdAt, // Ensure valid ISO 8601 date format
+
+          // Optional but recommended for better search performance:
+          // articleSection: "Web Development", // e.g., "Software Engineering", "Productivity"
+          // keywords: "web development, JavaScript, React.js, Node.js, programming", // Comma-separated relevant keywords
+          // wordCount: article.wordCount, // If you track this
+          // mainEntityOfPage: { // This links the article to its canonical URL page
+          //   "@type": "WebPage",
+          //   "@id": `${info.website}/blog/${article.slug}`
+          // }
+        },
+      })),
+      numberOfItems: data?.articles?.length || 0,
+    },
+
+    // Author of the overall blog (you)
+    author: {
+      "@type": "Person",
+      name: info.author,
+      url: info.website,
+      // sameAs: [
+      //   "https://linkedin.com/in/yourprofile",
+      //   "https://twitter.com/yourhandle",
+      //   "https://github.com/yourgithub",
+      // ],
+    },
+
+    // Add `@id` for entity resolution, useful for building a knowledge graph
+    "@id": `${info.website}/blog#blogpage`,
+
+    // Consider adding a BreadcrumbList schema on the page for better navigation visibility
+    // This would typically be a separate JSON-LD block.
   };
 
   return (
     <>
       {/* Pass the full meta object to the Layout component */}
-      <Layout className="page__blog" meta={blogPageMeta}>
+      <Layout
+        className="page__blog"
+        meta={{
+          children: (
+            <script
+              id="structured-data-projects-index-page"
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(structuredData),
+              }}
+            />
+          ),
+        }}
+      >
         <PageHeader
           heading="KNOWLEDGE BOOK"
           subheading={[

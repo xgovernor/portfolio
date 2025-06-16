@@ -1,4 +1,5 @@
 export const info = {
+    alternateName: "abutahermuhammad",
     author: "Abu Taher Muhammad",
     jobTitle: "Full-Stack Web Developer & Software Engineer",
     title: "Abu Taher Muhammad", // Added this to 'info' for clearer primary title

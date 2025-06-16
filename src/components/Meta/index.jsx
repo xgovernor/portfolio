@@ -1,317 +1,96 @@
 import Head from "next/head";
 import { memo } from "react";
 import { info } from "./meta.constant.js";
-import { imageBuilder } from "../../utils/sanity.js";
 
-function Meta({
-  pageTitle, // Renamed from 'title' to avoid conflict with og:title variable name
-  pageDescription, // Renamed from 'description' for clarity
-  pageImage = info.avatar, // Renamed from 'image' for clarity
-  pageUrl, // New prop for canonical and OG/Twitter URL
-  projectData = null,
-  blogArticlesData = null,
-  blogArticleData = null,
-  projectsData = null,
-  children,
-}) {
-  // Fallbacks if props are not provided
+function Meta({ pageTitle, pageDescription, children }) {
   const finalTitle = pageTitle
-    ? `${pageTitle} | ${info.jobTitle}`
+    ? `${pageTitle} | ${info.author} - ${info.jobTitle}`
     : `${info.title} | ${info.jobTitle}`;
   const finalDescription = pageDescription || info.description;
-  const finalImage = pageImage.startsWith("/")
-    ? `${info.website}${pageImage}`
-    : pageImage; // Ensure absolute URL for image
-  const finalUrl = pageUrl || info.website; // Use the specific page URL or fallback to main website URL
+  const finalImage = `${info.website}/banner.jpg`;
 
-  // --- Start: UPDATED JSON-LD for ProfilePage wrapping Person ---
-  let profilePageStructuredData = null;
+  const structuredPersonData = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    name: finalTitle,
+    dateCreated: "2021-01-01T00:00:00+06:00",
+    dateModified: "2025-06-16T00:00:00+06:00",
+    mainEntity: {
+      "@type": "Person",
+      name: info.author,
+      alternateName: info.alternateName,
+      description: info.description,
+      jobTitle: info.jobTitle,
+      gender: "Male",
+      identifier: info.identifier || "xgovernor",
+      url: info.website,
+      sameAs: [
+        "https://www.linkedin.com/in/abutahermuhammad/",
+        "https://github.com/xgovernor",
+        "https://www.facebook.com/abutahermuhammadh",
+        "https://abutaher-muhammad.medium.com/",
+        "https://x.com/abu_taher_m",
+        "https://dev.to/abutahermuhammad",
+      ],
+      image: [
+        finalImage,
+        `${info.website}/avatar.jpg`,
+        `${info.website}/favicon.svg`,
+        `${info.website}/favicon.jpg`,
+      ],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Shahjalal Uposhahar",
+        addressLocality: "Sylhet",
+        addressRegion: "Sylhet",
+        postalCode: "3100",
+        addressCountry: "Bangladesh",
+      },
+      birthDate: "2003-02-10",
+      birthPlace: "Sylhet",
+      nationality: "Bangladeshi",
+    },
+  };
 
-  // Only generate ProfilePage schema for the main homepage/about page (finalUrl === info.website)
-  // or if you have a dedicated /about page where this should apply.
-  // Assuming it's primarily for the homepage based on info.website fallback.
-  if (finalUrl === info.website) {
-    // Or add a prop like `isProfilePage`
-    profilePageStructuredData = {
-      "@context": "https://schema.org",
-      "@type": "ProfilePage",
-      // These dates would typically come from your build process or last update of the profile content
-      // For simplicity, let's use a static date or get it from your info.js if available.
-      dateCreated: "2023-01-01T00:00:00+06:00", // Example: Date you launched the site or profile
-      dateModified: new Date().toISOString(), // Dynamically set to current time, or last updated content timestamp
-      url: finalUrl, // The URL of the profile page
-      mainEntity: {
-        "@type": "Person",
-        name: info.author,
-        alternateName: "abutahermuhammad", // Your username/handle if applicable
-        // "identifier": "your-unique-id", // Optional: If you have a system-wide unique ID
-        jobTitle: info.jobTitle,
-        gender: "Male",
-        url: info.website, // Link to your main website/profile
-        sameAs: [
-          "https://www.linkedin.com/in/abutahermuhammad/",
-          "https://github.com/xgovernor",
-          "https://www.facebook.com/abutahermuhammadh",
-          "https://abutaher-muhammad.medium.com/",
-          "https://x.com/abu_taher_m",
-          "https://dev.to/abutahermuhammad",
-        ],
-        image: finalImage, // Use the absolute image URL from the page
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Shahjalal Uposhahar",
-          addressLocality: "Sylhet",
-          addressRegion: "Sylhet",
-          postalCode: "3100",
-          addressCountry: "Bangladesh",
-        },
-        email: info.email,
-        birthDate: "2003-02-10",
-        birthPlace: "Sylhet",
-        nationality: "Bangladeshi",
-        // You could potentially add interactionStatistic if you track public interactions
-        // For a personal portfolio, `agentInteractionStatistic` for `WriteAction` (articles) or
-        // `DevelopAction` (projects) could be relevant if you track counts.
-        // For example:
-        // "agentInteractionStatistic": [
-        //   {
-        //     "@type": "InteractionCounter",
-        //     "interactionType": "https://schema.org/WriteAction",
-        //     "userInteractionCount": 50 // Example: Total articles written
-        //   },
-        //   {
-        //     "@type": "InteractionCounter",
-        //     "interactionType": "https://schema.org/DevelopAction", // Custom/less common, but conceptual
-        //     "userInteractionCount": 20 // Example: Total projects developed
-        //   }
-        // ],
-        description: info.description, // Use your main description
+  // This would be a separate JSON-LD script block on your single blog post page
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home", // Or your site's root name
+        item: info.website, // Your website's root URL
       },
-    };
-  }
-  // --- End: UPDATED JSON-LD for ProfilePage wrapping Person ---
-
-  // --- Start: NEW JSON-LD for Projects Index Page (WebPage + ItemList of SoftwareSourceCode) ---
-  let projectsIndexStructuredData = null;
-  if (projectsData && Array.isArray(projectsData) && projectsData.length > 0) {
-    const listItems = projectsData.map((project, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      item: {
-        "@type": "SoftwareSourceCode", // Each item in the list is a SoftwareSourceCode
-        url: `${info.website}/projects/${project.slug}`, // Absolute URL to the individual project
-        name: project.projectName,
-        description: project.excerpt,
-        image: imageBuilder(project.thumbnail).width(800).height(450).url(), // Thumbnail for the project
-        author: {
-          "@type": "Person",
-          name: info.author, // Assuming you are the author/developer of all projects
-          url: info.website, // Link to your author page/profile
-        },
-        // You can add more project-specific properties if they are available in the `project` snippet
-        // "codeRepository": project.githubUrl,
-        // "programmingLanguage": project.technology ? (Array.isArray(project.technology) ? project.technology.join(', ') : project.technology) : null,
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Projects", // The name of your blog index page
+        item: `${info.website}/Projects`, // The URL of your blog index page
       },
-    }));
-
-    projectsIndexStructuredData = {
-      "@context": "https://schema.org",
-      "@type": "WebPage", // The page itself is a WebPage
-      name: finalTitle,
-      description: finalDescription,
-      url: finalUrl,
-      image: finalImage,
-      mainEntity: {
-        // This page's main content is a list
-        "@type": "ItemList",
-        name: finalTitle,
-        itemListElement: listItems,
-        numberOfItems: projectsData.length,
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Blog", // The title of the current blog post
+        item: `${info.website}/blog`, // The URL of the current blog post
       },
-      author: {
-        // Author of the projects page itself
-        "@type": "Person",
-        name: info.author,
-        url: info.website,
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: "Contact", // The title of the current blog post
+        item: `${info.website}/#contact`, // The URL of the current blog post
       },
-    };
-  }
-  // --- End: NEW JSON-LD for Projects Index Page ---
-
-  // --- Start: New JSON-LD for Project ---
-  let projectStructuredData = null;
-  if (projectData) {
-    projectStructuredData = {
-      "@context": "https://schema.org",
-      "@type": "SoftwareSourceCode", // Or "CreativeWork" or "Product"
-      name: projectData.projectName || projectData.title,
-      description: projectData.excerpt,
-      url: `${info.website}/projects/${projectData.slug}`, // Full URL to the project page
-      image: imageBuilder(projectData.thumbnail).width(1200).height(630).url(), // Optimized image URL
-      author: {
-        "@type": "Person",
-        name: info.author,
-        url: info.website, // Link back to your main profile
-      },
-      codeRepository: projectData.githubUrl || null, // If you store GitHub URL in Sanity
-      programmingLanguage: projectData.technology
-        ? Array.isArray(projectData.technology)
-          ? projectData.technology.join(", ")
-          : projectData.technology
-        : null,
-      license: projectData?.license || null, // Example: if your code is MIT licensed, or null
-      // Add more specific properties if available from your Sanity data:
-      // "applicationCategory": "Web Application",
-      // "operatingSystem": "All",
-      // "dateCreated": projectData.dateCreated, // if you have a date field
-      // "dateModified": projectData._updatedAt, // if you have this in Sanity
-      isPartOf: {
-        // Link back to your main projects page
-        "@type": "WebPage",
-        name: "Projects by Abu Taher Muhammad",
-        url: `${info.website}/projects`,
-      },
-      // Consider adding 'screenshot' if you have multiple images for the project
-      // "screenshot": [
-      //    imageBuilder(projectData.screenshot1).url(),
-      //    imageBuilder(projectData.screenshot2).url()
-      // ]
-    };
-  }
-  // --- End: New JSON-LD for Project ---
-
-  let blogPageStructuredData = null;
-  if (
-    blogArticlesData &&
-    Array.isArray(blogArticlesData) &&
-    blogArticlesData.length > 0
-  ) {
-    const listItems = blogArticlesData.map((article, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      item: {
-        "@type": "Article", // Each item in the list is an Article
-        url: `${info.website}/blog/${article.slug}`, // Absolute URL to the individual article
-        name: article.title,
-        headline: article.title, // Headline for the article
-        description: article.excerpt,
-        image: article?.thumbnail
-          ? imageBuilder(article.thumbnail).width(800).height(450).url()
-          : "/banner.jpg", // Thumbnail for the article
-        // You might want to add author, datePublished, etc., here if available in blogArticlesData
-        author: {
-          "@type": "Person",
-          name: info.author, // Assuming you are the author of all blog posts
-          url: info.website, // Link to your author page/profile
-        },
-        datePublished: article.date?.publishedAt || article.date?._createdAt, // Use publishedAt if available, otherwise createdAt
-        dateModified: article.date?._updatedAt || article.date?._createdAt,
-      },
-    }));
-
-    blogPageStructuredData = {
-      "@context": "https://schema.org",
-      "@type": "WebPage", // The page itself is a WebPage
-      name: finalTitle,
-      description: finalDescription,
-      url: finalUrl,
-      image: finalImage,
-      mainEntity: {
-        // This page's main content is a list
-        "@type": "ItemList",
-        name: finalTitle,
-        itemListElement: listItems,
-        numberOfItems: blogArticlesData.length,
-      },
-      author: {
-        // Author of the blog page itself
-        "@type": "Person",
-        name: info.author,
-        url: info.website,
-      },
-    };
-  }
-  // --- End: NEW JSON-LD for Blog Page ---
-
-  // --- Start: NEW JSON-LD for Single Blog Article (BlogPosting) ---
-  let singleArticleStructuredData = null;
-  if (blogArticleData) {
-    // Ensure all URLs are absolute
-    const articleImageUrl = blogArticleData.image
-      ? imageBuilder(blogArticleData.image).width(1200).height(630).url()
-      : null;
-    const articleUrl = `${info.website}/blog/${blogArticleData.slug}`;
-
-    singleArticleStructuredData = {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      headline: blogArticleData.title,
-      description: blogArticleData.excerpt,
-      image: {
-        "@type": "ImageObject",
-        url: articleImageUrl,
-        width: 1200, // Recommended width for large image
-        height: 630, // Recommended height for large image
-      },
-      url: articleUrl,
-      datePublished:
-        blogArticleData.date.publishedAt || blogArticleData.date._createdAt,
-      dateModified:
-        blogArticleData.date._updatedAt || blogArticleData.date._createdAt,
-      author: {
-        "@type": "Person",
-        name: info.author,
-        url: info.website, // Link to your author page/profile
-      },
-      publisher: {
-        // Required for BlogPosting for rich results
-        "@type": "Organization", // Or "Person" if you want to be the publisher
-        name: info.author + " Portfolio", // Your website/brand name
-        logo: {
-          "@type": "ImageObject",
-          url: `${info.website}${info.avatar}`, // Your logo/avatar
-          width: 60, // Example size
-          height: 60, // Example size
-        },
-      },
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": articleUrl, // Canonical URL of the article page
-      },
-      // Optional: if your Sanity 'body' field is plain text for this prop, otherwise omit
-      // "articleBody": blogArticleData.body,
-      articleSection: blogArticleData.category?.map((cat) => cat.title) || [], // Map categories to strings
-      keywords:
-        blogArticleData.topic?.map((topic) => topic.title).join(",") || "", // Map topics to comma-separated string
-      // Consider adding 'wordCount' if you can calculate it
-      // "wordcount": blogArticleData.body ? blogArticleData.body.split(/\s+/g).length : undefined,
-    };
-  }
-  // --- End: NEW JSON-LD for Single Blog Article ---
+    ],
+  };
 
   return (
     <>
       <Head>
-        {/* General Tags */}
-        {/*
-          Using 'key' prop for meta tags: Next.js can deduplicate or replace meta tags
-          if they have the same 'key'. This is useful when overriding tags on different pages.
-        */}
         <title key="title">{finalTitle}</title>
         <meta name="description" content={finalDescription} key="description" />
         <meta name="author" content={info.author} key="author" />
-        {/*
-          Removed <meta name="keywords" content={info.description} />
-          Keywords meta tag is largely ignored by Google. If you want to include keywords,
-          they should be naturally integrated into your title, description, and page content.
-          Using a full description as keywords is not effective.
-        */}
         <meta name="robots" content="index, follow" key="robots" />
-        {/*
-          httpEquiv="Content-Type" is generally not needed if your server sends the correct
-          Content-Type header and you have <meta charset="UTF-8">.
-          <meta charset="UTF-8" /> should be the first meta tag in <head>.
-        */}
         <meta charSet="utf-8" key="charset" />
         <meta
           name="viewport"
@@ -320,10 +99,6 @@ function Meta({
         />
         {/* Open Graph Tags */}
         <meta property="og:title" content={finalTitle} key="og:title" />
-        {/*
-          og:site_name should be the name of your website/brand, not the page title.
-          Example: "Abu Taher Muhammad Portfolio"
-        */}
         <meta
           property="og:site_name"
           content={info.author + " Portfolio"}
@@ -334,18 +109,14 @@ function Meta({
           content={finalDescription}
           key="og:description"
         />
-        <meta property="og:type" content="website" key="og:type" />{" "}
-        {/* 'website' for homepage, 'article' for blog posts */}
-        <meta property="og:url" content={finalUrl} key="og:url" />{" "}
-        {/* Use the specific page URL */}
-        <meta property="og:image" content={finalImage} key="og:image" />{" "}
-        {/* Ensure absolute URL */}
+        <meta property="og:type" content="website" key="og:type" />
+        <meta property="og:url" content={info.website} key="og:url" />
+        <meta property="og:image" content={finalImage} key="og:image" />
         <meta
           property="og:image:alt"
           content={`${finalTitle} - Image`}
           key="og:image:alt"
-        />{" "}
-        {/* Dynamic alt text for image */}
+        />
         <meta property="og:locale" content="en_US" key="og:locale" />
         {/* Twitter Tags */}
         <meta
@@ -363,26 +134,18 @@ function Meta({
           content="@abutahermuhammad"
           key="twitter:creator"
         />
-        <meta name="twitter:title" content={finalTitle} key="twitter:title" />{" "}
-        {/* Use finalTitle for consistency */}
+        <meta name="twitter:title" content={finalTitle} key="twitter:title" />
         <meta
           name="twitter:description"
           content={finalDescription}
           key="twitter:description"
-        />{" "}
-        {/* Use finalDescription for consistency */}
-        <meta
-          name="twitter:image"
-          content={finalImage}
-          key="twitter:image"
-        />{" "}
-        {/* Ensure absolute URL */}
+        />
+        <meta name="twitter:image" content={finalImage} key="twitter:image" />
         <meta
           name="twitter:image:alt"
           content={`${finalTitle} - Image`}
           key="twitter:image:alt"
-        />{" "}
-        {/* Dynamic alt text for image */}
+        />
         {/* Favicons */}
         <link rel="icon" href="/favicon.ico" sizes="any" key="favicon-ico" />
         <link
@@ -409,57 +172,23 @@ function Meta({
           key="msapplication-tile-color"
         />
         <meta name="theme-color" content="#1A1A1A" key="theme-color" />
-        {/* Canonical Tag (Crucial) */}
-        <link rel="canonical" href={finalUrl} key="canonical" />
-        {/* <link rel="alternate" type="application/rss+xml" href="/rss.xml" /> */}
-        {/* JSON-LD:Person */}
+        <link rel="canonical" href={info.website} key="canonical" />
+
         <script
           id="structured-data-person"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(profilePageStructuredData),
+            __html: JSON.stringify(structuredPersonData),
           }}
         />
-        {/* NEW: JSON-LD for Projects Index Page (conditionally rendered) */}
-        {projectsIndexStructuredData && (
-          <script
-            id="structured-data-projects-index-page"
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(projectsIndexStructuredData),
-            }}
-          />
-        )}
-        {/* JSON-LD:Project (conditionally rendered if projectData is passed) */}
-        {projectStructuredData && (
-          <script
-            id="structured-data-project"
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(projectStructuredData),
-            }}
-          />
-        )}
-        {/* NEW: JSON-LD for Blog Page (conditionally rendered) */}
-        {blogPageStructuredData && (
-          <script
-            id="structured-data-blog-page"
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(blogPageStructuredData),
-            }}
-          />
-        )}
-        {/* NEW: JSON-LD for Single Blog Article (conditionally rendered) */}
-        {singleArticleStructuredData && (
-          <script
-            id="structured-data-single-article"
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(singleArticleStructuredData),
-            }}
-          />
-        )}
+
+        <script
+          id="structured-data-breadcrumbs"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema),
+          }}
+        />
         {children}
       </Head>
     </>
