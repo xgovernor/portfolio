@@ -14,15 +14,15 @@ function WorkProjects ({ projects }) {
 
   return (
     <section
-      // ref={sectionRef}
+    // ref={sectionRef}
     >
-      <Container className="xl:max-w-[1366px] flex flex-col px-10 py-10 md:py-[60px] lg:py-[80px] xl:py-[100px] gap-8">
+      <Container className="flex flex-col gap-8 px-10 py-10 md:py-[60px] lg:py-[80px] xl:max-w-[1366px] xl:py-[100px]">
         {projects.map((project, i) => (
           <ProjectCard
             // style={{ y: style }}
             key={project._id}
             serial={i + 1}
-            projectName={project.projectName}
+            projectName={project.name}
             thumbnail={imageBuilder(project.thumbnail)
               .width(562)
               .height(323)

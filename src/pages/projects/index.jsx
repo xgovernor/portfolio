@@ -13,7 +13,7 @@ import { info } from "./../../components/Meta/meta.constant";
 const QUERY = groq`*[_type == "project"] {
   _id,
   featured,
-  projectName,
+  name,
   thumbnail,
   title,
   excerpt,
