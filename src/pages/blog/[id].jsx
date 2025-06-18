@@ -5,55 +5,103 @@ import NavigationalArticles from "../../components/NavigationArticles";
 import Layout from "../../components/Layout";
 import groq from "groq";
 import { getClient, imageBuilder } from "../../utils/sanity";
-// No need for Script import here, as it's handled by Meta component now
-// import Script from "next/script"; // REMOVE THIS
 import { info } from "./../../components/Meta/meta.constant.js"; // Import info for base URLs
+import { PropTypes } from "prop-types";
 
 const QUERY = groq`
-        *[_type == "article" && slug.current == $slug] | order(_updatedAt desc)[0] {
-          _id,
-          title,
-          'slug': slug.current,
-          "date": {
-            _createdAt,
-            publishedAt,
-            _updatedAt
-          },
-          featured,
-          excerpt,
-          image,
-          category[]->{ // Make sure you're fetching category title
-            _id,
-            title
-          },
-          topic[]->{ // Make sure you're fetching topic title
-            _id,
-            title
-          },
-          body,
-          references,
-          importantLinks,
-        }
-      `;
-// GROQ query for featured Projects & Articles.
-// (No change here, as it's for NavigationalArticles, not the main article's meta)
-const RELATED_ARTICLE_QUERY = groq`*[_type == "article"] {
-  _id,
-  "date": {
-    _createdAt,
-    publishedAt,
-    _updatedAt
-  },
-  featured,
-  "category": category[0] -> {
+  *[_type == "article" && slug.current == $slug] | order(_updatedAt desc)[0] {
     _id,
-    title
-  },
-  thumbnail,
-  title,
-  excerpt,
-  "slug": slug.current,
-  }[0...2]`;
+    title,
+    'slug': slug.current,
+    "date": {
+      _createdAt,
+      publishedAt,
+      _updatedAt
+    },
+    featured,
+    excerpt,
+    image,
+    category[]->{
+      _id,
+      title
+    },
+    topic[]->{
+      _id,
+      title
+    },
+    body,
+    references,
+    importantLinks,
+  }
+`;
+
+// Fetch related articles based on shared topics or categories, excluding the current article
+const RELATED_ARTICLE_QUERY = groq`
+  *[
+    _type == "article" &&
+    slug.current != $slug &&
+    (
+      count(topic[@._ref in $topicIds]) > 0 ||
+      count(category[@._ref in $categoryIds]) > 0
+    )
+  ] | order(_updatedAt desc)[0...4] {
+    _id,
+    "date": {
+      _createdAt,
+      publishedAt,
+      _updatedAt
+    },
+    featured,
+    "category": category[0] -> {
+      _id,
+      title
+    },
+    thumbnail,
+    title,
+    excerpt,
+    "slug": slug.current,
+  }
+`;
+
+export async function getServerSideProps({ params, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=31536000, stale-while-revalidate=59",
+  );
+  const { id: slug } = params;
+
+  try {
+    const article = await getClient(false).fetch(QUERY, { slug });
+
+    if (!article) {
+      return {
+        notFound: true,
+      };
+    }
+
+    // Extract topic and category IDs for related articles query
+    const topicIds = (article.topic || []).map((t) => t._id);
+    const categoryIds = (article.category || []).map((c) => c._id);
+
+    const articles = await getClient(false).fetch(RELATED_ARTICLE_QUERY, {
+      slug,
+      topicIds,
+      categoryIds,
+    });
+
+    return {
+      props: {
+        articles,
+        article,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching article data:", error);
+    return {
+      notFound: true,
+    };
+  }
+}
 
 function ArticlesSingle({ articles, article }) {
   if (!article) {
@@ -64,6 +112,11 @@ function ArticlesSingle({ articles, article }) {
       </Layout>
     );
   }
+
+  const heroThumbnail = imageBuilder(article?.image)
+    .width(1500)
+    .height(500)
+    .url();
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -177,47 +230,20 @@ function ArticlesSingle({ articles, article }) {
           updatedAt={article?.date._updatedAt}
           createdAt={article?.date._createdAt}
         />
-        <SingleCover
-          src={imageBuilder(article?.image).width(1088).height(370).url()}
-          alt={article?.title}
-        />
+        <SingleCover src={heroThumbnail} alt={article?.title} />
         <SingleContent content={article.body} />
-        <NavigationalArticles articles={articles} />
+
+        {articles.length > 0 ? (
+          <NavigationalArticles articles={articles} />
+        ) : null}
       </Layout>
     </>
   );
 }
 
-export async function getServerSideProps({ params, res }) {
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=31536000, stale-while-revalidate=59",
-  );
-  const { id: slug } = params; // params.id is the slug from the URL
-
-  try {
-    const article = await getClient(false).fetch(QUERY, { slug });
-    const articles = await getClient(false).fetch(RELATED_ARTICLE_QUERY);
-
-    if (!article) {
-      return {
-        notFound: true,
-      };
-    }
-
-    return {
-      props: {
-        articles,
-        article,
-        // slug, // No need to pass slug explicitly if it's already in article.slug
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching article data:", error);
-    return {
-      notFound: true,
-    };
-  }
-}
+ArticlesSingle.propTypes = {
+  articles: PropTypes.array,
+  article: PropTypes.object,
+};
 
 export default ArticlesSingle;
