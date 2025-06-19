@@ -9,89 +9,97 @@
 
 <url>
   <loc>https://www.abutaher.me/</loc>
-  <lastmod>2025-06-07T03:55:27+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:29+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.abutaher.me/projects</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.abutaher.me/blog</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.abutaher.me/projects/portfolio</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.abutaher.me/projects/simbio</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.abutaher.me/projects/toybytebd</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.abutaher.me/projects/haris-ali-construction</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.abutaher.me/projects/ferne-health-indonesia</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <loc>https://www.abutaher.me/projects/ferne-health</loc>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.abutaher.me/projects/uk-basis</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.abutaher.me/projects/svlgdp</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.abutaher.me/projects/the-gisthive</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.abutaher.me/projects/wpl-toolkit</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.abutaher.me/projects/solution-flows</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.abutaher.me/projects/islamer-kantho</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.abutaher.me/projects/git-customizer</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.abutaher.me/blog/beyond-the-basics-essential-javascript-concepts</loc>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.abutaher.me/blog/the-difference-between-npm-and-npx</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.abutaher.me/blog/category/npm</loc>
-  <lastmod>2025-06-13T15:02:42+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://www.abutaher.me/blog/load-testing-with-k6-stress-spike-load-soak</loc>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
-
-
+<url>
+  <loc>https://www.abutaher.me/blog/mastering-oop-the-4-core-principles</loc>
+  <lastmod>2025-06-19T18:31:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
 </urlset>
