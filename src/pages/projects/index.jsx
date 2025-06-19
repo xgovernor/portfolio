@@ -9,7 +9,7 @@ import { info } from "./../../components/Meta/meta.constant";
 
 // GROQ query for projects.
 // IMPORTANT: Ensure this query fetches all fields needed for the JSON-LD snippet
-// (title, projectName, excerpt, thumbnail, slug)
+// (title, name, excerpt, thumbnail, slug)
 const QUERY = groq`*[_type == "project"] {
   _id,
   featured,
@@ -47,13 +47,13 @@ function Work({ data }) {
         position: index + 1,
         item: {
           "@type": "Article", // Each item in the list is an Article (case study)
-          headline: project.projectName, // The main title of the case study
+          headline: `${project.name}-${project.title}`, // The main title of the case study
           url: `${info.website}/projects/${project.slug}`,
           description: project.excerpt,
           image: {
             "@type": "ImageObject",
             url: imageBuilder(project.thumbnail).width(800).height(450).url(),
-            caption: `Thumbnail for ${project.projectName} project case study`,
+            caption: `Thumbnail for ${project.name} project case study`,
             width: 800,
             height: 450,
           },

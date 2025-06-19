@@ -2,7 +2,7 @@ import { memo } from "react";
 
 function CodeBlock(props) {
   return (
-    <div className="relative mx-auto w-full max-w-[710px] text-[#e0e0e0]">
+    <div className="relative mx-auto my-3 w-full max-w-[710px] text-[#e0e0e0]">
       <div className="rounded-t border-b border-[#1f1f1f] bg-[#0b0b0c] px-6 pt-3 pb-2">
         <span className="text-sm font-medium capitalize">
           {props.node.language}

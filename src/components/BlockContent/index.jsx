@@ -4,9 +4,11 @@ import TableBlock from "./TableBlock";
 import ImageBlock from "./ImageBlock";
 import DualImageBlock from "./DualImageBlock";
 import ProjectContentBlock from "./ProjectContentBlock";
+import DetailsBlock from "./DetailsBlock";
 
 const serializers = {
   types: {
+    details: DetailsBlock,
     code: CodeBlock,
     sizeChart: TableBlock,
     image: ImageBlock,

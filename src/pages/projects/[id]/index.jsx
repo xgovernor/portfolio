@@ -13,7 +13,7 @@ const PROJECT_QUERY = groq`*[_type == "project" && slug.current == $slug] | orde
 {
   _id,
   thumbnail,
-  projectName, // Using projectName for title if 'title' is not present in Sanity
+  name,
   title,       // Assuming 'title' field might be used for project page title
   liveUrl,
   excerpt,     // Use this for meta description
@@ -52,8 +52,8 @@ function Project({ project }) {
     // Consider TechArticle if your case studies are very technical deep-dives
     // "@type": "TechArticle",
 
-    headline: `${project.projectName} Case Study by Abu Taher Muhammad`, // Main headline of the article
-    name: project.projectName, // Descriptive name
+    headline: `${project.name} - ${project.title} Case Study by Abu Taher Muhammad`, // Main headline of the article
+    name: project.name, // Descriptive name
     description: project.excerpt, // The summary or abstract of the case study
     url: `${info.website}/projects/${project.slug}`, // Canonical URL of the case study page
 
@@ -61,7 +61,7 @@ function Project({ project }) {
       // Featured image for the article
       "@type": "ImageObject",
       url: imageBuilder(project.thumbnail).width(1200).height(630).url(),
-      caption: `Featured image for the ${project.title || project.projectName} case study`,
+      caption: `Featured image for the ${project.name} case study`,
       width: 1200,
       height: 630,
     },
@@ -99,7 +99,7 @@ function Project({ project }) {
     // Relate the article to the actual software/code it's about using 'about'
     about: {
       "@type": "SoftwareSourceCode", // The specific software/code being discussed
-      name: project.title || project.projectName,
+      name: project.name,
       description: project.excerpt, // Description of the software itself
       url: project.projectLiveUrl || null, // Live demo URL of the project
       codeRepository: project.githubUrl || null, // Link to the code repository
@@ -159,7 +159,8 @@ function Project({ project }) {
     >
       {/* Pass the dynamic meta object here */}
       <ProjectHeader
-        title={project.title || project.projectName} // Use title or project name
+        project={project.name}
+        title={project.title}
         cover={imageBuilder(project.thumbnail).width(1920).height(1080).url()}
       />
       <ProjectInfo

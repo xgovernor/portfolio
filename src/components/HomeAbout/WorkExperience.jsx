@@ -2,36 +2,46 @@ import React from 'react'
 
 const companies = [
   {
-    company: 'Dot9',
-    position: 'Full Stack Developer',
-    year: '2022 - Present'
+    company: "Dot9",
+    location: "Bangladesh",
+    position: "Full Stack Developer",
+    year: "2022 - Present",
   },
   {
-    company: 'Ferne Health',
-    position: 'Junior Frontend Engineer',
-    year: '2022'
+    company: "Ferne Health",
+    location: "Singapore",
+    position: "Junior Frontend Engineer",
+    year: "2022",
   },
   {
-    company: 'Freelancer Lab',
-    position: 'Web Developer',
-    year: '2019 - 2022'
-  }
-]
+    company: "Freelancer Lab",
+    location: "Bangladesh",
+    position: "Web Developer",
+    year: "2019 - 2022",
+  },
+];
 
-const WorkCard = ({company, position, year}) => {
+const WorkCard = ({ company, location, position, year }) => {
   return (
-    <div className="py-1.5 grid grid-cols-3 md:items-center first-of-type:border-t border-b border-dashed border-[#B2B5B7]">
-        <div className="col-span-2 flex flex-col md:flex-row justify-between gap-0.5">
-            <h3 className="text-[13px] text-[#1A1A1A]">{company}</h3>
-            <p className="font-serif text-xs font-medium text-[#1A1A1A]">{position}</p>
-        </div>
+    <div className="grid grid-cols-3 border-b border-dashed border-[#B2B5B7] py-1.5 first-of-type:border-t md:items-center">
+      <div className="col-span-2 flex flex-col justify-between gap-0.5 md:flex-row">
+        <h3 className="text-[13px] text-[#1A1A1A]">
+          {company},{" "}
+          <span className="font-serif text-xs font-medium text-[#1A1A1A]">
+            {location}
+          </span>
+        </h3>
+        <p className="font-serif text-xs font-medium text-[#1A1A1A]">
+          {position}
+        </p>
+      </div>
 
-        <div className="col-span-1 flex justify-end">
-            <p className="text-sm font-serif font-medium text-[#1A1A1A]">{year}</p>
-        </div>
+      <div className="col-span-1 flex justify-end">
+        <p className="font-serif text-sm font-medium text-[#1A1A1A]">{year}</p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 
 const WorkExperience = () => {
